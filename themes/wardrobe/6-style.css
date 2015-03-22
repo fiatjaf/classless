@@ -1,0 +1,107 @@
+body, h1, h2, h3, h4, h5 {
+  font-family: "Open Sans"; }
+
+body {
+  background-image: -webkit-linear-gradient(-45deg, #dedade, #ededef, #ccdfee, #edefed);
+  background-image: -moz-linear-gradient(-45deg, #dedade, #ededef, #ccdfee, #edefed);
+  background-image: -ms-linear-gradient(-45deg, #dedade, #ededef, #ccdfee, #edefed);
+  background-image: -o-linear-gradient(-45deg, #dedade, #ededef, #ccdfee, #edefed);
+  background-image: linear-gradient(-45deg, #dedade, #ededef, #ccdfee, #edefed);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+  color: #404142;
+  font-size: 14px; }
+  body > header,
+  body > nav,
+  body > main,
+  body > footer,
+  body > aside {
+    background: #fff;
+    margin: 0 auto;
+    width: 100%;
+    padding: 30px;
+    text-align: center; }
+  body > main {
+    padding-bottom: 10px;
+    margin: 1px auto; }
+  body > header {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px; }
+    body > header h1 {
+      color: #484949;
+      font-size: 22px; }
+    body > header h2 {
+      color: #999; }
+  body > footer {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px; }
+
+nav {
+  text-align: center;
+  margin-top: 30px; }
+  nav a {
+    padding: 8px 13px;
+    border-radius: 2px;
+    margin-right: 10px;
+    line-height: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    white-space: nowrap; }
+    nav a:last-child {
+      margin-right: 0; }
+
+time {
+  color: #999;
+  font-size: 11px; }
+
+main > article,
+main > section {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  text-align: left; }
+main > section:not(:first-of-type) {
+  padding-top: 15px;
+  border-top: 1px solid #ddd; }
+
+main > section {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  position: relative; }
+  main > section h1 {
+    font-weight: normal;
+    font-size: 15px;
+    margin: 0 0 6px;
+    text-transform: capitalize; }
+  main > section h1:not(:first-of-type):before {
+    content: "------";
+    display: block;
+    color: #d0d0d0;
+    margin: 10px 0;
+    font-weight: normal; }
+  main > section footer nav a:not([href]) { visibility: hidden; }
+
+article header {
+  padding-bottom: 15px;
+  margin-bottom: 15px; }
+  article header h1 {
+    margin-bottom: 5px; }
+  article header .category {
+    font-size: 11px; }
+
+body > aside {
+  border-top: 1px solid #ddd;
+  margin: 0; }
+  body > aside section {
+    padding-top: 15px;
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto 0; }
+  body > aside img {
+    width: 90px;
+    float: left;
+    margin: 0 15px 0 0; }
+aside p {
+  margin: 0; }

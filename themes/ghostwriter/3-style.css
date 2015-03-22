@@ -1,0 +1,268 @@
+
+/* ============================================================ */
+/* Base */
+/* ============================================================ */
+
+body {
+  background: #FEFEFE;
+  color: #424242;
+  font-family: "Open Sans", arial, sans-serif;
+  font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 33px;
+  text-transform: none;
+}
+
+h1 { font-size: 26px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; margin-bottom: 20px; }
+h4 { font-size: 18px; margin-bottom: 18px; }
+h5 { font-size: 16px; margin-bottom: 15px; }
+h6 { font-size: 14px; margin-bottom: 12px; }
+
+p {
+  line-height: 1.8;
+  margin: 0 0 30px;
+}
+
+a {
+  color: #F03838;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style-position: inside;
+  line-height: 1.8;
+  margin: 0 0 40px;
+  padding: 0;
+}
+
+ul li, ol li { margin: 0 0 10px; }
+
+blockquote {
+  border-left: 1px dotted #303030;
+  margin: 40px 0;
+  padding: 5px 30px;
+}
+
+blockquote p {
+  color: #AEADAD;
+  display: block;
+  font-style: italic;
+  margin: 0;
+  width: 100%;
+}
+
+img {
+  display: block;
+  max-width: 809px;
+  margin: auto;
+}
+
+pre {
+  background: #F1F0EA;
+  border: 1px solid #DDDBCC;
+  border-radius: 3px;
+  margin: 0 0 40px;
+  padding: 15px 20px;
+}
+
+::selection {
+  background: #FFF5B8;
+  color: #000;
+  display: block;
+}
+
+::-moz-selection {
+  background: #FFF5B8;
+  color: #000;
+  display: block;
+}
+
+/* ============================================================ */
+/* General Appearance */
+/* ============================================================ */
+
+body {
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  max-width: 889px;
+}
+
+body > nav {
+  text-align: center;
+  display: table;
+  height: auto;
+  width: auto;
+  margin: 100px 0 35px;
+  overflow: auto;
+}
+body > nav + * { clear: both }
+
+aside a,
+nav a,
+body > header h1 a {
+  border: none;
+  color: #FEFEFE;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 12px;
+  text-transform: uppercase;
+  background: #F03838;
+  float: left;
+  margin: 0 0 0 10px;
+  padding: 8px;
+  line-height: 1.2em;
+}
+body > header h1 a:hover,
+body > aside a:hover,
+body > nav a:hover { background: #303030; }
+
+/* ============================================================ */
+/* Site Header */
+/* ============================================================ */
+
+body > header {
+  overflow: auto;
+  text-align: center;
+  text-transform: uppercase;
+  display: table;
+  float: left;
+}
+body > header h1 {
+  margin: 0;
+  text-transform: uppercase;
+}
+body > header > *:not(h1) { display: none }
+
+/* ============================================================ */
+/* Post */
+/* ============================================================ */
+
+main > header {
+  visibility: hidden;
+}
+
+main > article {
+  margin: 0 40px;
+}
+main > article header {
+  border-bottom: 6px solid #303030;
+  margin: 0 0 50px;
+  padding: 0 0 80px;
+  text-align: center;
+  text-transform: uppercase;
+}
+main > article header h1 {
+  font-size: 52px;
+  font-weight: 700;
+  margin: 15px 0;
+  text-transform: uppercase;
+}
+main > article header h1 a { color: inherit; }
+main > article header > *:not(h1) {
+  color: #AEADAD;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 25px 0 0;
+}
+main > article header > *:last-child:after {
+  border-bottom: 1px dotted #303030;
+  content: "";
+  display: block;
+  margin: 40px auto 0;
+  width: 100px;
+}
+main > article > *:not(header) { margin: 0 0 92px; }
+main > article > *:not(header) a:hover {
+  border-bottom: 1px dotted #F03838;
+  padding: 0 0 2px;
+}
+
+/* ============================================================ */
+/* Post Index */
+/* ============================================================ */
+
+main > header + section {
+  border-top: 6px solid #303030;
+}
+main > section { margin-bottom: 25px; }
+main > section ul {
+  list-style: none;
+  margin: 20px 40px 0;
+}
+main > section ul li article {
+  border-bottom: 1px dotted #303030;
+  margin: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: block;
+  color: #424242;
+  padding: 20px 5px;
+}
+main > section ul li article:hover {
+  background: #FCF5F5;
+  color: #F03838;
+  padding: 20px 12px;
+}
+
+main > section ul li article h1 {
+  display: inline-block;
+  margin: 0;
+  text-transform: none;
+  font-size: 18px;
+}
+main > section ul li article time { display: inline-block; }
+main > section ul li article time:before { content: "/ "; }
+
+main > section > footer nav ul { float: right; }
+main > section > footer nav a:not([href]) {
+  background-color: gray;
+  opacity: 0.5;
+}
+
+/* ============================================================ */
+/* Aside */
+/* ============================================================ */
+
+body > aside {
+  background: #303030;
+  color: #D3D3D3;
+  padding: 50px 0 15px 0;
+}
+body > aside { text-align: center; }
+
+/* ============================================================ */
+/* Footer */
+/* ============================================================ */
+
+body > footer {
+  background: #303030;
+  color: #D3D3D3;
+  padding: 15px 0 50px 0;
+}
+body > footer p {
+  color: #656565;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+body > footer a {
+  color: #656565;
+  font-weight: 700;
+}
+body > footer a:hover { color: #FEFEFE; }
+
+/* ============================================================ */
+/* Media Queries */
+/* ============================================================ */
+
+@media only screen and (max-width: 400px) {
+  main > article header h1 { font-size: 32px; }
+}
