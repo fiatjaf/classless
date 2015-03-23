@@ -307,11 +307,10 @@ main ul, main ul li {
 
 main > header { display: none }
 
-/* helpers */
-
-.inline { display: inline; }
-.muted { color: #999; }
-.invisible { visibility: hidden; }
+body > main ul { list-style: none }                                                                                                                      
+body > main li p { display: inline }                                                                                                                     
+nav ul { list-style: none; }                                                                                                                             
+nav li { display: inline; }
 body, h1, h2, h3, h4, h5 {
   font-family: "Open Sans"; }
 

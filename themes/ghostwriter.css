@@ -484,6 +484,10 @@ ul, ol {
 }
 
 ul li, ol li { margin: 0 0 10px; }
+body > main ul { list-style: none }                                                                                                                      
+body > main li p { display: inline }                                                                                                                     
+nav ul { list-style: none; }                                                                                                                             
+nav li { display: inline; }
 
 blockquote {
   border-left: 1px dotted #303030;
