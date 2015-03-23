@@ -1,0 +1,114 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <title>Unitemplate playground</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/0.5.6/chance.js"></script>
+    <link rel="stylesheet" id="theme">
+  </head>
+
+  <body></body>
+
+  <script>
+    $.get('unitemplate.html', function (html) {
+      var u = $(html)
+      u.find('*').each(function () {
+        var t = $(this)
+        var tagName = this.tagName.toLowerCase()
+
+        if (!t.children().length) {
+          if (tagName in fillings) {
+            var fillingType = fillings[tagName]
+            if (Array.isArray(fillingType)) {
+              fillingType = chance.pick(fillingType)
+            }
+
+            t.append(chance[fillingType]())
+          }
+          else if (tagName == 'img') {
+            if (chance.d4() > 2) {
+              t.attr('src', 'http://lorempixel.com/'+chance.natural({min: 100, max: 700}) +'/'+chance.natural({min: 100, max: 700})+'/')
+            }
+            else {
+              t.remove()
+            }
+          }
+        }
+      })
+
+      $('body').append(u)
+    })
+
+    var fillings = {
+      'p': ['sentence', 'paragraph'],
+      'li': ['sentence', 'paragraph'],
+      'a': 'word',
+      'h1': ['sentence', 'word'],
+      'h2': ['sentence', 'word'],
+      'h3': ['sentence', 'word'],
+    }
+  </script>
+  <script>
+    $('<div>')
+      .attr('id', 'play')
+      .css({border: '2px dotted black', background: 'white'})
+      .css({width: '200px'})
+      .css({position: 'fixed', right: '22px', top: '15px'})
+      .append(
+        $('<div>')
+          .css({padding: '10px'})
+          .append(
+            $('<input>')
+              .attr('placeholder', 'Paste a Unitemplate CSS theme URL here')
+              .val('')
+              .on('input', function () {
+                var url = $(this).val()
+                if (url.substr(0, 4) != 'http') {
+                  // just the name of the theme, complete the url
+                  url = 'http://rawgit.com/fiatjaf/unitemplate/master/themes/' + url + '.css'
+                }
+                else if (url.indexOf('github') != -1) {
+                  // github-hosted, replace with rawgit
+                  url = url.replace(/https?:\/\/[^\/]+\//, 'http://rawgit.com/')
+                }
+
+                $('#theme').attr('href', url)
+              })
+          )
+      )
+      .append((function () {
+        var ul = $('<ul>').css({padding: '0'})
+        var scenarios = [
+          'a-list-of-posts-with-header',
+          'list-of-posts',
+          'card-with-checklists',
+          'post-with-checklists',
+        ]
+        scenarios.forEach(function (name) {
+          var url = 'http://rawgit.com/fiatjaf/unitemplate/master/scenarios/' + name + '.html'
+          $('<li>')
+            .append(
+              (function (scenarioURL) {
+                return $('<button>')
+                  .on('click', function () {
+                    $.get(scenarioURL, function (html) {
+                      $('#play').appendTo('head')
+                      $('body').html(html)
+                      $('#play').appendTo('body')
+                    })
+                    return false
+                  })
+                  .text(name)
+              })(url)
+            )
+            .css({'list-style': 'none', padding: '7px'})
+            .appendTo(ul)
+        })
+        return ul
+      })())
+      .appendTo('body')
+  </script>
+
+</html>
