@@ -1,6 +1,7 @@
 all:
 	make wardrobe.theme
 	make ghostwriter.theme
+	make festively.theme
 
 wardrobe.theme: wardrobe/5-basics.css wardrobe/6-style.css
 	cat wardrobe/*.css > wardrobe.css
@@ -8,3 +9,6 @@ wardrobe.theme: wardrobe/5-basics.css wardrobe/6-style.css
 ghostwriter.theme: ghostwriter/3-style.css ghostwriter/main.coffee
 	cat ghostwriter/*.css > ghostwriter.css
 	browserify -t coffeeify ghostwriter/main.coffee > ghostwriter.js
+
+festively.theme: festively/4-style.css
+	cat festively/*.css > festively.css

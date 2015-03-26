@@ -43,7 +43,7 @@
 
     var fillings = {
       'p': ['sentence', 'paragraph'],
-      'li': ['sentence', 'paragraph'],
+      'li': 'sentence',
       'a': 'word',
       'h1': ['sentence', 'word'],
       'h2': ['sentence', 'word'],
@@ -55,7 +55,7 @@
       .attr('id', 'play')
       .css({border: '2px dotted black', background: 'white'})
       .css({width: '200px'})
-      .css({position: 'fixed', right: '22px', top: '15px'})
+      .css({position: 'fixed', right: '22px', top: '15px', 'z-index': 1000})
       .append(
         $('<div>')
           .css({padding: '10px'})

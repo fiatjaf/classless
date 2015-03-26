@@ -1,0 +1,172 @@
+/* ==========================================================================
+		0.2 Tables
+	========================================================================== */
+table {
+  max-width: 100%;
+}
+
+table, table td, table th {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+table td, table th {
+  padding: 10px;
+}
+
+table th {
+  background: #f3f3f3;
+  font-weight: 700;
+}
+
+table tr:nth-child(odd) td {
+  background: #f9f9f9;
+}
+
+/* ==========================================================================
+			0.3 Code etc.
+	========================================================================== */
+dl {
+  margin: 1.6em 0;
+}
+
+dl dt {
+  float: left;
+  width: 180px;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+dl dd {
+  margin-left: 200px;
+  margin-bottom: 1em;
+}
+
+mark {
+  background-color: #ffc336;
+}
+
+code, tt {
+  padding: 0 4px;
+  font-family: "Courier New", monospace, sans-serif;
+  border: 1px solid #E3EDF3;
+  background: #F7FAFB;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+pre {
+  margin: 0 0 20px 0;
+  border: 1px solid #E3EDF3;
+  width: 96%;
+  padding: 20px;
+  font-family: "Courier New", monospace, sans-serif;
+  white-space: pre;
+  overflow: auto;
+  background: #F7FAFB;
+  border-radius: 3px;
+}
+
+h2 + pre {
+  margin-top: 20px;
+}
+
+pre code, tt {
+  font-size: inherit;
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+kbd {
+  display: inline-block;
+  margin-bottom: 0.4em;
+  padding: 1px 8px;
+  border: #ccc 1px solid;
+  color: #666;
+  text-shadow: #fff 0 1px 0;
+  font-size: 0.9em;
+  font-weight: bold;
+  background: #f4f4f4;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;
+}
+
+/* ==========================================================================
+		0.Forms
+	========================================================================== */
+::-webkit-input-placeholder {
+  color: #737171;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #737171;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #737171;
+}
+
+:-ms-input-placeholder {
+  color: #737171;
+}
+
+input[type="text"], input[type="url"], input[type="email"],
+input[type="tel"], input[type="password"], textarea {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  outline: none;
+  width: auto;
+  padding: 1em 0.75em;
+  font-size: 19px;
+  font-size: 1.9rem;
+  font-weight: 400;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 100%;
+  color: #737171;
+  -o-transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+input[type="submit"], button {
+  -webkit-appearance: none;
+  background-color: transparent;
+  font-size: 20px;
+  font-size: 2rem;
+}
+
+input[type="text"]:hover, input[type="url"]:hover, input[type="email"]:hover,
+input[type="tel"]:hover, input[type="password"]:hover, textarea:hover {
+  color: #737171;
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+input[type="text"]:focus, input[type="url"]:focus, input[type="email"]:focus,
+input[type="tel"]:focus, input[type="password"]:focus, textarea:focus {
+  color: #737171;
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.11);
+}
+
+select {
+  width: 100%;
+}
+
+input.searchsubmit,
+input[type="submit"].searchsubmit {
+  display: none;
+}
+
