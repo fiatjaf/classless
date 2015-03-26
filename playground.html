@@ -60,6 +60,9 @@
         $('<div>')
           .css({padding: '10px'})
           .append(
+            $('<strong>').text('THEME')
+          )
+          .append(
             $('<input>')
               .attr('placeholder', 'Paste a Unitemplate CSS theme URL here')
               .val('')
@@ -67,7 +70,7 @@
                 var url = $(this).val()
                 if (url.substr(0, 4) != 'http') {
                   // just the name of the theme, complete the url
-                  url = 'http://rawgit.com/fiatjaf/unitemplate/master/themes/' + url + '.css'
+                  url = 'http://rawgit.com/fiatjaf/unitemplate/gh-pages/themes/' + url + '.css'
                 }
                 else if (url.indexOf('github') != -1) {
                   // github-hosted, replace with rawgit
@@ -78,36 +81,74 @@
               })
           )
       )
-      .append((function () {
-        var ul = $('<ul>').css({padding: '0'})
-        var scenarios = [
-          'a-list-of-posts-with-header',
-          'list-of-posts',
-          'card-with-checklists',
-          'post-with-checklists',
-        ]
-        scenarios.forEach(function (name) {
-          var url = 'http://rawgit.com/fiatjaf/unitemplate/master/scenarios/' + name + '.html'
-          $('<li>')
-            .append(
-              (function (scenarioURL) {
-                return $('<button>')
-                  .on('click', function () {
-                    $.get(scenarioURL, function (html) {
-                      $('#play').appendTo('head')
-                      $('body').html(html)
-                      $('#play').appendTo('body')
-                    })
-                    return false
+      .append(
+        $('<div>')
+          .css({padding: '10px'})
+          .append(
+            $('<strong>').text('EXAMPLE TEMPLATES')
+          )
+          .append((function () {
+            var ul = $('<ul>').css({padding: '0'})
+            var scenarios = [
+              'a-list-of-posts-with-header',
+              'list-of-posts',
+              'card-with-checklists',
+              'post-with-checklists',
+            ]
+            scenarios.forEach(function (name) {
+              var url = 'http://rawgit.com/fiatjaf/unitemplate/gh-pages/scenarios/' + name + '.html'
+              $('<li>')
+                .append(
+                  (function (scenarioURL) {
+                    return $('<button>')
+                      .on('click', function () {
+                        $.get(scenarioURL, function (html) {
+                          $('#play').appendTo('head')
+                          $('body').html(html)
+                          $('#play').appendTo('body')
+                        })
+                        return false
+                      })
+                      .text(name)
+                  })(url)
+                )
+                .css({'list-style': 'none', padding: '7px'})
+                .appendTo(ul)
+            })
+            ul.append(
+              $('<input>')
+                .attr('placeholder', 'Paste a unitemplate URL here to test with this theme')
+                .val('')
+                .on('input', function () {
+                  var scenarioURL = $(this).val()
+
+                  // test URL
+                  var pattern = new RegExp('^(https?:\\/\\/)'+ // protocol
+                    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+                    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+                    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+                    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+                    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+                  if (!pattern.test(scenarioURL)) {
+                    return
+                  }
+
+                  if (scenarioURL.indexOf('github') != -1) {
+                    // github-hosted, replace with rawgit
+                    scenarioURL = scenarioURL.replace(/https?:\/\/[^\/]+\//, 'http://rawgit.com/')
+                  }
+
+                  $.get(scenarioURL, function (html) {
+                    $('#play').appendTo('head')
+                    $('body').html(html)
+                    $('#play').appendTo('body')
                   })
-                  .text(name)
-              })(url)
+                })
             )
-            .css({'list-style': 'none', padding: '7px'})
-            .appendTo(ul)
-        })
-        return ul
-      })())
+
+            return ul
+          })())
+      )
       .appendTo('body')
   </script>
 
