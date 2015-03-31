@@ -550,7 +550,6 @@ body > nav {
 }
 body > nav + * { clear: both }
 
-aside a,
 nav a,
 body > header h1 a {
   border: none;
@@ -603,6 +602,9 @@ main > article header {
   padding: 0 0 80px;
   text-align: center;
   text-transform: uppercase;
+}
+main > article header img {
+  width: 100%;
 }
 main > article header h1 {
   font-size: 52px;
@@ -659,7 +661,9 @@ main > section ul li article:hover {
   padding: 20px 12px;
 }
 
-main > section ul li article h1 {
+main > section ul li article header { display: inline; }
+main > section ul li article header img { display: none; }
+main > section ul li article header h1 {
   display: inline-block;
   margin: 0;
   text-transform: none;
