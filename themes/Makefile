@@ -12,3 +12,4 @@ ghostwriter.theme: ghostwriter/3-style.css ghostwriter/main.coffee
 
 festively.theme: festively/4-style.css
 	cat festively/*.css > festively.css
+	browserify -t coffeeify festively/main.coffee > festively.js

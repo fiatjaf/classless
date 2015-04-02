@@ -397,13 +397,11 @@ input[type="submit"].searchsubmit {
 html {
   -webkit-text-size-adjust: none;
   height: 100%;
-  font-size: 52.5%;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ul { padding: 0; margin: 0; }
-aside p { font-size: 200%; }
 
 body {
   margin: 0;
@@ -514,7 +512,7 @@ body > footer {
 
 main > header {
   text-align: center;
-  font-size: 320%;
+  font-size: 160%;
   color: #333;
 }
 main > header h1:before {
@@ -525,9 +523,9 @@ main > header h1:before {
 main > header h1 {
   line-height: 1.4em;
   margin-bottom: 2em;
-  font-size: 120%;
+  font-size: 110%;
 }
-main > header h1 a { color: inherit; }
+header h1 a { color: inherit; }
 main > header h1:after {
   content: ' —';
   display: inline-block;
@@ -547,7 +545,7 @@ main > footer {
 main > section ul { list-style: none; }
 main > section ul li article {
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 3em;
 }
 main > section ul li p { display: inline; }
 
@@ -621,7 +619,7 @@ section nav li a:hover:before {
 }
 
 main > article > header h1 {
-  font-size: 500%;
+  font-size: 250%;
   text-align: center;
   margin: 28px auto 12px;
   font-weight: normal;
@@ -632,8 +630,8 @@ main > article :not(section) ol ul,main > article :not(section) ol ol,main > art
   margin-bottom: 0;
 }
 
-body > header > img,
-article > header > img {
+body > header img,
+article > header img {
   position: relative;
   z-index: 3;
   background: #fff;
@@ -641,7 +639,7 @@ article > header > img {
   width: 100%;
 }
 
-article > header > img a:hover img {
+article > header img a:hover img {
   opacity: 0.85;
 }
 
@@ -687,10 +685,11 @@ article article a:hover {
 
 body > aside img,
 article section ul li article img {
+  width: 100%;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   width: 95px;
   height: 95px;
-  margin-bottom: 10px;
+  margin-bottom: 2em;
   border: none;
   border-radius: 400px;
 }
@@ -703,10 +702,8 @@ h1,h2,h3,h4,h5,h6,blockquote,button,input[type="text"],input[type="url"],input[t
   font-family: 'Amatic SC', 'Heveltica Neue', Arial, sans-serif;
 }
 
-main > section ul li article aside *,
-main > section ul li article p,
-main > section ul li article time {
-  font-size: 200%;
+main > section li article header h1 {
+  color: #34495e;
 }
 
 main > article blockquote {
@@ -715,7 +712,7 @@ main > article blockquote {
 
 blockquote {
   margin-bottom: 1em;
-  font-size: 210%;
+  font-size: 105%;
   border-left: 1px solid #d6575b;
 }
 
@@ -724,14 +721,12 @@ h1 {
 }
 
 body > header > * {
-  font-size: 5.2rem;
+  font-size: 2.8rem;
   width: 100%;
   display: table-cell;
   vertical-align: middle;
   font-weight: 400;
 }
-
-h2,h3,h4,h5,h6 { font-size: 200%; }
 
 body > header h1,h1,h2,h3,h4,h5,h6,article > header > aside,blockquote,button,input[type="text"],input[type="url"],input[type="email"],input[type="tel"],input[type="password"],textarea,main > article-meta,input[type="submit"],body > nav,body > header {
   font-weight: 700;
@@ -837,17 +832,17 @@ main > article :not() img,main > article :not(section) ol,main > article :not(se
 
 @media screen and min-width 40em {
   html {
-    font-size: 55.5%;
+    font-size: 60.5%;
   }
 
-  main article > header > img {
+  main article > header img {
     overflow: hidden;
   }
 }
 
 @media screen and min-width 575em {
   html {
-    font-size: 62.5%;
+    font-size: 80.5%;
   }
 }
 
