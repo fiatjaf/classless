@@ -314,6 +314,8 @@ nav li { display: inline; }
 body, h1, h2, h3, h4, h5 {
   font-family: "Open Sans"; }
 
+img { max-width: 100%; margin: 0.5em; border: 6px solid; }
+
 body {
   background-image: -webkit-linear-gradient(-45deg, #dedade, #ededef, #ccdfee, #edefed);
   background-image: -moz-linear-gradient(-45deg, #dedade, #ededef, #ccdfee, #edefed);
