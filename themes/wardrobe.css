@@ -407,7 +407,7 @@ article header {
 body > aside {
   border-top: 1px solid #ddd;
   margin: 0; }
-  body > aside section {
+  body > aside div {
     padding-top: 15px;
     width: 100%;
     max-width: 500px;
