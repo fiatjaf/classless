@@ -409,14 +409,20 @@ article header {
 body > aside {
   border-top: 1px solid #ddd;
   margin: 0; }
+  body > aside h1 {
+    float: left;
+    display: block; }
   body > aside div {
     padding-top: 15px;
     width: 100%;
     max-width: 500px;
+    text-align: left;
     margin: 30px auto 0; }
   body > aside img {
     width: 90px;
     float: left;
+    clear: left;
+    display: block;
     margin: 0 15px 0 0; }
 aside p {
   margin: 0; }
