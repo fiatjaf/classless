@@ -155,24 +155,24 @@ main > section ul li p { display: inline; }
 
 main, section, aside, article, footer, header { clear: both; }
 
-section nav {
+footer nav {
   text-align: center;
   margin-top: 2em;
   margin-bottom: 2em;
 }
 
-section nav ul {
+footer nav ul {
   width: 100%;
 }
 
-section nav li {
+footer nav li {
   width: 50%;
   display: inline;
   text-align: center;
   float: left;
 }
 
-section nav li a {
+footer nav li a {
   position: relative;
   line-height: 65px;
   width: 100%;
@@ -184,7 +184,7 @@ section nav li a {
   display: block;
 }
 
-section nav li a:not([href]) {
+footer nav li a:not([href]) {
   position: relative;
   display: inline-block;
   line-height: 65px;
@@ -196,7 +196,7 @@ section nav li a:not([href]) {
   opacity: 0.05;
 }
 
-section nav li a:before {
+footer nav li a:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -212,13 +212,13 @@ section nav li a:before {
   transition: opacity .25s ease-in-out;
 }
 
-section nav li a:hover {
+footer nav li a:hover {
   color: #fff;
   background: #000;
   background-color: #34495e;
 }
 
-section nav li a:hover:before {
+footer nav li a:hover:before {
   opacity: 0.2;
 }
 
@@ -298,11 +298,11 @@ article section ul li article img {
   border-radius: 400px;
 }
 
-body,input[type="text"],input[type="email"],input[type="tel"],input[type="url"],input[type="password"],textarea,input[type="submit"] {
+body, input[type="text"], input[type="email"], input[type="tel"], input[type="url"], input[type="password"], textarea, input[type="submit"] {
   font-family: 'Roboto Slab', Georgia, serif;
 }
 
-h1,h2,h3,h4,h5,h6,blockquote,button,input[type="text"],input[type="url"],input[type="email"],input[type="tel"],input[type="password"],textarea,aside,input[type="submit"],body > nav,body > header,section > ul article {
+h1, h2, h3, h4, h5, h6, blockquote, button, input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="password"], textarea, aside, input[type="submit"], body > nav, body > header, section > ul article {
   font-family: 'Amatic SC', 'Heveltica Neue', Arial, sans-serif;
 }
 
@@ -332,7 +332,7 @@ body > header > * {
   font-weight: 400;
 }
 
-body > header h1,h1,h2,h3,h4,h5,h6,article > header > aside,blockquote,button,input[type="text"],input[type="url"],input[type="email"],input[type="tel"],input[type="password"],textarea,main > article-meta,input[type="submit"],body > nav,body > header {
+body > header h1, h1, h2, h3, h4, h5, h6, article > header > aside, blockquote, button, input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="password"], textarea, main > article-meta, input[type="submit"], body > nav, body > header {
   font-weight: 700;
 }
 
@@ -358,15 +358,15 @@ body > header > p {
   margin-top: 24px;
 }
 
-body > header h1,h1 {
+body > header h1, h1 {
   line-height: 1.1;
 }
 
-h1,h2,h3,h4,h5,h6,article > header > aside,blockquote,input[type="submit"],body > nav,body > header h1 {
+h1, h2, h3, h4, h5, h6, article > header > aside, blockquote, input[type="submit"], body > nav, body > header h1 {
   text-transform: uppercase;
 }
 
-body,html {
+body, html {
   background-color: #fafbfc;
 }
 
@@ -379,7 +379,7 @@ body > aside {
   background: #fff;
 }
 
-button:hover,input[type="submit"]:hover {
+button:hover, input[type="submit"]:hover {
   opacity: 1;
   text-decoration: none;
   border-color: #34495e!important;

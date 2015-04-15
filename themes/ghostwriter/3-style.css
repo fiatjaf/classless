@@ -42,7 +42,7 @@ ul, ol {
 ul li, ol li { margin: 0 0 10px; }
 body > main ul { list-style: none }                                                                                                                      
 body > main li p { display: inline }                                                                                                                     
-nav ul { list-style: none; }                                                                                                                             
+nav ul { list-style: none; }
 nav li { display: inline; }
 
 blockquote {
@@ -228,8 +228,8 @@ main > section ul li article header h1 {
 main > section ul li article time { display: inline-block; }
 main > section ul li article time:before { content: "/ "; }
 
-main > section > footer nav ul { float: right; }
-main > section > footer nav a:not([href]) {
+main > footer nav ul { float: right; }
+main > footer nav a:not([href]) {
   background-color: gray;
   opacity: 0.5;
 }
