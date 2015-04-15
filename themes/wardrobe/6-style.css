@@ -96,6 +96,10 @@ article header {
 body > aside {
   border-top: 1px solid #ddd;
   margin: 0; }
+  body > aside section {
+    width: 90%;
+    max-width: 287px;
+    margin: auto; }
   body > aside h1 {
     float: left;
     display: block; }
