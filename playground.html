@@ -3,7 +3,7 @@
 <html>
 
   <head>
-    <title>Unitemplate playground</title>
+    <title>Classless playground</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/0.5.6/chance.js"></script>
     <link rel="stylesheet" id="theme">
@@ -12,7 +12,7 @@
   <body></body>
 
   <script>
-    $.get('unitemplate.html', function (html) {
+    $.get('template.html', function (html) {
       var u = $(html)
       u.find('*').each(function () {
         var t = $(this)
@@ -64,13 +64,13 @@
           )
           .append(
             $('<input>')
-              .attr('placeholder', 'Paste a Unitemplate CSS theme URL here')
+              .attr('placeholder', 'Paste a Classless CSS theme URL here')
               .val('')
               .on('input', function () {
                 var url = $(this).val()
                 if (url.substr(0, 4) != 'http') {
                   // just the name of the theme, complete the url
-                  url = 'http://rawgit.com/fiatjaf/unitemplate/gh-pages/themes/' + url + '.css'
+                  url = 'http://rawgit.com/fiatjaf/classless/gh-pages/themes/' + url + '.css'
                 }
                 else if (url.indexOf('github') != -1) {
                   // github-hosted, replace with rawgit
@@ -97,7 +97,7 @@
               'card-with-header-image',
             ]
             scenarios.forEach(function (name) {
-              var url = 'http://rawgit.com/fiatjaf/unitemplate/gh-pages/scenarios/' + name + '.html'
+              var url = 'http://rawgit.com/fiatjaf/classless/gh-pages/scenarios/' + name + '.html'
               $('<li>')
                 .append(
                   (function (scenarioURL) {
@@ -118,7 +118,7 @@
             })
             ul.append(
               $('<input>')
-                .attr('placeholder', 'Paste a unitemplate URL here to test with this theme')
+                .attr('placeholder', 'Paste a classless URL here to test with this theme')
                 .val('')
                 .on('input', function () {
                   var scenarioURL = $(this).val()
