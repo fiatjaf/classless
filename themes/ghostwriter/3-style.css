@@ -39,7 +39,6 @@ ul, ol {
   padding: 0;
 }
 
-ul li, ol li { margin: 0 0 10px; }
 body > main ul { list-style: none }                                                                                                                      
 body > main li p { display: inline }                                                                                                                     
 nav ul { list-style: none; }
