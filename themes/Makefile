@@ -2,6 +2,7 @@ all:
 	make wardrobe.theme
 	make ghostwriter.theme
 	make festively.theme
+	make dbyll.theme
 
 wardrobe.theme: wardrobe/5-basics.css wardrobe/6-style.css
 	cat wardrobe/*.css > wardrobe.css
@@ -18,3 +19,5 @@ aluod.theme: aluod/style.less
 	lessc aluod/style.less aluod.css
 	browserify -t coffeeify aluod/main.coffee > aluod.js
 
+dbyll.theme: dbyll/4-style.css
+	cat dbyll/*.css > dbyll.css
