@@ -125,11 +125,14 @@ main {
           .paper;
           float: left;
           margin: 10px;
-          padding: 7px;
+          padding: 13px;
           width: 100%;
           max-height: 340px;
           overflow: hidden;
           color: #333; a { color: @petroleum; }
+          -webkit-transition: max-height 0.8s;
+          -moz-transition: max-height 0.8s;
+          transition: max-height 0.8s;
       
           header {
             overflow: hidden;
@@ -152,15 +155,16 @@ main {
               margin-top: 14px;
               margin-bottom: 0;
               padding: 0;
-              font-size: 2.1em;
+              font-size: 2.9em;
               overflow: hidden;
               font-family: Cookie, sans-serif;
               float: left;
             }
             img + h1 { color: #775D4A !important; float: none !important; }
 
-            aside {
-              a { display: block; color: @blue; }
+            aside, time, p {
+              display: block;
+              a { color: @blue; }
             }
             img + * + aside{ width: 96%; }
           }
@@ -187,7 +191,9 @@ main {
       
           &:hover {
             max-height: 480px;
-            p { max-height: 273px; overflow: auto; word-break: break-all; } 
+            overflow: auto;
+            height: auto;
+            p { word-break: break-all; } 
           }
         }
       }

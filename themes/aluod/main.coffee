@@ -10,3 +10,4 @@ for container in containers
     M = new Masonry ul,
       itemSelector: 'li'
     M.bindResize()
+    window.M = M

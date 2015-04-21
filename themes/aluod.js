@@ -3182,6 +3182,7 @@ for (i = 0, len = containers.length; i < len; i++) {
       itemSelector: 'li'
     });
     M.bindResize();
+    window.M = M;
   }
 }
 
