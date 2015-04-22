@@ -11,3 +11,12 @@ for container in containers
       itemSelector: 'li'
     M.bindResize()
     window.M = M
+
+# recalculate the layout onhover
+if window.M
+  for article in document.querySelector 'main > section li article'
+    article.onmouseover = article.onmouseout = ->
+      setTimeout ->
+        window.M.layout()
+        setTimeout window.M.layout, 500
+      , 1000

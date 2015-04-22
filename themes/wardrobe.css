@@ -371,6 +371,9 @@ time {
   color: #999;
   font-size: 11px; }
 
+article {
+  margin-top: 23px; }
+
 main > article,
 main > section {
   width: 100%;
@@ -385,9 +388,13 @@ main > section {
   margin-bottom: 15px;
   padding-bottom: 15px;
   position: relative; }
+  main > section li {
+    margin-bottom: 10px; }
+    main > section li article > *:not(header):not(footer) a:last-child {
+      display: block;
+      text-align: center; }
   main > section h1 {
     font-weight: normal;
-    font-size: 15px;
     margin: 0 0 6px;
     text-transform: capitalize; }
   main > section h1:not(:first-of-type):before {
@@ -399,7 +406,6 @@ main > section {
   main > section footer nav a:not([href]) { visibility: hidden; }
 
 article header {
-  padding-bottom: 15px;
   margin-bottom: 15px; }
   article header h1 {
     margin-bottom: 5px; }

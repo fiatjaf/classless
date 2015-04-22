@@ -3164,7 +3164,7 @@ if ( typeof define === 'function' && define.amd ) {
 })( window );
 
 },{"./item":7,"desandro-matches-selector":9,"doc-ready":10,"eventie":11,"get-size":5,"wolfy87-eventemitter":12}],14:[function(require,module,exports){
-var M, Masonry, container, containers, i, imagesLoaded, len, ul;
+var M, Masonry, article, container, containers, i, imagesLoaded, j, len, len1, ref, ul;
 
 imagesLoaded = require('imagesloaded');
 
@@ -3183,6 +3183,19 @@ for (i = 0, len = containers.length; i < len; i++) {
     });
     M.bindResize();
     window.M = M;
+  }
+}
+
+if (window.M) {
+  ref = document.querySelector('main > section li article');
+  for (j = 0, len1 = ref.length; j < len1; j++) {
+    article = ref[j];
+    article.onmouseover = article.onmouseout = function() {
+      return setTimeout(function() {
+        window.M.layout();
+        return setTimeout(window.M.layout, 500);
+      }, 1000);
+    };
   }
 }
 

@@ -793,6 +793,7 @@ body {
   margin-bottom: 60px;
 }
 body > header {
+  width: 30%;
   position: absolute;
   top: 0;
   left: 2em;
@@ -804,7 +805,7 @@ body > header > *:not(h1) {
   display: none;
 }
 body > header h1 {
-  max-width: 6em;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -936,6 +937,7 @@ main > section > ul li article header aside,
 main > section > ul li article header time,
 main > section > ul li article header p {
   display: block;
+  clear: both;
 }
 main > section > ul li article header aside a,
 main > section > ul li article header time a,

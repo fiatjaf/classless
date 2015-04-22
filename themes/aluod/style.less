@@ -30,6 +30,7 @@ html, body {
 }
 
 body > header {
+  width: 30%;
   position: absolute;
   top: 0;
   left: 2em;
@@ -41,7 +42,7 @@ body > header {
   font-family: inherit;
 
   h1 {
-    max-width: 6em;
+    max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -164,6 +165,7 @@ main {
 
             aside, time, p {
               display: block;
+              clear: both;
               a { color: @blue; }
             }
             img + * + aside{ width: 96%; }
