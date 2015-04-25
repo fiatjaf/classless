@@ -1,0 +1,88 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>classless themes</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.53/responsiveslides.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.53/responsiveslides.css">    
+<style>
+* { box-sizing: border-box; }
+a {
+  text-decoration: none;
+  color: white;
+}
+html, body {
+  background: #222 url(http://responsiveslides.com/bg.png);
+  color: whitesmoke;
+  font-family: Helvetica;
+}
+body > h1 {
+  text-align: center;
+  font-family: Georgia;
+}
+body > div {
+  float: left;
+  width: 48%;
+  margin: 1%;
+  padding: 4%;
+}
+li h1 {
+  margin-left: 20px;
+  text-decoration: none !important;
+  color: #333;
+  text-shadow: white 2px 2px 2px;
+}
+img {
+  width: 100%;
+}
+li img {
+  margin-top: -65px;
+}
+</style>
+
+<h1>classless</h1>
+<div>
+  <p>A collection of themes for blog and blog-like websites (anything with pages/posts and sections/categories) based on pure semantic HTML.</p>
+  <p>All themes follow the same HTML structure, so you can just swap the CSS (sometimes JS) and you get a whole new theme without having to change anything. The HTML consists of only tags, no classes or ids, and makes very little assumptions about the content with which you will fill it.</p>
+  <a target="_blank" href="structure-white.png"><img src="structure-transparent.png"></a>
+  <a href="https://github.com/fiatjaf/classless/blob/gh-pages/template.html">(see this in HTML)</a>
+  <h1>Use cases</h1>
+  <p></p>
+  <p></p>
+  <h1>Contribute!</h1>
+  <p>As you can see, I'm not the best designer in the world, and all these themes are ports from random themes open-sourced on the web, so help with theme creation and suggestions for improvements in the basic template will be very much appreciated.</p>
+</div>
+<div>
+  <ul>
+    <li><a href="blank">
+      <h1>Blank</h1>
+      <img src="screenshots/blank-3.png"></a></li>
+    <li><a href="ghostwriter">
+      <h1>Ghostwriter</h1>
+      <img src="screenshots/ghostwriter-3.png"></a></li>
+    <li><a href="wardrobe">
+      <h1>Wardrobe</h1>
+      <img src="screenshots/wardrobe-3.png"></a></li>
+    <li><a href="aluod">
+      <h1>Aluod</h1>
+      <img src="screenshots/aluod-3.png"></a></li>
+    <li><a href="dbyll">
+      <h1>Dbyll</h1>
+      <img src="screenshots/dbyll-3.png"></a></li>
+    <li><a href="festively">
+      <h1>Festively</h1>
+      <img src="screenshots/festively-3.png"></a></li>
+  </ul>
+</div>
+
+<script>
+$(function () {
+  $("ul").responsiveSlides({
+    auto: true,
+    speed: 500,
+    timeout: 4000,
+    nav: false,
+    maxwidth: "",
+    namespace: "rslides",
+  });
+})
+</script>
