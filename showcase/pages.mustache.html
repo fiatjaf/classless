@@ -6,7 +6,9 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ResponsiveSlides.js/1.53/responsiveslides.css">    
 <style>
 * { box-sizing: border-box; }
-a { text-decoration: none; color: white; }
+a {
+  color: rgb(178, 235, 242);
+}
 html, body {
   background: #222 url(http://responsiveslides.com/bg.png);
   color: whitesmoke;
@@ -16,10 +18,12 @@ body > h1 {
   text-align: center;
   font-family: Georgia;
 }
-body > div {
+h1 a { text-decoration: none; color: white; }
+body > div,
+body > nav {
   width: 98%;
   margin: 1%;
-  padding: 4%;
+  padding: 1% 6% 0;
 }
 li img {
   width: 100%;
@@ -27,9 +31,17 @@ li img {
 </style>
 
 <h1><a href="..">themes</a> / <a href="">{{ name }}</a></h1>
-<div>
- 
-</div>
+<nav>
+  <p>{{ desc }}</p>
+  <ul>
+    <li><a href="http://temperos.alhur.es/http://rawgit.com/fiatjaf/classless/gh-pages/showcase/demo.mustache.html?theme={{ name }}">Demo</a></li>
+    {{#notblank}}
+    <li><a href="https://github.com/fiatjaf/classless/tree/gh-pages/themes/{{ name }}">Files</a></li>
+    <li><a href="http://fiatjaf.alhur.es/classless/themes/{{ name }}.css">all-in-one embeddable CSS file</a></li>
+    {{#js}}<li><a href="http://fiatjaf.alhur.es/classless/themes/{{ name }}.js">all-in-one embeddable JS file</a></li>{{/js}}
+    {{/notblank}}
+  </ul>
+</nav>
 <div>
   <ul>
     {{#screenshots}}
@@ -40,7 +52,7 @@ li img {
 
 <script>
 $(function () {
-  $("ul").responsiveSlides({
+  $("div > ul").responsiveSlides({
     auto: true,
     speed: 500,
     timeout: 4000,

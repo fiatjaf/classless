@@ -8,6 +8,14 @@
 * { box-sizing: border-box; }
 a {
   color: rgb(178, 235, 242);
+  text-align: center;
+  display: block;
+}
+p { text-align: justify }
+li > a,
+p > a {
+  display: inline;
+  text-align: justify;
 }
 html, body {
   background: #222 url(http://responsiveslides.com/bg.png);
@@ -30,7 +38,8 @@ li h1 {
   color: #333;
   text-shadow: white 2px 2px 2px;
 }
-img {
+p img,
+li img {
   width: 100%;
 }
 li a {
@@ -45,7 +54,7 @@ li img {
 <div>
   <p>A collection of themes for blog and blog-like websites (anything with pages/posts and sections/categories) based on pure semantic HTML.</p>
   <p>All themes follow the same HTML structure, so you can just swap the CSS (sometimes JS) and you get a whole new theme without having to change anything. The HTML consists of only tags, no classes or ids, and makes very little assumptions about the content with which you will fill it.</p>
-  <a target="_blank" href="structure-white.png"><img src="structure-transparent.png"></a>
+  <p><a target="_blank" href="structure-white.png"><img src="structure-transparent.png"></a></p>
   <a href="https://github.com/fiatjaf/classless/blob/gh-pages/template.html">(see this in HTML)</a>
   <h1>For theme writers</h1>
   <p>Write your theme once, constrain yourself a little to the limited customizationability of the HTML, but magically you get compatibility with all CMSes out there.</p>
@@ -58,6 +67,8 @@ li img {
   <p>There's a <a href="https://github.com/fiatjaf/classless">GitHub repository</a> with the basic template and all themes, and a <a href="http://fiatjaf.alhur.es/classless/playground">playground for dinamically testing themes</a> with various different HTML documents based on the fundamental structure.</p>
 </div>
 <div>
+  <h1>Themes available</h1>
+  <p>Click to see more</p>
   <ul>
     <li><a href="blank">
       <h1>Blank</h1>
@@ -78,7 +89,15 @@ li img {
       <h1>Festively</h1>
       <img src="screenshots/festively-3.png"></a></li>
   </ul>
+  <p><a href="festively">Festively</a></p>
+  <p><a href="blank">Blank</a></p>
+  <p><a href="ghostwriter">Ghostwriter</a></p>
+  <p><a href="aluod">Aluod</a></p>
+  <p><a href="wardrobe">Wardrobe</a></p>
+  <p><a href="dbyll">Dbyll</a></p>
 </div>
+
+<a href="https://github.com/fiatjaf/classless"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
 
 <script>
 $(function () {
