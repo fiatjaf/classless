@@ -1,11 +1,12 @@
 ## Resources
 
-A badly-written little post about the motivation of this work: http://fiatjaf.alhur.es/programming/reusable-pure-css-themes/
-
-A prototype of a _playground environment_ for testing themes: http://fiatjaf.alhur.es/classless/playground
+* A badly-written little post about the motivation of this work: http://fiatjaf.alhur.es/programming/reusable-pure-css-themes/
+* A [playground](http://fiatjaf.alhur.es/classless/showcase/) for testing themes:
 
   * use the almost-random HTML that is loaded, or click on the buttons to get real-world _classlessd_ HTML.
   * write the name of a theme in our [themes](https://github.com/fiatjaf/classless/tree/gh-pages/themes) directory to test it, or paste the URL of CSS theme (it can be from GitHub).
+* A [showcase of the themes](http://fiatjaf.alhur.es/classless/showcase/) currently available at classless
+
 
 ## Related articles you should see:
 

@@ -7,8 +7,7 @@
 <style>
 * { box-sizing: border-box; }
 a {
-  text-decoration: none;
-  color: white;
+  color: rgb(178, 235, 242);
 }
 html, body {
   background: #222 url(http://responsiveslides.com/bg.png);
@@ -34,6 +33,9 @@ li h1 {
 img {
   width: 100%;
 }
+li a {
+  text-decoration: none;
+}
 li img {
   margin-top: -65px;
 }
@@ -45,11 +47,15 @@ li img {
   <p>All themes follow the same HTML structure, so you can just swap the CSS (sometimes JS) and you get a whole new theme without having to change anything. The HTML consists of only tags, no classes or ids, and makes very little assumptions about the content with which you will fill it.</p>
   <a target="_blank" href="structure-white.png"><img src="structure-transparent.png"></a>
   <a href="https://github.com/fiatjaf/classless/blob/gh-pages/template.html">(see this in HTML)</a>
-  <h1>Use cases</h1>
-  <p></p>
-  <p></p>
+  <h1>For theme writers</h1>
+  <p>Write your theme once, constrain yourself a little to the limited customizationability of the HTML, but magically you get compatibility with all CMSes out there.</p>
+  <p>Perhaps, however, for doing nice stuff you'll need to use <a href="http://www.heydonworks.com/article/tetris-the-power-of-css">tricky CSS</a>.</p>
+  <h1>For CMS builders</h1>
+  <p>If you're writing a CMS, be it a hosted service with a specific property or an open-source Wordpress alternative you don't need to think about themes (and all the network effect arising from it: people use if we have beautiful themes, theme builders come if we have a users) or try to be compatible with other CMSes to use themes designed for them specifically. You can just be compatible with HTML5 sections and comply to this minimal standard and you'll get automatically our pure CSS (and JS sometimes) open source themes.</p>
+  <p>You also free yourself from the burden of writing a mechanism that allow theme builders to write HTML, share it (maybe even have a "theme market") and get that HTML rendered by your software, you can accept just CSS and JS, which can be just included in the rendered page and that's it.</p>
   <h1>Contribute!</h1>
   <p>As you can see, I'm not the best designer in the world, and all these themes are ports from random themes open-sourced on the web, so help with theme creation and suggestions for improvements in the basic template will be very much appreciated.</p>
+  <p>There's a <a href="https://github.com/fiatjaf/classless">GitHub repository</a> with the basic template and all themes, and a <a href="http://fiatjaf.alhur.es/classless/playground">playground for dinamically testing themes</a> with various different HTML documents based on the fundamental structure.</p>
 </div>
 <div>
   <ul>
