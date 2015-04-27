@@ -224,8 +224,10 @@ main > section ul li article header h1 {
   text-transform: none;
   font-size: 18px;
 }
+main > section ul li article aside { display: inline-block; }
+main > section ul li article aside:before { content: "/ "; }
 main > section ul li article time { display: inline-block; }
-main > section ul li article time:before { content: "/ "; }
+main > section ul li article time:not(aside > time):before { content: "/ "; }
 
 main > footer nav ul { float: right; }
 main > footer nav a:not([href]) {
