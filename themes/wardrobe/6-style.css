@@ -107,7 +107,6 @@ body > aside {
     max-width: 287px;
     margin: auto; }
   body > aside h1 {
-    float: left;
     display: block; }
   body > aside div {
     padding-top: 15px;
@@ -118,7 +117,6 @@ body > aside {
   body > aside img {
     width: 90px;
     float: left;
-    clear: left;
     display: block;
     margin: 0 15px 0 0; }
 aside p {
