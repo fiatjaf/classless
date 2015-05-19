@@ -246,6 +246,13 @@ body > aside {
 }
 body > aside { text-align: center; }
 
+body > aside img {
+  display: block;
+  width: 84px;
+  margin: auto;
+  padding-left: 76px;
+}
+
 /* ============================================================ */
 /* Footer */
 /* ============================================================ */
