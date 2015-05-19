@@ -1,6 +1,7 @@
 ## Resources
 
 * A badly-written little post about the motivation of this work: http://fiatjaf.alhur.es/programming/reusable-pure-css-themes/
+* The best way to understand the HTML structure of the base classless template: https://workflowy.com/s/Q79FgxLKUT
 * A [playground](http://fiatjaf.alhur.es/classless/playground/) for testing themes:
 
   * use the almost-random HTML that is loaded, or click on the buttons to get real-world _classlessd_ HTML.
