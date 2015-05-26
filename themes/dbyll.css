@@ -86,7 +86,7 @@ body > nav ul,
 main > section > ul { list-style: none; }
 li p { display: inline; }
 nav ul { margin: auto; }
-nav li { list-style: none; display: inline; }
+nav li { list-style: none; display: inline; margin: 0 10px; }
 
 body > header,
 body > aside {
@@ -216,6 +216,11 @@ main > article header aside {
 main > section,
 main > article {
   padding: 0 5% 0;
+}
+
+main > article {
+  min-height: 500px;
+  font-size: 1.25em;
 }
 
 main > section > ul li article div a, main > section > ul li article pre a { color: #2c3e50; }
