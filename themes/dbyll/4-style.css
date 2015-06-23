@@ -179,6 +179,7 @@ body > aside img {
 main > footer nav a {
   text-decoration: none;
 }
+main > footer nav a:not(*[href]) { display: none }
 
 footer {
   margin-top: 15px;

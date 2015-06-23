@@ -42,6 +42,8 @@ handlers =
       $('#classless-widget').appendTo('body')
     ).catch(console.log.bind console)
 
+window.setClasslessTheme = (name) -> handlers.themeChanged null, {value: name}
+
 vrenderMain = (state, channels) ->
   themes = [
     {name: 'lebo'}
@@ -68,7 +70,8 @@ vrenderMain = (state, channels) ->
     style: {"border":"2px dotted black","width":"200px","position":"fixed","right":"22px","top":"15px","z-index":"1000","background":"white"}
   ,
     (div style: {"padding":"10px"},
-      (strong {}, "THEME")
+      (strong {style: {color: 'black'}}, "THEME")
+      (p {}, 'see this page with another theme.')
       (Selectize
         value: null
         options: themes
@@ -85,7 +88,8 @@ vrenderMain = (state, channels) ->
       )
     )
     (div style: {"padding":"10px"},
-      (strong {}, "EXAMPLE TEMPLATES")
+      (strong {style: {'color': 'black'}}, "EXAMPLE TEMPLATES")
+      (p {}, 'see this theme with other HTML.')
       (ul style: {"padding":"0px"},
         (li {style: {"list-style":"none"}},
           (button
@@ -94,6 +98,13 @@ vrenderMain = (state, channels) ->
            , scenario)
         ) for scenario in scenarios
       )
+    )
+    (div {style: {'padding': '10px'}},
+      (small {}, 'add the following link to your favorites bar and use it on any page with HTML following the classless standard: ')
+      (a
+        style: {'border': '2px solid gray', 'background': 'gray', 'color': 'white', 'padding': '1px 5px'}
+        href: "javascript:script = document.createElement('script');script.src = 'http://fiatjaf.alhur.es/classless/build/bookmarklet.js';document.getElementsByTagName('head')[0].appendChild(script);"
+      , 'classless')
     )
   )
 

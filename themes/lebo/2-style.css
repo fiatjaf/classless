@@ -65,6 +65,10 @@ li p {
 /*
 /*****************************************************************************/
 
+main {
+  margin-bottom: 5em;
+}
+
 main > section > ul {
   list-style-type: none;
   margin-bottom: 2em;

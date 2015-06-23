@@ -56,6 +56,12 @@ handlers = {
   }
 };
 
+window.setClasslessTheme = function(name) {
+  return handlers.themeChanged(null, {
+    value: name
+  });
+};
+
 vrenderMain = function(state, channels) {
   var scenario, scenarios, themes;
   themes = [
@@ -91,7 +97,11 @@ vrenderMain = function(state, channels) {
     style: {
       "padding": "10px"
     }
-  }, strong({}, "THEME"), Selectize({
+  }, strong({
+    style: {
+      color: 'black'
+    }
+  }, "THEME"), p({}, 'see this page with another theme.'), Selectize({
     value: null,
     options: themes,
     create: true,
@@ -110,7 +120,11 @@ vrenderMain = function(state, channels) {
     style: {
       "padding": "10px"
     }
-  }, strong({}, "EXAMPLE TEMPLATES"), ul({
+  }, strong({
+    style: {
+      'color': 'black'
+    }
+  }, "EXAMPLE TEMPLATES"), p({}, 'see this theme with other HTML.'), ul({
     style: {
       "padding": "0px"
     }
@@ -135,7 +149,19 @@ vrenderMain = function(state, channels) {
       }, scenario)));
     }
     return results;
-  })())));
+  })())), div({
+    style: {
+      'padding': '10px'
+    }
+  }, small({}, 'add the following link to your favorites bar and use it on any page with HTML following the classless standard: '), a({
+    style: {
+      'border': '2px solid gray',
+      'background': 'gray',
+      'color': 'white',
+      'padding': '1px 5px'
+    },
+    href: "javascript:script = document.createElement('script');script.src = 'http://fiatjaf.alhur.es/classless/build/bookmarklet.js';document.getElementsByTagName('head')[0].appendChild(script);"
+  }, 'classless')));
 };
 
 tl.run(document.body, vrenderMain, handlers);

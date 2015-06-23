@@ -12,110 +12,64 @@ t.maq=[];t.mai=c;t.ma=function(){t.maq.push(arguments)};
 
 ma('pageView');
 </script>
-<style>
-* { box-sizing: border-box; }
-a {
-  color: rgb(178, 235, 242);
-  text-align: center;
-  display: block;
-}
-p { text-align: justify }
-li > a,
-p > a {
-  display: inline;
-  text-align: justify;
-}
-html, body {
-  background: #222 url(http://responsiveslides.com/bg.png);
-  color: whitesmoke;
-  font-family: Helvetica;
-}
-body > h1 {
-  text-align: center;
-  font-family: Georgia;
-}
-body > div {
-  float: left;
-  width: 48%;
-  margin: 1%;
-  padding: 4%;
-}
-li h1 {
-  margin-left: 20px;
-  text-decoration: none !important;
-  color: #333;
-  text-shadow: white 2px 2px 2px;
-}
-p img,
-li img {
-  width: 100%;
-}
-li a {
-  text-decoration: none;
-}
-li img {
-  margin-top: -65px;
-}
-</style>
-
-<h1>classless</h1>
-<div>
-  <p>A collection of themes for blog and blog-like websites (anything with pages/posts and sections/categories) based on pure semantic HTML.</p>
-  <p>All themes follow the same HTML structure, so you can just swap the CSS (sometimes JS) and you get a whole new theme without having to change anything. The HTML consists of only tags, no classes or ids, and makes very little assumptions about the content with which you will fill it.</p>
-  <p><a target="_blank" href="structure-white.png"><img src="structure-transparent.png"></a></p>
-  <a href="https://github.com/fiatjaf/classless/blob/gh-pages/template.html">(see this in HTML)</a>
-  <h1>For theme writers</h1>
-  <p>Write your theme once, constrain yourself a little to the limited customizationability of the HTML, but magically you get compatibility with all CMSes out there.</p>
-  <p>Perhaps, however, for doing nice stuff you'll need to use <a href="http://www.heydonworks.com/article/tetris-the-power-of-css">tricky CSS</a>.</p>
-  <h1>For CMS builders</h1>
-  <p>If you're writing a CMS, be it a hosted service with a specific property or an open-source Wordpress alternative you don't need to think about themes (and all the network effect arising from it: people use if we have beautiful themes, theme builders come if we have a users) or try to be compatible with other CMSes to use themes designed for them specifically. You can just be compatible with HTML5 sections and comply to this minimal standard and you'll get automatically our pure CSS (and JS sometimes) open source themes.</p>
-  <p>You also free yourself from the burden of writing a mechanism that allow theme builders to write HTML, share it (maybe even have a "theme market") and get that HTML rendered by your software, you can accept just CSS and JS, which can be just included in the rendered page and that's it.</p>
-  <h1>Contribute!</h1>
-  <p>As you can see, I'm not the best designer in the world, and all these themes are ports from random themes open-sourced on the web, so help with theme creation and suggestions for improvements in the basic template will be very much appreciated.</p>
-  <p>There's a <a href="https://github.com/fiatjaf/classless">GitHub repository</a> with the basic template and all themes, and a <a href="http://fiatjaf.alhur.es/classless/playground">playground for dinamically testing themes</a> with various different HTML documents based on the fundamental structure.</p>
-</div>
-<div>
-  <h1>Themes available</h1>
-  <p>Click to see more</p>
-  <ul>
-    <li><a href="blank">
-      <h1>Blank</h1>
-      <img src="screenshots/blank-3.png"></a></li>
-    <li><a href="ghostwriter">
-      <h1>Ghostwriter</h1>
-      <img src="screenshots/ghostwriter-3.png"></a></li>
-    <li><a href="wardrobe">
-      <h1>Wardrobe</h1>
-      <img src="screenshots/wardrobe-3.png"></a></li>
-    <li><a href="aluod">
-      <h1>Aluod</h1>
-      <img src="screenshots/aluod-3.png"></a></li>
-    <li><a href="dbyll">
-      <h1>Dbyll</h1>
-      <img src="screenshots/dbyll-3.png"></a></li>
-    <li><a href="festively">
-      <h1>Festively</h1>
-      <img src="screenshots/festively-3.png"></a></li>
-  </ul>
-  <p><a href="festively">Festively</a></p>
-  <p><a href="blank">Blank</a></p>
-  <p><a href="ghostwriter">Ghostwriter</a></p>
-  <p><a href="aluod">Aluod</a></p>
-  <p><a href="wardrobe">Wardrobe</a></p>
-  <p><a href="dbyll">Dbyll</a></p>
-</div>
+<body>
+  <main>
+    <section>
+      <ul>
+        <li>
+          <article><header>
+            <a href="blank"><img src="screenshots/blank-3.png"></a>
+            <h1><a href="blank">Blank</a></h1>
+          </header></article>
+        </li>
+        <li>
+          <article><header>
+            <a href="ghostwriter"><img src="screenshots/ghostwriter-3.png"></a>
+            <h1><a href="ghostwriter">Ghostwriter</a></h1>
+          </header></article>
+        </li>
+        <li>
+          <article><header>
+            <a href="wardrobe"><img src="screenshots/wardrobe-3.png"></a>
+            <h1><a href="wardrobe">Wardrobe</a></h1>
+          </header></article>
+        </li>
+        <li>
+          <article><header>
+            <a href="aluod"><img src="screenshots/aluod-3.png"></a>
+            <h1><a href="aluod">Aluod</a></h1>
+          </header></article>
+        </li>
+        <li>
+          <article><header>
+            <a href="dbyll"><img src="screenshots/dbyll-3.png"></a>
+            <h1><a href="dbyll">Dbyll</a></h1>
+          </header></article>
+        </li>
+        <li>
+          <article><header>
+            <a href="festively"><img src="screenshots/festively-3.png"></a>
+            <h1><a href="festively">Festively</a></h1>
+          </header></article>
+        </li>
+        <li>
+          <article><header>
+            <a href="lebo"><img src="screenshots/lebo-3.png"></a>
+            <h1><a href="lebo">Lebo</a></h1>
+          </header></article>
+        </li>
+        <li>
+          <article><header>
+            <a href="jeen"><img src="screenshots/jeen-4.png"></a>
+            <h1><a href="jeen">Jeen</a></h1>
+          </header></article>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
 
 <a href="https://github.com/fiatjaf/classless"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
 
-<script>
-$(function () {
-  $("ul").responsiveSlides({
-    auto: true,
-    speed: 500,
-    timeout: 4000,
-    nav: false,
-    maxwidth: "",
-    namespace: "rslides",
-  });
-})
-</script>
+<script src="../build/bookmarklet.js"></script>
+<script>setClasslessTheme('aluod')</script>

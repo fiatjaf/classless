@@ -3,6 +3,8 @@ all:
 	make ghostwriter.theme
 	make festively.theme
 	make dbyll.theme
+	make jeen.theme
+	make lebo.theme
 
 wardrobe.theme: wardrobe/5-basics.css wardrobe/6-style.css
 	cat wardrobe/*.css > wardrobe.css

@@ -24,12 +24,16 @@ blockquote {
   margin-left: 0;
   padding-left: 1em;
 }
+li p { display: inline }
 
 body > header a,
 body > header a:hover,
 body > header a:visited,
-a { color: rgb(219, 224, 230) !important }
-a:visited { color: rgb(160, 194, 158) !important; }
+a { color: rgb(211, 188, 189); }
+header a,
+nav a {
+  text-decoration: none; 
+}
 
 body > header {
   margin: 50px auto 20px;
@@ -43,7 +47,6 @@ body > header a {
   color: white;
   font-family: 'Merriweather', 'Georgia', serif;
   font-weight: normal;
-  font-size: 190%;
   line-height: 90%;
   text-align: center;
   text-decoration: none;
@@ -67,10 +70,17 @@ body > nav li {
   display: inline;
   padding: 0 4px;
 }
+body > nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white:
+}
 
 main {
   margin: 20px;
 }
+main > header { display: none; }
+main header h1 { color: white; }
 
 main > article {
   clear: both;
@@ -88,16 +98,35 @@ main > article > *:not(header):not(footer):not(ul):not(dl):not(table):not(sectio
   line-height: 0.8;
   box-shadow: 2px 2px 0 #ffe, 5px 5px 0 #111;
   font-family: Times;
+  color: rgb(211, 188, 189);
 }
 
+main > section ul {
+  list-style: none;
+  padding: 0;
+}
 main > section ul li article {}
+main > section ul li article img {
+  height: 1em;
+  border: 1px solid;
+}
 main > section ul li article header h1,
 main > section ul li article header aside {
   font-size: 1em;
   line-height: 1em;
   display: inline-block;
 }
-main > section ul li article {}
+main > section ul li article > *:not(header) {
+  padding-left: 2em;
+  font-size: 80%;
+}
+
+main > footer > nav ul {
+  list-style: none;
+  text-align: right;
+}
+main > footer > nav li { display: inline; }
+main > footer > nav a:not(*[href]) { visibility: hidden; }
 
 p code,
 .highlight {
