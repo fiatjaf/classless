@@ -21,3 +21,9 @@ aluod.theme: aluod/style.less
 
 dbyll.theme: dbyll/4-style.css
 	cat dbyll/*.css > dbyll.css
+
+jeen.theme: jeen/style.css
+	cat jeen/style.css > jeen.css
+
+lebo.theme: lebo/2-style.css
+	cat lebo/*.css > lebo.css
