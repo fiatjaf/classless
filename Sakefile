@@ -1,0 +1,8 @@
+bookmarklet:
+  help: the themes bookmarklet
+  dependencies:
+    - bookmarklet.coffee
+  output:
+    - build/bookmarklet.js
+  formula: >
+    ./node_modules/.bin/browserify -t coffeeify --extension='.coffee' bookmarklet.coffee > build/bookmarklet.js
