@@ -40,9 +40,12 @@ document.getElementsByTagName('head')[0].appendChild(stylesheet);
 handlers = {
   themeChanged: function(State, theme) {
     if (theme.value.slice(0, 4) === 'http') {
-      return stylesheet.href = theme.value;
+      stylesheet.href = theme.value;
     } else {
-      return stylesheet.href = "//rawgit.com/fiatjaf/classless/gh-pages/themes/" + theme.value + ".css";
+      stylesheet.href = "//rawgit.com/fiatjaf/classless/gh-pages/themes/" + theme.value + ".css";
+    }
+    if (typeof ma === 'function') {
+      return ma('theme', theme.value);
     }
   },
   scenarioChanged: function(State, scenario) {
@@ -52,6 +55,10 @@ handlers = {
       $('#classless-widget').appendTo('head');
       $('body').html(res.text);
       return $('#classless-widget').appendTo('body');
+    }).then(function() {
+      if (typeof ma === 'function') {
+        return ma('scenario', scenario.value);
+      }
     })["catch"](console.log.bind(console));
   }
 };
@@ -167,6 +174,13 @@ vrenderMain = function(state, channels) {
 tl.run(document.body, vrenderMain, handlers);
 
 $('<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/css/selectize.default.min.css">').appendTo('head');
+
+
+(function(t,r,a,c,k){k=r.createElement('script');k.type='text/javascript';
+k.async=true;k.src=a;k.id='ma';r.getElementsByTagName('head')[0].appendChild(k);
+t.maq=[];t.mai=c;t.ma=function(){t.maq.push(arguments)};
+})(window,document,'https://spooner.alhur.es:6984/microanalytics/_design/microanalytics/_rewrite/tracker.js','e212b55b');
+;
 
 
 },{"jquery":8,"lie":12,"selectize":27,"superagent":31,"superagent-promise":30,"talio":86,"talio-selectize":34,"virtual-elements":87}],2:[function(require,module,exports){

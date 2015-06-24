@@ -31,6 +31,8 @@ handlers =
       stylesheet.href = theme.value
     else
       stylesheet.href = "//rawgit.com/fiatjaf/classless/gh-pages/themes/#{theme.value}.css"
+    if typeof ma is 'function'
+      ma 'theme', theme.value
   scenarioChanged: (State, scenario) ->
     Promise.resolve().then(->
       superagent
@@ -40,6 +42,9 @@ handlers =
       $('#classless-widget').appendTo('head')
       $('body').html(res.text)
       $('#classless-widget').appendTo('body')
+    ).then(->
+      if typeof ma is 'function'
+        ma 'scenario', scenario.value
     ).catch(console.log.bind console)
 
 window.setClasslessTheme = (name) -> handlers.themeChanged null, {value: name}
@@ -113,3 +118,10 @@ tl.run document.body, vrenderMain, handlers
 # selectize css
 $('<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/css/selectize.default.min.css">').appendTo('head')
 # ~
+
+`
+(function(t,r,a,c,k){k=r.createElement('script');k.type='text/javascript';
+k.async=true;k.src=a;k.id='ma';r.getElementsByTagName('head')[0].appendChild(k);
+t.maq=[];t.mai=c;t.ma=function(){t.maq.push(arguments)};
+})(window,document,'https://spooner.alhur.es:6984/microanalytics/_design/microanalytics/_rewrite/tracker.js','e212b55b');
+`
