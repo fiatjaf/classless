@@ -42,7 +42,7 @@ handlers = {
     if (theme.value.slice(0, 4) === 'http') {
       stylesheet.href = theme.value;
     } else {
-      stylesheet.href = "//rawgit.com/fiatjaf/classless/gh-pages/themes/" + theme.value + ".css";
+      stylesheet.href = "//fiatjaf.alhur.es/classless/themes/" + theme.value + ".css";
     }
     if (typeof ma === 'function') {
       return ma('theme', theme.value);
