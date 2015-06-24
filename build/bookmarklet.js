@@ -160,7 +160,7 @@ vrenderMain = function(state, channels) {
     style: {
       'padding': '10px'
     }
-  }, small({}, 'add the following link to your favorites bar and use it on any page with HTML following the classless standard: '), a({
+  }, small({}, 'add the following bookmarklet to your bookmark bar and use it on any page with HTML following the classless standard: '), a({
     style: {
       'border': '2px solid gray',
       'background': 'gray',

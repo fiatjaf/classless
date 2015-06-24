@@ -105,7 +105,7 @@ vrenderMain = (state, channels) ->
       )
     )
     (div {style: {'padding': '10px'}},
-      (small {}, 'add the following link to your favorites bar and use it on any page with HTML following the classless standard: ')
+      (small {}, 'add the following bookmarklet to your bookmark bar and use it on any page with HTML following the classless standard: ')
       (a
         style: {'border': '2px solid gray', 'background': 'gray', 'color': 'white', 'padding': '1px 5px'}
         href: "javascript:script = document.createElement('script');script.src = 'http://fiatjaf.alhur.es/classless/build/bookmarklet.js';document.getElementsByTagName('head')[0].appendChild(script);"
