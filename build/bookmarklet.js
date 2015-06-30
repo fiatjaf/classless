@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var Promise, Selectize, a, button, div, fieldset, form, h1, handlers, i, input, j, k, legend, len, len1, li, link, nav, p, pre, ref, ref1, ref2, select, small, span, strong, style, stylesheet, superagent, table, tbody, td, textarea, tfoot, th, thead, tl, tr, ul, vrenderMain;
+var Promise, Selectize, a, button, div, fieldset, form, h1, handlers, i, input, j, k, legend, len, len1, li, link, nav, p, pre, ref, ref1, ref2, scenarios, select, small, span, strong, style, stylesheet, superagent, table, tbody, td, textarea, tfoot, th, thead, themes, tl, tr, ul, vrenderMain;
 
 tl = require('talio');
 
@@ -37,6 +37,26 @@ stylesheet.id = 'classless-theme';
 
 document.getElementsByTagName('head')[0].appendChild(stylesheet);
 
+themes = [
+  {
+    name: 'lebo'
+  }, {
+    name: 'jeen'
+  }, {
+    name: 'wardrobe'
+  }, {
+    name: 'ghostwriter'
+  }, {
+    name: 'festively'
+  }, {
+    name: 'aluod'
+  }, {
+    name: 'dbyll'
+  }
+];
+
+scenarios = ['list-of-posts', 'list-of-posts-with-images', 'list-of-posts-with-excerpts', 'post-simple', 'post-with-images', 'post-with-checklists', 'post-with-header-image'];
+
 handlers = {
   themeChanged: function(State, theme) {
     if (theme.value.slice(0, 4) === 'http') {
@@ -64,31 +84,18 @@ handlers = {
 };
 
 window.setClasslessTheme = function(name) {
+  var index;
+  if (!name) {
+    index = Math.floor(Math.random() * themes.length);
+    name = themes[index].name;
+  }
   return handlers.themeChanged(null, {
     value: name
   });
 };
 
 vrenderMain = function(state, channels) {
-  var scenario, scenarios, themes;
-  themes = [
-    {
-      name: 'lebo'
-    }, {
-      name: 'jeen'
-    }, {
-      name: 'wardrobe'
-    }, {
-      name: 'ghostwriter'
-    }, {
-      name: 'festively'
-    }, {
-      name: 'aluod'
-    }, {
-      name: 'dbyll'
-    }
-  ];
-  scenarios = ['list-of-posts', 'list-of-posts-with-images', 'list-of-posts-with-excerpts', 'post-simple', 'post-with-images', 'post-with-checklists', 'post-with-header-image'];
+  var scenario;
   return fieldset({
     id: "classless-widget",
     style: {
@@ -167,7 +174,7 @@ vrenderMain = function(state, channels) {
       'color': 'white',
       'padding': '1px 5px'
     },
-    href: "javascript:script = document.createElement('script');script.src = 'http://fiatjaf.alhur.es/classless/build/bookmarklet.js';document.getElementsByTagName('head')[0].appendChild(script);"
+    href: "javascript:script = document.createElement('script');script.src = '//fiatjaf.alhur.es/classless/build/bookmarklet.js';document.getElementsByTagName('head')[0].appendChild(script);"
   }, 'classless')));
 };
 
@@ -183,7 +190,7 @@ t.maq=[];t.mai=c;t.ma=function(){t.maq.push(arguments)};
 ;
 
 
-},{"jquery":8,"lie":12,"selectize":27,"superagent":31,"superagent-promise":30,"talio":86,"talio-selectize":34,"virtual-elements":87}],2:[function(require,module,exports){
+},{"jquery":8,"lie":12,"selectize":27,"superagent":31,"superagent-promise":30,"talio":86,"talio-selectize":34,"virtual-elements":105}],2:[function(require,module,exports){
 // http://wiki.commonjs.org/wiki/Unit_Testing/1.0
 //
 // THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
@@ -18690,33 +18697,11 @@ module.exports.run = function(domnode, vrender, handlers, BaseState) {
 
 
 },{"dom-delegator":37,"error/typed":51,"immupdate":52,"raf":53,"value-event/base-event":55,"value-event/change":56,"value-event/click":57,"value-event/key":58,"value-event/submit":64,"value-event/value":65,"virtual-dom/vdom/create-element":70,"virtual-dom/vdom/patch":73,"virtual-dom/vtree/diff":84,"xtend":85}],87:[function(require,module,exports){
-var h = require('virtual-dom/h')
-
-var tags = ['a', 'abbr', 'acronym', 'address', 'applet', 'area', 'article', 'aside', 'audio', 'b', 'base', 'basefont', 'bdi', 'bdo', 'big', 'blockquote', 'body', 'br', 'button', 'canvas', 'caption', 'center', 'cite', 'code', 'col', 'colgroup', 'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'dir', 'div', 'dl', 'dt', 'em', 'embed', 'fieldset', 'figcaption', 'figure', 'font', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'i', 'iframe', 'img', 'input', 'ins', 'kbd', 'keygen', 'label', 'legend', 'li', 'link', 'main', 'map', 'mark', 'menu', 'menuitem', 'meta', 'meter', 'nav', 'noframes', 'noscript', 'object', 'ol', 'optgroup', 'option', 'output', 'p', 'param', 'pre', 'progress', 'q', 'rp', 'rt', 'ruby', 's', 'samp', 'script', 'section', 'select', 'small', 'source', 'span', 'strike', 'strong', 'style', 'sub', 'summary', 'sup', 'table', 'tbody', 'td', 'textarea', 'tfoot', 'th', 'thead', 'time', 'title', 'tr', 'track', 'tt', 'u', 'ul', 'var', 'video', 'wbr']
-
-var createElement = module.exports.createElement = function (tagName) {
-  return function () {
-    try {
-      return h(tagName, arguments[0], [].slice.call(arguments, 1))
-    } catch (e) {
-      if (e.foreignObject && typeof e.foreignObject == 'number') {
-        return h(tagName, arguments[0], '' + arguments[1])
-      }
-    }
-  }
-}
-
-for (var i = 0; i < tags.length; i++) {
-  var tag = tags[i]
-  module.exports[tag] = createElement(tag)
-}
-
-},{"virtual-dom/h":88}],88:[function(require,module,exports){
 var h = require("./virtual-hyperscript/index.js")
 
 module.exports = h
 
-},{"./virtual-hyperscript/index.js":96}],89:[function(require,module,exports){
+},{"./virtual-hyperscript/index.js":95}],88:[function(require,module,exports){
 /*!
  * Cross-Browser Split 1.1.1
  * Copyright 2007-2012 Steven Levithan <stevenlevithan.com>
@@ -18824,15 +18809,15 @@ module.exports = (function split(undef) {
   return self;
 })();
 
-},{}],90:[function(require,module,exports){
+},{}],89:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"dup":39,"individual/one-version":92}],91:[function(require,module,exports){
+},{"dup":39,"individual/one-version":91}],90:[function(require,module,exports){
 arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],92:[function(require,module,exports){
+},{"dup":40}],91:[function(require,module,exports){
 arguments[4][41][0].apply(exports,arguments)
-},{"./index.js":91,"dup":41}],93:[function(require,module,exports){
+},{"./index.js":90,"dup":41}],92:[function(require,module,exports){
 arguments[4][68][0].apply(exports,arguments)
-},{"dup":68}],94:[function(require,module,exports){
+},{"dup":68}],93:[function(require,module,exports){
 'use strict';
 
 var EvStore = require('ev-store');
@@ -18861,7 +18846,7 @@ EvHook.prototype.unhook = function(node, propertyName) {
     es[propName] = undefined;
 };
 
-},{"ev-store":90}],95:[function(require,module,exports){
+},{"ev-store":89}],94:[function(require,module,exports){
 'use strict';
 
 module.exports = SoftSetHook;
@@ -18880,7 +18865,7 @@ SoftSetHook.prototype.hook = function (node, propertyName) {
     }
 };
 
-},{}],96:[function(require,module,exports){
+},{}],95:[function(require,module,exports){
 'use strict';
 
 var isArray = require('x-is-array');
@@ -19017,7 +19002,7 @@ function errorString(obj) {
     }
 }
 
-},{"../vnode/is-thunk":98,"../vnode/is-vhook":99,"../vnode/is-vnode":100,"../vnode/is-vtext":101,"../vnode/is-widget":102,"../vnode/vnode.js":104,"../vnode/vtext.js":105,"./hooks/ev-hook.js":94,"./hooks/soft-set-hook.js":95,"./parse-tag.js":97,"x-is-array":93}],97:[function(require,module,exports){
+},{"../vnode/is-thunk":97,"../vnode/is-vhook":98,"../vnode/is-vnode":99,"../vnode/is-vtext":100,"../vnode/is-widget":101,"../vnode/vnode.js":103,"../vnode/vtext.js":104,"./hooks/ev-hook.js":93,"./hooks/soft-set-hook.js":94,"./parse-tag.js":96,"x-is-array":92}],96:[function(require,module,exports){
 'use strict';
 
 var split = require('browser-split');
@@ -19073,19 +19058,19 @@ function parseTag(tag, props) {
     return props.namespace ? tagName : tagName.toUpperCase();
 }
 
-},{"browser-split":89}],98:[function(require,module,exports){
+},{"browser-split":88}],97:[function(require,module,exports){
 arguments[4][76][0].apply(exports,arguments)
-},{"dup":76}],99:[function(require,module,exports){
+},{"dup":76}],98:[function(require,module,exports){
 arguments[4][77][0].apply(exports,arguments)
-},{"dup":77}],100:[function(require,module,exports){
+},{"dup":77}],99:[function(require,module,exports){
 arguments[4][78][0].apply(exports,arguments)
-},{"./version":103,"dup":78}],101:[function(require,module,exports){
+},{"./version":102,"dup":78}],100:[function(require,module,exports){
 arguments[4][79][0].apply(exports,arguments)
-},{"./version":103,"dup":79}],102:[function(require,module,exports){
+},{"./version":102,"dup":79}],101:[function(require,module,exports){
 arguments[4][80][0].apply(exports,arguments)
-},{"dup":80}],103:[function(require,module,exports){
+},{"dup":80}],102:[function(require,module,exports){
 arguments[4][81][0].apply(exports,arguments)
-},{"dup":81}],104:[function(require,module,exports){
+},{"dup":81}],103:[function(require,module,exports){
 var version = require("./version")
 var isVNode = require("./is-vnode")
 var isWidget = require("./is-widget")
@@ -19159,7 +19144,7 @@ function VirtualNode(tagName, properties, children, key, namespace) {
 VirtualNode.prototype.version = version
 VirtualNode.prototype.type = "VirtualNode"
 
-},{"./is-thunk":98,"./is-vhook":99,"./is-vnode":100,"./is-widget":102,"./version":103}],105:[function(require,module,exports){
+},{"./is-thunk":97,"./is-vhook":98,"./is-vnode":99,"./is-widget":101,"./version":102}],104:[function(require,module,exports){
 var version = require("./version")
 
 module.exports = VirtualText
@@ -19171,4 +19156,26 @@ function VirtualText(text) {
 VirtualText.prototype.version = version
 VirtualText.prototype.type = "VirtualText"
 
-},{"./version":103}]},{},[1]);
+},{"./version":102}],105:[function(require,module,exports){
+var h = require('virtual-dom/h')
+
+var tags = ['a', 'abbr', 'acronym', 'address', 'applet', 'area', 'article', 'aside', 'audio', 'b', 'base', 'basefont', 'bdi', 'bdo', 'big', 'blockquote', 'body', 'br', 'button', 'canvas', 'caption', 'center', 'cite', 'code', 'col', 'colgroup', 'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'dir', 'div', 'dl', 'dt', 'em', 'embed', 'fieldset', 'figcaption', 'figure', 'font', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'i', 'iframe', 'img', 'input', 'ins', 'kbd', 'keygen', 'label', 'legend', 'li', 'link', 'main', 'map', 'mark', 'menu', 'menuitem', 'meta', 'meter', 'nav', 'noframes', 'noscript', 'object', 'ol', 'optgroup', 'option', 'output', 'p', 'param', 'pre', 'progress', 'q', 'rp', 'rt', 'ruby', 's', 'samp', 'script', 'section', 'select', 'small', 'source', 'span', 'strike', 'strong', 'style', 'sub', 'summary', 'sup', 'table', 'tbody', 'td', 'textarea', 'tfoot', 'th', 'thead', 'time', 'title', 'tr', 'track', 'tt', 'u', 'ul', 'var', 'video', 'wbr']
+
+var createElement = module.exports.createElement = function (tagName) {
+  return function () {
+    try {
+      return h(tagName, arguments[0], [].slice.call(arguments, 1))
+    } catch (e) {
+      if (e.foreignObject && typeof e.foreignObject == 'number') {
+        return h(tagName, arguments[0], '' + arguments[1])
+      }
+    }
+  }
+}
+
+for (var i = 0; i < tags.length; i++) {
+  var tag = tags[i]
+  module.exports[tag] = createElement(tag)
+}
+
+},{"virtual-dom/h":87}]},{},[1]);

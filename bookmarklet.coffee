@@ -20,10 +20,35 @@ for link in document.querySelectorAll('link[rel="stylesheet"]')
   link.parentNode.removeChild link
 # ~
 
+# add placeholder for themes
 stylesheet = document.createElement 'link'
 stylesheet.rel = 'stylesheet'
 stylesheet.id = 'classless-theme'
 document.getElementsByTagName('head')[0].appendChild stylesheet
+# ~
+
+# existing themes and scenarios
+themes = [
+  {name: 'lebo'}
+  {name: 'jeen'}
+  {name: 'wardrobe'}
+  {name: 'ghostwriter'}
+  {name: 'festively'}
+  {name: 'aluod'}
+  {name: 'dbyll'}
+]
+
+scenarios = [
+  'list-of-posts'
+  'list-of-posts-with-images'
+  'list-of-posts-with-excerpts'
+  'post-simple'
+  'post-with-images'
+  'post-with-checklists'
+  'post-with-header-image'
+]
+
+# ~
 
 handlers =
   themeChanged: (State, theme) ->
@@ -47,29 +72,13 @@ handlers =
         ma 'scenario', scenario.value
     ).catch(console.log.bind console)
 
-window.setClasslessTheme = (name) -> handlers.themeChanged null, {value: name}
+window.setClasslessTheme = (name) ->
+  if not name
+    index = Math.floor(Math.random() * themes.length)
+    name = themes[index].name
+  handlers.themeChanged null, {value: name}
 
 vrenderMain = (state, channels) ->
-  themes = [
-    {name: 'lebo'}
-    {name: 'jeen'}
-    {name: 'wardrobe'}
-    {name: 'ghostwriter'}
-    {name: 'festively'}
-    {name: 'aluod'}
-    {name: 'dbyll'}
-  ]
-
-  scenarios = [
-    'list-of-posts'
-    'list-of-posts-with-images'
-    'list-of-posts-with-excerpts'
-    'post-simple'
-    'post-with-images'
-    'post-with-checklists'
-    'post-with-header-image'
-  ]
-
   (fieldset
     id: "classless-widget"
     style: {"border":"2px dotted black","width":"200px","position":"fixed","right":"22px","top":"15px","z-index":"1000","background":"white"}
@@ -108,7 +117,7 @@ vrenderMain = (state, channels) ->
       (small {}, 'add the following bookmarklet to your bookmark bar and use it on any page with HTML following the classless standard: ')
       (a
         style: {'border': '2px solid gray', 'background': 'gray', 'color': 'white', 'padding': '1px 5px'}
-        href: "javascript:script = document.createElement('script');script.src = 'http://fiatjaf.alhur.es/classless/build/bookmarklet.js';document.getElementsByTagName('head')[0].appendChild(script);"
+        href: "javascript:script = document.createElement('script');script.src = '//fiatjaf.alhur.es/classless/build/bookmarklet.js';document.getElementsByTagName('head')[0].appendChild(script);"
       , 'classless')
     )
   )
