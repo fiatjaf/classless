@@ -129,6 +129,7 @@ main > footer > nav li { display: inline; }
 main > footer > nav a:not(*[href]) { visibility: hidden; }
 
 p code,
+li code,
 .highlight {
   background-color: rgb(233, 245, 215);
   color: black;
