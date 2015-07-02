@@ -39,6 +39,8 @@ document.getElementsByTagName('head')[0].appendChild(stylesheet);
 
 themes = [
   {
+    name: 'blank'
+  }, {
     name: 'lebo'
   }, {
     name: 'jeen'
@@ -16052,7 +16054,8 @@ module.exports = function(arr, fn, initial){
   return curr;
 };
 },{}],34:[function(require,module,exports){
-var SelectizeWidget, delegator, dispatchChange;
+var SelectizeWidget, delegator, dispatchChange,
+  indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
 delegator = null;
 
@@ -16076,7 +16079,7 @@ SelectizeWidget = (function() {
   }
 
   SelectizeWidget.prototype.init = function() {
-    var container, elem;
+    var container, elem, observer, onInsert;
     container = document.createElement('div');
     elem = document.createElement('select');
     elem.name = this.opts.name || null;
@@ -16086,21 +16089,44 @@ SelectizeWidget = (function() {
       if (!this.opts.onChange) {
         this.opts.onChange = dispatchChange.bind(this, elem);
       } else {
-        this.opts.onChange = function(value) {
-          dispatchChange(elem, value);
-          return onChange(value);
-        };
+        this.opts.onChange = (function(_this) {
+          return function(value) {
+            dispatchChange(elem, value);
+            return _this.opts.onChange(value);
+          };
+        })(this);
       }
     }
-    elem.addEventListener('DOMNodeInsertedIntoDocument', (function(_this) {
-      return function(e) {
+    onInsert = (function(_this) {
+      return function() {
         var selectize;
         selectize = $(elem).selectize(_this.opts)[0].selectize;
         if (_this.opts.value) {
           return selectize.setValue(_this.opts.value, true);
         }
       };
-    })(this));
+    })(this);
+    if (typeof MutationObserver === 'undefined') {
+      elem.addEventListener('DOMNodeInsertedIntoDocument', onInsert);
+    } else {
+      observer = new MutationObserver(function(mutations) {
+        var i, len, mutation, results;
+        results = [];
+        for (i = 0, len = mutations.length; i < len; i++) {
+          mutation = mutations[i];
+          if (mutation.target === container && indexOf.call(mutation.addedNodes, elem) >= 0) {
+            observer.disconnect();
+            results.push(onInsert());
+          } else {
+            results.push(void 0);
+          }
+        }
+        return results;
+      });
+      observer.observe(container, {
+        childList: true
+      });
+    }
     return container;
   };
 
@@ -16114,10 +16140,12 @@ SelectizeWidget = (function() {
         if (!this.opts.onChange) {
           this.opts.onChange = dispatchChange.bind(this, elem);
         } else {
-          this.opts.onChange = function(value) {
-            dispatchChange(elem, value);
-            return onChange(value);
-          };
+          this.opts.onChange = (function(_this) {
+            return function(value) {
+              dispatchChange(elem, value);
+              return _this.opts.onChange(value);
+            };
+          })(this);
         }
       }
       $(elem).selectize(this.opts);
@@ -18582,12 +18610,16 @@ TalioState = (function() {
   };
 
   TalioState.prototype.get = function(prop) {
-    var degree, i, len, ref, ret;
+    var degree, e, i, len, ref, ret;
     ret = this.state;
-    ref = prop.split('.');
-    for (i = 0, len = ref.length; i < len; i++) {
-      degree = ref[i];
-      ret = ret[degree];
+    try {
+      ref = prop.split('.');
+      for (i = 0, len = ref.length; i < len; i++) {
+        degree = ref[i];
+        ret = ret[degree];
+      }
+    } catch (_error) {
+      e = _error;
     }
     return ret;
   };

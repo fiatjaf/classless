@@ -29,6 +29,7 @@ document.getElementsByTagName('head')[0].appendChild stylesheet
 
 # existing themes and scenarios
 themes = [
+  {name: 'blank'}
   {name: 'lebo'}
   {name: 'jeen'}
   {name: 'wardrobe'}
@@ -47,7 +48,6 @@ scenarios = [
   'post-with-checklists'
   'post-with-header-image'
 ]
-
 # ~
 
 handlers =
