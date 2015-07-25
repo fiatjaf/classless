@@ -1045,9 +1045,23 @@ main > section header h1.replace-foto {
   margin-top: 10%;
   text-align: center;
 }
-main > article header h1,
-main > section header h1 {
-  font-family: inherit;
+main > article header ul,
+main > section header ul {
+  display: inline;
+  font-size: 0.8em;
+  padding: 0;
+}
+main > article header ul li,
+main > section header ul li {
+  display: inline;
+  margin: 0 2px;
+}
+main > article header ul a,
+main > section header ul a {
+  min-height: 1em;
+  padding: 4px 7px;
+  background-color: #60a794;
+  color: white;
 }
 main > article header aside,
 main > section header aside {

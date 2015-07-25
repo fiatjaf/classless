@@ -119,6 +119,23 @@ body > header h1 a {
   padding: 8px;
   line-height: 1.2em;
 }
+
+header ul {
+  list-style: none;
+  margin-top: -5px !important;
+  margin-bottom: 5px !important;
+}
+header li {
+  display: inline;
+  margin: 0 2px;
+}
+header li a {
+  min-height: 1em;
+  padding: 4px 7px;
+  background-color: #424242;
+  color: white;
+}
+
 body > header h1 a:hover,
 body > aside a:hover,
 body > nav a:hover { background: #303030; }

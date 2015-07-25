@@ -670,6 +670,25 @@ article > header > aside li:first-child:before {
   content: " ";
 }
 
+article > header ul {
+  list-style: none:
+}
+article > header li {
+  display: inline;
+  float: right;
+  margin: 0 2px;
+}
+article > header li a {
+  background-color: #d6575b;
+  color: rgb(250, 251, 252);
+  min-height: 1em;
+  padding: 4px 10px;
+  border: none;
+}
+article > header li a:hover {
+  border: 1px solid;
+}
+
 body > aside,
 article section {
   padding: 3.5em 2em;

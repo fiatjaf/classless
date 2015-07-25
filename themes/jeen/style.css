@@ -35,6 +35,21 @@ nav a {
   text-decoration: none; 
 }
 
+header ul {
+  padding: 0;
+  display: inline;
+}
+header li {
+  display: inline;
+  margin: 0 2px;
+}
+main > article > header li a {
+  min-height: 1em;
+  padding: 1px 4px;
+  color: white;
+  border: 1px dotted;
+}
+
 body > header {
   margin: 50px auto 20px;
   position: relative;

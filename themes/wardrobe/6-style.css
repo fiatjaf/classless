@@ -96,8 +96,24 @@ article header {
   margin-bottom: 15px; }
   article header h1 {
     margin-bottom: 5px; }
-  article header .category {
-    font-size: 11px; }
+  article header ul {
+    list-style: none;
+    margin: 0;
+    padding-bottom: 5px;
+    font-size: 11px;
+    display: inline;
+  }
+  article header li {
+    display: inline;
+    margin: 0 2px;
+  }
+  article header li a {
+    min-height: 1em;
+    padding: 3px 5px;
+    background-color: #ccdfee;
+    color: white;
+    border-radius: 2px;
+  }
 
 body > aside {
   border-top: 1px solid #ddd;
