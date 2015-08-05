@@ -197,6 +197,7 @@ body > nav {
 
   body > nav li {
     display: inline;
+    margin-left: 1em;
   }
 
   body > nav a:hover {
@@ -206,7 +207,6 @@ body > nav {
   body > nav a {
     color: #aaa;
     text-decoration: none;
-    margin-left: 1em;
   }
 
 a {
