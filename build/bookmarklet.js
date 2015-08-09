@@ -54,6 +54,8 @@ themes = [
     name: 'aluod'
   }, {
     name: 'dbyll'
+  }, {
+    name: 'tacit'
   }
 ];
 

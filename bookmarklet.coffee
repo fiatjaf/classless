@@ -37,6 +37,7 @@ themes = [
   {name: 'festively'}
   {name: 'aluod'}
   {name: 'dbyll'}
+  {name: 'tacit'}
 ]
 
 scenarios = [
