@@ -5,6 +5,7 @@ all:
 	make dbyll.theme
 	make jeen.theme
 	make lebo.theme
+	make tacit.theme
 
 wardrobe.theme: wardrobe/5-basics.css wardrobe/6-style.css
 	cat wardrobe/*.css > wardrobe.css
@@ -29,3 +30,6 @@ jeen.theme: jeen/style.css
 
 lebo.theme: lebo/2-style.css
 	cat lebo/*.css > lebo.css
+
+tacit.theme: tacit/style.scss
+	scss --sourcemap=none tacit/style.scss tacit.css

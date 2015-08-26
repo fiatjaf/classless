@@ -1,0 +1,44 @@
+@import 'tacit/scss/main.scss';
+
+h1 {
+  & > a {
+    font-weight: inherit;
+    font-size: inherit;
+    color: inherit;
+  }
+}
+
+body {
+  @extend section;
+}
+
+body > header {
+  img {
+    width: 100%;
+  }
+}
+
+main {
+  @extend article;
+}
+
+body > aside {
+  @extend article;
+  margin: 20px;
+
+  * {
+    text-align: center;
+  }
+}
+
+main > article,
+li > article {
+  background: inherit;
+  border: none;
+  padding: initial;
+}
+
+body > footer,
+body > footer * {
+  text-align: center;
+}
