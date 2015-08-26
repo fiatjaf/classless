@@ -266,8 +266,7 @@ article > header img a:hover img {
   opacity: 0.85;
 }
 
-article > header > aside,
-article > header > *:not(h1) {
+article > header > aside {
   width: 100%;
   border-bottom: none;
   padding: .75em 0 1.75em;
@@ -278,37 +277,22 @@ article > header > *:not(h1) {
   text-align: center;
   font-size: 2.2rem;
 }
-
-article > header > aside a,
-article > header > a,
-article > header > *:not(h1) a {
-  text-align: center;
-  display: block;
-  margin: auto;
-  border: none;
-}
-
-article > header li {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: .25em;
-}
-
 article > header li:before {
   content: " • ";
   color: #d6575b;
 }
-
 article > header li:first-child:before {
   content: " ";
 }
-
 article > header ul {
-  list-style: none:
+  list-style: none;
+  display: inline;
+  margin: 0 4px;
 }
 article > header li {
+  vertical-align: middle;
+  margin-left: .25em;
   display: inline;
-  float: right;
   margin: 0 2px;
 }
 article > header li a {
@@ -320,6 +304,7 @@ article > header li a {
 }
 article > header li a:hover {
   border: 1px solid;
+  text-shadow: 0 0 1px white;
 }
 
 body > aside,

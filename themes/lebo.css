@@ -327,6 +327,9 @@ main > article {
   main > article > header {
     
   }
+    main > article > header h1 {
+      margin-bottom: 0:
+    }
 
     main > article > header a {
       color: inherit;
