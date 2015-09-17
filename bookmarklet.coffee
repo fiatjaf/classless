@@ -51,18 +51,23 @@ scenarios = [
 ]
 # ~
 
+baseURL = 'websitesfortrello.github.io/classless'
+script = document.getElementById('classless-script')
+if script and script.getAttribute('rel')
+  baseURL = script.getAttribute('rel')
+
 handlers =
   themeChanged: (State, theme) ->
     if theme.value.slice(0, 4) == 'http'
       stylesheet.href = theme.value
     else
-      stylesheet.href = "//fiatjaf.alhur.es/classless/themes/#{theme.value}.css"
+      stylesheet.href = "//#{baseURL}/themes/#{theme.value}.css"
     if typeof ma is 'function'
       ma 'theme', theme.value
   scenarioChanged: (State, scenario) ->
     Promise.resolve().then(->
       superagent
-        .get("//rawgit.com/fiatjaf/classless/gh-pages/scenarios/#{scenario.value}.html")
+        .get("//rawgit.com/websitesfortrello/classless/gh-pages/scenarios/#{scenario.value}.html")
         .end()
     ).then((res) ->
       $('#classless-widget').appendTo('head')
@@ -118,7 +123,7 @@ vrenderMain = (state, channels) ->
       (small {}, 'add the following bookmarklet to your bookmark bar and use it on any page with HTML following the classless standard: ')
       (a
         style: {'border': '2px solid gray', 'background': 'gray', 'color': 'white', 'padding': '1px 5px'}
-        href: "javascript:script = document.createElement('script');script.src = '//fiatjaf.alhur.es/classless/build/bookmarklet.js';document.getElementsByTagName('head')[0].appendChild(script);"
+        href: "javascript:script = document.createElement('script');script.src = '//websitesfortrello.github.io/classless/build/bookmarklet.js';document.getElementsByTagName('head')[0].appendChild(script);"
       , 'classless')
     )
   )
@@ -127,11 +132,10 @@ tl.run document.body, vrenderMain, handlers
 
 # selectize css
 $('<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/css/selectize.default.min.css">').appendTo('head')
+# bookmarklet css
+$('html > head').append($('<style>
+.selectize-dropdown {
+  z-index: 12000;
+}
+</style>'))
 # ~
-
-`
-(function(t,r,a,c,k){k=r.createElement('script');k.type='text/javascript';
-k.async=true;k.src=a;k.id='ma';r.getElementsByTagName('head')[0].appendChild(k);
-t.maq=[];t.mai=c;t.ma=function(){t.maq.push(arguments)};
-})(window,document,'https://spooner.alhur.es:6984/microanalytics/_design/microanalytics/_rewrite/tracker.js','e212b55b');
-`
