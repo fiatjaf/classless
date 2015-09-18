@@ -6,6 +6,7 @@ all:
 	make jeen.theme
 	make lebo.theme
 	make tacit.theme
+	make barbieri.theme
 
 wardrobe.theme: wardrobe/5-basics.css wardrobe/6-style.css
 	cat wardrobe/*.css > wardrobe.css
@@ -33,3 +34,7 @@ lebo.theme: lebo/2-style.css
 
 tacit.theme: tacit/style.scss
 	scss --sourcemap=none tacit/style.scss tacit.css
+
+barbieri.theme: barbieri/bundle.css
+	cat barbieri/*.css > barbieri.css
+

@@ -35,6 +35,7 @@ themes = [
   {name: 'wardrobe'}
   {name: 'ghostwriter'}
   {name: 'festively'}
+  {name: 'barbieri'}
   {name: 'aluod'}
   {name: 'dbyll'}
   {name: 'tacit'}
