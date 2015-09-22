@@ -197,7 +197,7 @@ main {
     }
   }
   
-  footer nav {
+  nav {
     margin-top: 50px;
     text-align: center;
   
@@ -211,8 +211,17 @@ main {
       &:not(*[href]) { display: none }
     }
   }
+
+  & > article {
+    .paper;
+    margin: 20px auto;
+    padding: 20px;
+    color: #333; a { color: @petroleum; }
+    width: 890px;
+    max-width: 100%;
+    border: 0;
+  }
   
-  & > article,
   & > section {
     width: 100%;
     max-width: 900px;
@@ -234,13 +243,16 @@ main {
       }
   
       @media all and (min-width: 1200px) {
-        & > aside {
+        aside {
           max-height: 200px;
           overflow: hidden;
-          &:hover { overflow: auto; }
+          &:hover {
+            overflow-x: hidden;
+            overflow-y: auto;
+          }
         }
       }
-  
+
       img {
         width: 100%;
         display: block;
@@ -289,5 +301,11 @@ main {
 
     }
   
+  }
+
+  & > section, & > article {
+    header aside address:before {
+      content: 'by '
+    }
   }
 }

@@ -2,13 +2,13 @@
   font-family: 'Cookie';
   font-style: normal;
   font-weight: 400;
-  src: local('Cookie-Regular'), url(http://fonts.gstatic.com/s/cookie/v7/pKcurCxn_Ato3MXK6jF2CA.ttf) format('truetype');
+  src: local('Cookie-Regular'), url(https://fonts.gstatic.com/s/cookie/v7/pKcurCxn_Ato3MXK6jF2CA.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Noto Sans'), local('NotoSans'), url(http://fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+  src: local('Noto Sans'), local('NotoSans'), url(https://fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
 }
 html {
   font-family: sans-serif;
@@ -848,7 +848,7 @@ body > aside img {
   height: 100px;
 }
 body > aside a {
-  color: #f5deb3;
+  color: wheat;
 }
 img {
   border: 2px solid white;
@@ -969,22 +969,37 @@ main > section > ul li article:hover {
 main > section > ul li article:hover p {
   word-break: break-all;
 }
-main footer nav {
+main nav {
   margin-top: 50px;
   text-align: center;
 }
-main footer nav li {
+main nav li {
   display: inline;
 }
-main footer nav a {
+main nav a {
   font-size: 150%;
   font-weight: bold;
   padding: 7px 35px;
 }
-main footer nav a:not(*[href]) {
+main nav a:not(*[href]) {
   display: none;
 }
-main > article,
+main > article {
+  background-color: white;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 60px;
+  margin: 20px auto;
+  padding: 20px;
+  color: #333;
+  width: 890px;
+  max-width: 100%;
+  border: 0;
+}
+main > article a {
+  color: #60a794;
+}
 main > section {
   width: 100%;
   max-width: 900px;
@@ -993,11 +1008,9 @@ main > section {
   border: 0;
   color: white;
 }
-main > article a,
 main > section a {
   color: wheat;
 }
-main > article header,
 main > section header {
   height: auto;
   overflow: auto;
@@ -1005,72 +1018,63 @@ main > section header {
   margin: 0;
   padding: 7px 0;
 }
-main > article header > aside,
 main > section header > aside {
   padding: 0 7px;
 }
 @media all and (min-width: 1200px) {
-  main > article header > aside,
-  main > section header > aside {
+  main > section header aside {
     max-height: 200px;
     overflow: hidden;
   }
-  main > article header > aside:hover,
-  main > section header > aside:hover {
-    overflow: auto;
+  main > section header aside:hover {
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 }
-main > article header img,
 main > section header img {
   width: 100%;
   display: block;
   margin: auto;
 }
-main > article header h1,
 main > section header h1 {
   font-size: 2.7em;
   font-family: "Cookie", sans-serif !important;
   margin: 0;
   padding: 0;
 }
-main > article header h1.replace-foto,
 main > section header h1.replace-foto {
   width: 98%;
   margin-top: 10%;
   text-align: center;
 }
-main > article header ul,
 main > section header ul {
   display: inline;
   font-size: 0.8em;
   padding: 0;
 }
-main > article header ul li,
 main > section header ul li {
   display: inline;
   margin: 0 2px;
 }
-main > article header ul a,
 main > section header ul a {
   min-height: 1em;
   padding: 4px 7px;
   background-color: #60a794;
   color: white;
 }
-main > article header aside,
 main > section header aside {
   width: 100%;
 }
-main > article:not(header),
 main > section:not(header),
-main > article:not(footer),
 main > section:not(footer) {
   font-size: 0.9em;
   line-height: 1.3em;
 }
-main > article:not(header) p:first-child,
 main > section:not(header) p:first-child,
-main > article:not(footer) p:first-child,
 main > section:not(footer) p:first-child {
   margin-top: 0;
+}
+main > section header aside address:before,
+main > article header aside address:before {
+  content: 'by ';
 }
