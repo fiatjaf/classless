@@ -167,6 +167,75 @@ main > section ul li p { display: inline; }
 
 main, section, aside, article, footer, header { clear: both; }
 
+/* comments */
+main > section > article {
+  margin: 28px 0;
+  padding: 0 200px;
+  position: relative;
+}
+
+main > section > article a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main > section > article header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  z-index: 19;
+}
+
+main > section > article header img,
+main > section > article header h1 {
+  font-size: 28px;
+  z-index: 19;
+}
+main > section > article header img {
+  width: 70px;
+  max-height: 100px;
+  margin-left: 65px;
+  float: left;
+}
+main > section > article header h1 {
+  margin-left: 200px;
+  width: 400px;
+  color: #d6575b;
+}
+
+main > section > article header aside {
+  font-size: 20px;
+  float: right:
+}
+
+main > section > article > *:not(footer):not(header) {
+  clear: both;
+  padding: 35px 0 0 0;
+  text-align: justify;
+  z-index: 18;
+  font-size: 0.8em;
+}
+main > section > article > *:not(footer):not(header) a {
+  text-decoration: underline;
+  color: black;
+}
+
+main > section > article > header + * {
+  position: relative;
+}
+
+main > section > article footer a {
+  color: #d6575b;
+}
+
+main > section > article footer a:before {
+  content: 'on ';
+}
+/*****/
+
 footer nav {
   text-align: center;
   margin-top: 2em;
