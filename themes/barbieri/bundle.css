@@ -55,7 +55,7 @@ nav {
     display: inline;
   }
   nav li:before {
-    content: ' | ';
+    content: ' ';
   }
   nav li:first-child:before {
     content: '';
