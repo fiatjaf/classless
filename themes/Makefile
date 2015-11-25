@@ -7,6 +7,7 @@ all:
 	make lebo.theme
 	make tacit.theme
 	make barbieri.theme
+	make longform.theme
 	make templates.theme
 
 wardrobe.theme: wardrobe/5-basics.css wardrobe/6-style.css
@@ -38,6 +39,9 @@ tacit.theme: tacit/style.scss
 
 barbieri.theme: barbieri/bundle.css
 	cat barbieri/*.css > barbieri.css
+
+longform.theme: longform/style.less
+	lessc longform/style.less longform.css
 
 templates.theme: templates/3-column.css templates/elements.css
 	cp templates/3-column.css templates/3-column.scss
