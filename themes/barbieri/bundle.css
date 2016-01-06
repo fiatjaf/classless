@@ -112,7 +112,8 @@ body > main {
     }
   
   body > main > section {}
-  body > main section ul {
+  body > main section ul,
+  body > main section ol {
     list-style: none;
     margin: 40px 0;
     height: auto;

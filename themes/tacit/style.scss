@@ -32,6 +32,9 @@ body > aside {
 }
 
 main > article,
+section li {
+  list-style: none;
+}
 li > article {
   background: inherit;
   border: none;

@@ -555,8 +555,9 @@ main > footer {
   display: block;
 }
 
-main > section ul { list-style: none; }
-main > section ul li article {
+main > section ul,
+main > section ol { list-style: none; }
+main > section li article {
   text-align: center;
   margin-bottom: 3em;
 }
@@ -793,7 +794,7 @@ article article a:hover {
 }
 
 body > aside img,
-article section ul li article img {
+article section li article img {
   width: 100%;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
   width: 95px;
@@ -816,7 +817,7 @@ body, input[type="text"], input[type="email"], input[type="tel"], input[type="ur
   font-family: 'Roboto Slab', Georgia, serif;
 }
 
-h1, h2, h3, h4, h5, h6, blockquote, button, input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="password"], textarea, article > header > *:not(h1), aside, input[type="submit"], body > nav, body > header, section > ul article {
+h1, h2, h3, h4, h5, h6, blockquote, button, input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="password"], textarea, article > header > *:not(h1), aside, input[type="submit"], body > nav, body > header, section article {
   font-family: 'Amatic SC', 'Heveltica Neue', Arial, sans-serif;
 }
 

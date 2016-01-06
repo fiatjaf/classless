@@ -483,7 +483,8 @@ ul, ol {
   padding: 0;
 }
 
-body > main ul { list-style: none }                                                                                                                      
+body > main ul
+body > main ol { list-style: none }                                                                                                                      
 body > main li p { display: inline }                                                                                                                     
 nav ul { list-style: none; }
 nav li { display: inline; }
@@ -657,11 +658,12 @@ main > header + section {
   border-top: 6px solid #303030;
 }
 main > section { margin-bottom: 25px; }
-main > section ul {
+main > section ul,
+main > section ol {
   list-style: none;
   margin: 20px 40px 0;
 }
-main > section ul li article {
+main > section li article {
   border-bottom: 1px dotted #303030;
   margin: 0;
   -webkit-transition: all 0.2s ease-in-out;
@@ -671,24 +673,24 @@ main > section ul li article {
   color: #424242;
   padding: 20px 5px;
 }
-main > section ul li article:hover {
+main > section li article:hover {
   background: #FCF5F5;
   color: #F03838;
   padding: 20px 12px;
 }
 
-main > section ul li article header { display: inline; }
-main > section ul li article header img { display: none; }
-main > section ul li article header h1 {
+main > section li article header { display: inline; }
+main > section li article header img { display: none; }
+main > section li article header h1 {
   display: inline-block;
   margin: 0;
   text-transform: none;
   font-size: 18px;
 }
-main > section ul li article aside { display: inline-block; }
-main > section ul li article aside:before { content: "/ "; }
-main > section ul li article time { display: inline-block; }
-main > section ul li article time:not(aside > time):before { content: "/ "; }
+main > section li article aside { display: inline-block; }
+main > section li article aside:before { content: "/ "; }
+main > section li article time { display: inline-block; }
+main > section li article time:not(aside > time):before { content: "/ "; }
 
 main > footer nav ul { float: right; }
 main > footer nav a:not([href]) {

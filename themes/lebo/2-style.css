@@ -69,12 +69,13 @@ main {
   margin-bottom: 5em;
 }
 
-main > section > ul {
+main > section > ul,
+main > section > ol {
   list-style-type: none;
   margin-bottom: 2em;
 }
 
-  main > section > ul li {
+  main > section > * > li {
     line-height: 1.75em;
     width: 100%;
     height: auto;
@@ -86,7 +87,7 @@ main > section > ul {
     margin: 0;
   }
 
-    main > section > ul li article header > *:not(h1):not(aside):not(header):not(time),
+    main > section > * li article header > *:not(h1):not(aside):not(header):not(time),
     main > section li article > *:not(h1):not(header) {
       display: none;
     }

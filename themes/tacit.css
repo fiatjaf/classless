@@ -295,8 +295,11 @@ body > aside {
     text-align: center; }
 
 main > article, main > main,
-li > article,
-li > main {
+section li,
+body li {
+  list-style: none; }
+
+li > article, li > main {
   background: inherit;
   border: none;
   padding: initial; }

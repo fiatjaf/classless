@@ -20,7 +20,7 @@ blockquote:before { content: "“"; display: block; position: absolute; margin-l
 main h3 { text-transform: capitalize; }
 aside img { border-radius: 3px; margin: auto; display: block; margin: 10px auto 20px;  }
 aside { text-align: center; }
-main ul, main ul li {
+main ul, main ol, main li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -29,6 +29,7 @@ main ul, main ul li {
 main > header { display: none }
 
 body > main ul { list-style: none }                                                                                                                      
+body > main ol { list-style: none }                                                                                                                      
 body > main li p { display: inline }                                                                                                                     
 nav ul { list-style: none; }                                                                                                                             
 nav li { display: inline; }

@@ -3,7 +3,7 @@ body {
 }
 
 body > nav ul,
-main > section > ul { list-style: none; }
+main > section > ul, main > section > ol { list-style: none; }
 li p { display: inline; }
 nav ul { margin: auto; }
 nav li { list-style: none; display: inline; margin: 0 10px; }
@@ -126,6 +126,7 @@ main > article {
 
 main > section div,
 main > section ul,
+main > section ol,
 main > article div {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -162,30 +163,30 @@ main > article {
   font-size: 1.25em;
 }
 
-main > section > ul li article div a, main > section > ul li article pre a { color: #2c3e50; }
+main > section > * > li article div a, main > section > * > li article pre a { color: #2c3e50; }
 article img { max-width: 100%; }
 
 h1,h2,h3,h4,h5,h6 { font-family: 'Ubuntu', sans-serif; }
-main > section > ul li article h1,
-main > section > ul li article h2,
-main > section > ul li article h3,
-main > section > ul li article h4,
-main > section > ul li article h5,
-main > section > ul li article h6 {
+main > section li article h1,
+main > section li article h2,
+main > section li article h3,
+main > section li article h4,
+main > section li article h5,
+main > section li article h6 {
   font-family: 'Ubuntu', sans-serif;
   color: #f2756a;
 }
 
-main > section > ul li article h1 a,
-main > section > ul li article h2 a,
-main > section > ul li article h3 a,
-main > section > ul li article h4 a {
+main > section li article h1 a,
+main > section li article h2 a,
+main > section li article h3 a,
+main > section li article h4 a {
   color: #f2756a;
 }
-main > section > ul li article h1 a:hover,
-main > section > ul li article h2 a:hover,
-main > section > ul li article h3 a:hover,
-main > section > ul li article h4 a:hover {
+main > section li article h1 a:hover,
+main > section li article h2 a:hover,
+main > section li article h3 a:hover,
+main > section li article h4 a:hover {
   color: #e74c3c;
 }
 
