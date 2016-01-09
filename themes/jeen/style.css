@@ -68,10 +68,6 @@ body > header a {
 }
 body > header p { margin: 4px auto; font-size: 0.7em; }
 
-body > aside {
-  display: none;
-}
-
 body > nav {
   text-align: center;
   overflow: auto;
@@ -116,22 +112,28 @@ main > article > *:not(header):not(footer):not(ul):not(dl):not(table):not(sectio
   color: rgb(211, 188, 189);
 }
 
-main > section ul {
+main > section ul,
+main > section ol {
   list-style: none;
   padding: 0;
 }
 main > section ul li article {}
+
+main > section ol li article img,
 main > section ul li article img {
   height: 1em;
   border: 1px solid;
 }
 main > section ul li article header h1,
-main > section ul li article header aside {
+main > section ol li article header h1,
+main > section ul li article header aside,
+main > section ol li article header aside {
   font-size: 1em;
   line-height: 1em;
   display: inline-block;
 }
-main > section ul li article > *:not(header) {
+main > section ul li article > *:not(header),
+main > section ol li article > *:not(header) {
   padding-left: 2em;
   font-size: 80%;
 }
