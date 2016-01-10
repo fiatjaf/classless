@@ -32,6 +32,7 @@ themes = [
   {name: 'cyprio'}
   {name: 'lebo'}
   {name: 'wardrobe'}
+  {name: 'subtle'}
   {name: 'ghostwriter'}
   {name: 'barbieri'}
   {name: 'festively'}
@@ -63,7 +64,7 @@ handlers =
     if theme.value.slice(0, 4) == 'http'
       stylesheet.href = theme.value
     else
-      stylesheet.href = "//#{baseURL}/themes/#{theme.value}.css"
+      stylesheet.href = "//#{baseURL}/themes/#{theme.value}/theme.css"
     if typeof ma is 'function'
       ma 'theme', theme.value
   scenarioChanged: (State, scenario) ->

@@ -11,8 +11,9 @@ all:
 	cd aluod; make; cp theme.css ../aluod.css; cp theme.js ../aluod.js
 	cd longform; make
 	cd cyprio; make
+	cd subtle; make
 	
 	make README.md
 
-README.md:
+README.md: *
 	fish ../scripts/themes-readme.fish > README.md

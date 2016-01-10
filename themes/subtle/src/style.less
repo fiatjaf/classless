@@ -1,0 +1,429 @@
+@red:  #ff0000;
+@black:  #000000;
+@white:  #ffffff;
+@super-light-grey: #efefef;
+@light-grey:  #eeeeee;
+@med-grey:  #999999;
+@dark-grey:  #4d4d4d;
+@blue:  #0e94ec;
+@accent:  @blue;
+@sans: 'PT Sans', sans-serif;
+@serif: 'PT Serif', serif;
+@mono: 'PT Mono', monospace;
+
+/* fonts */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'PT Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Mono'), local('PTMono-Regular'), url(http://fonts.gstatic.com/s/ptmono/v4/rFGHhFPYIVvC08PGjJIN1_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Mono'), local('PTMono-Regular'), url(http://fonts.gstatic.com/s/ptmono/v4/CaVdAWGUSxTocbxGJLiki_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Mono'), local('PTMono-Regular'), url(http://fonts.gstatic.com/s/ptmono/v4/eEAdzx7eU---nbdfQm1E0fY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Mono'), local('PTMono-Regular'), url(http://fonts.gstatic.com/s/ptmono/v4/h6kfiL-5Ady2K9sB3hOqcw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v8/JX7MlXqjSJNjQvI4heMMGvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v8/vtwNVMP8y9C17vLvIBNZI_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v8/9kaD4V2pNPMMeUVBHayd7vY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url(http://fonts.gstatic.com/s/ptsans/v8/ATKpv8nLYAKUYexo8iqqrg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Serif'), local('PTSerif-Regular'), url(http://fonts.gstatic.com/s/ptserif/v8/5hX15RUpPERmeybVlLQEWBTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Serif'), local('PTSerif-Regular'), url(http://fonts.gstatic.com/s/ptserif/v8/fU0HAfLiPHGlZhZpY6M7dBTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Serif'), local('PTSerif-Regular'), url(http://fonts.gstatic.com/s/ptserif/v8/CPRt--GVMETgA6YEaoGitxTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Serif'), local('PTSerif-Regular'), url(http://fonts.gstatic.com/s/ptserif/v8/I-OtoJZa3TeyH6D9oli3ifesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: @white;
+  color: @dark-grey;
+  font-family: @sans;
+  font-size: 18px;
+}
+a {
+  color: @black;
+  text-decoration: none;
+}
+hr {
+  color: @light-grey;
+  background-color: @light-grey;
+  height: 1px;
+  border: none;
+}
+.border-radius (@radius: 5px) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+.transition (@set: 500ms) {
+  transition: @set;
+  -moz-transition: @set;
+  -webkit-transition: @set;
+}
+img {
+  max-width: 100%;
+}
+
+body > header {
+  & > h1 {
+    padding: 40px 40px 0 40px;
+    text-align: center;
+  }
+  
+  /* body > aside is moved here. */
+  aside {
+    padding: 40px;
+    text-align: center;
+    
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+
+  h1 {
+    margin: 15px 0 5px 0;
+  }
+
+  p {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+  }
+
+  ul {
+    margin: 40px 0 0 0;
+    padding-left: 0;
+    font-size: 16px;
+    list-style-type: none;
+
+    li {
+      display: inline;
+      line-height: 3em;
+
+      a {
+        padding: 5px 15px 5px 15px;
+        border: 3px solid @light-grey;
+        .border-radius(15px);
+        color: @med-grey;
+      }
+    }
+  }
+}
+
+main {
+  /* body > nav is moved here */
+  & > nav {
+    padding: 40px;
+    border-top: @light-grey 1px solid;
+    border-bottom: @light-grey 1px solid;
+    
+    li {
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: inline;
+      
+      &:not(*:first-child)::before {
+        content: ' ¦ ';
+      }
+    }
+
+    p {
+      font-weight: bold;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+  }
+  
+  & > header {
+    text-align: center;
+  }
+
+  article, section {
+    max-width: 640px;
+    padding: 40px;
+  }
+  
+  section {
+    ul, ol {
+      padding: 0;
+      list-style: none;
+    }
+    li article {
+      padding: 40px 0;
+    }
+  }
+  
+  article {
+    & > header {
+      &:hover {
+        time {
+          color: @med-grey;
+        }
+        
+        h1 {
+          color: @blue;
+        }
+        
+        ul {
+          color: inherit;
+          background: inherit;
+        }
+      }
+      
+      h1 {
+        position: relative;
+        top: 27px;
+        color: @black;
+        
+        a { color: inherit; }
+      }
+      
+      aside {
+        position: relative;
+        top: -47px;
+        text-align: left;
+        
+        & > * { display: inline }
+      }
+      
+      aside, time, p {
+        font-size: 12px;
+        color: @med-grey;
+      }
+      
+      time {
+        color: @super-light-grey;
+        .transition(500ms all);
+      }
+      
+      ul {
+        /* tags */
+        color: @super-light-grey;
+        background: none;
+        .transition(500ms all);
+        
+        li {
+          display: inline;
+          
+          a {
+            color: inherit;
+            padding: 5px 15px;
+            .transition(800ms background);
+            .border-radius()
+          }
+          a:hover {
+            background: @light-grey;
+          }
+        }
+      }
+    }
+
+    & > *:not(header) {
+      line-height: 1.375em;
+      a {
+        text-decoration: underline;
+      }
+
+      code {
+        margin: 2px;
+        padding: 0;
+        color: @black;
+        font-size: 14px;
+        font-family: @mono;
+        background: @light-grey;
+      }
+
+      pre {
+        margin: 22px 2px 22px 2px;
+        padding: 2px;
+        color: @black;
+        border-left: 3px solid @accent;
+        font-size: 14px;
+        font-family: @mono;
+        background: @light-grey;
+        line-height: 1.125em;
+        overflow-x: auto;
+      }
+
+      blockquote {
+        margin: 22px 2px 22px 2px;
+        padding-left: 40px;
+        color: @med-grey;
+        font-style: italic;
+      }
+    }
+  }
+
+  /* pagination */
+  footer:not(*:last-child) {
+    border-top: @light-grey 1px solid;
+    padding: 40px;
+    text-align: center;
+
+    li {
+      display: inline;
+    }
+    
+    a[rel="next"]::before {
+      content: 'older posts'
+    }
+    a[rel="prev"]::before {
+      content: 'newer posts'
+    }
+    a:not(*[href]) {
+      display: none;
+    }
+    a[rel] {
+      padding: 10px 20px;
+      border: 2px solid @accent;
+      .border-radius(20px);
+      text-transform: uppercase;
+      color: @accent;
+      font-size: 18px;
+      &:hover {
+        color: @white;
+        background-color: @accent;
+      }
+      &:active {
+        color: @white;
+        background-color: @accent;
+      }
+    }
+  }
+  
+  /* body > footer is moved here */
+  footer:last-child {
+    border-top: @light-grey 1px solid;
+    padding: 0 40px 0 40px;
+    color: @med-grey;
+    font-size: 10px;
+  }
+}
+
+/* these are hidden in their original
+places, but the three will be moved by JS
+and will appear again. */
+body > aside { display: none }
+body > nav { display: none }
+body > footer { display: none }
+
+@media screen and (min-width: 1024px) {
+  body > header {
+    width: 25%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: @light-grey 1px solid;
+
+    h1 {
+      margin: 10px 0 0 0;
+    }
+
+    /* body > aside is moved here. */
+    aside, h1 {
+      display: block;
+      max-width: 192px;
+    }
+
+    ul {
+      li {
+        display: block;
+      }
+    }
+  }
+
+  main {
+    width: 75%;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    article {
+      max-width: 640px;
+    }
+
+    & > nav {
+      border-top: 0;
+    }
+  }
+}

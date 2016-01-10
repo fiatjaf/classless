@@ -11,5 +11,6 @@
 * [jeen](jeen/)
 * [lebo](lebo/)
 * [longform](longform/)
+* [subtle](subtle/)
 * [tacit](tacit/)
 * [wardrobe](wardrobe/)
