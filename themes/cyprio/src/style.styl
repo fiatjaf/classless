@@ -1,0 +1,275 @@
+@charset "UTF-8"
+@import "src/normalize"
+
+$backgroundColor        = #343434
+$textColor              = #fff
+$linkColor              = #D9E85F
+$linkBorderColor        = #999
+$titlesColor            = #bbb
+$titlesBorderColor      = #444
+$imgCaptionColor        = darken($textColor, 20)
+$articleHeaderColor     = #bbb
+$footerBorderColor      = #444
+$separatorBorderColor   = #fff
+
+transition
+    -moz-transition    arguments
+    -webkit-transition arguments
+    -o-transition      arguments
+    transition         arguments
+    
+@font-face
+  font-family "Open Sans"
+  font-style normal
+  src url(https://cdn.rawgit.com/oz/cyprio.net/master/fonts/opensans/OpenSans-Regular.ttf)
+
+@@font-face
+  font-family "et-bembo"
+  src url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-roman-line-figures/et-bembo-roman-line-figures.eot")
+  src url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-roman-line-figures/et-bembo-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-roman-line-figures/et-bembo-roman-line-figures.woff") format("woff"), url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-roman-line-figures/et-bembo-roman-line-figures.ttf") format("truetype"), url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-roman-line-figures/et-bembo-roman-line-figures.svg#etbookromanosf") format("svg")
+  font-weight normal
+  font-style normal
+
+@font-face
+  font-family "et-bembo"
+  src url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-display-italic-old-style-figures/et-bembo-display-italic-old-style-figures.eot")
+  src url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-display-italic-old-style-figures/et-bembo-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-display-italic-old-style-figures/et-bembo-display-italic-old-style-figures.woff") format("woff"), url("/fonts/et-bembo/et-bembo-display-italic-old-style-figures/et-bembo-display-italic-old-style-figures.ttf") format("truetype"), url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-display-italic-old-style-figures/et-bembo-display-italic-old-style-figures.svg#etbookromanosf") format("svg")
+  font-weight normal
+  font-style italic
+
+@font-face
+  font-family "et-bembo"
+  src url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-bold-line-figures/et-bembo-bold-line-figures.eot")
+  src url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-bold-line-figures/et-bembo-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-bold-line-figures/et-bembo-bold-line-figures.woff") format("woff"), url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-bold-line-figures/et-bembo-bold-line-figures.ttf") format("truetype"), url("https://cdn.rawgit.com/oz/cyprio.net/master/fonts/et-bembo/et-bembo-bold-line-figures/et-bembo-bold-line-figures.svg#etbookromanosf") format("svg")
+  font-weight bold
+  font-style normal
+
+// Font used for text blocks
+text-font()
+  font-family "et-bembo", serif
+  font-size 1.3em
+  line-height 1.5em
+  
+// Rounded corners things
+border-radius()
+  -webkit-border-radius arguments
+  border-radius arguments
+
+// ----------------------------------------------------------------------------
+// Common styles
+
+pre, code
+  font-family monospace
+  font-size 1em
+  line-height: 1.4em
+
+a, a:visited, a:hover, a:focus, a:active
+  color $linkColor
+  text-decoration none
+  border-bottom 1px $linkBorderColor dotted
+
+a:hover
+  color lighten($linkColor, 20)
+  border-bottom 1px $linkBorderColor solid
+
+time
+  color $articleHeaderColor
+  font-family "et-bembo", serif
+  font-size 1.3em
+
+h1, h2, h3
+  font-family "et-bembo", sans-serif
+  color $titlesColor
+  text-shadow 0 1px 4px #000
+  font-style italic
+
+h1
+  font-size 1.3em
+
+h2
+  font-size 1.2em
+
+h3
+  font-size 1em
+
+hr
+  border-top none
+  border-left none
+  border-right none
+  border-bottom 1px $separatorBorderColor solid
+  
+// classless bizarreness
+body > header h1 a
+main > header h1 a
+main > article header h1 a
+header aside a 
+  font-family inherit
+  color inherit
+  font-size inherit
+  border inherit
+  text-decoration inherit
+  font-weight inherit
+  font-style inherit
+  &:hover
+    text-decoration: none
+    border inherit
+    
+main > header h1
+  font-style normal
+  text-align center
+
+main article > header h1
+main section > header h1:not(a + h1):not(img + h1)
+  border-top 1px darken($titlesBorderColor, 2) solid
+  
+body > aside
+  text-align center
+    
+header > a
+  border none
+  &:hover, &:visited, &:focus, &:active
+    border none
+    
+a:not(*[href])
+  display none
+  
+// Pseudo-responsive layout...
+body
+  background-color $backgroundColor
+  color $textColor
+
+body > header
+main
+body > footer
+body > aside
+  width 50%
+  margin 10px auto
+
+header, footer
+  padding 20px 10%
+
+footer
+  border-top 1px solid $footerBorderColor
+  margin-top 3em
+  text-font()
+  font-size 0.8em
+  text-align right
+  color darken($textColor, 15)
+
+main
+  text-font()
+  
+@media all and (max-width: 699px)
+  body > header,
+  main,
+  body > footer
+  body > aside
+    width 100%
+
+  header, footer
+    padding 10px 0%
+    margin 0 auto
+
+  footer
+    font-family sans-serif
+    font-size 0.7em
+
+// Header style
+body > header
+  color #fff
+  font-family "Open Sans", sans-serif
+  font-size 10px
+  line-height 8px
+  text-transform uppercase
+  letter-spacing 4px
+  text-align center
+  width 200px
+  margin 0px auto 50px
+  text-shadow 1px 1px 3px #888
+
+  a
+    color #fff
+    border none
+
+// Navigation
+nav
+  width 100%
+  padding 2px
+  font-family "Open Sans", sans-serif
+  font-size 1em
+  text-align center
+  li
+    display inline
+  a
+    border none
+    padding 2px 4px
+    transition all 0.2s ease-in
+    text-transform uppercase
+  a:hover
+    border none
+    text-shadow 0px 1px 6px #000
+    
+// Lists of articles
+main section
+  li article
+    & > header
+      h1
+        display inline
+        font-size 1em
+        font-style normal
+      aside
+        display inline
+      time
+        display inline
+        &::before
+          content ' - '
+    & > *:not(header)
+      font-size 70%
+    
+// Articles
+article
+  padding 0 0
+
+  header
+    width 100%
+    margin 0
+    padding 0
+    img
+      max-width 100%
+    time
+      text-align right
+      display block
+    aside
+      color $imgCaptionColor
+      text-align right
+      font-size 0.55em
+      font-family "verdana", sans-serif
+      margin-top 0px
+      padding-top 3px
+      
+      ul
+        text-align right
+        
+      li
+        display inline
+        padding 7px 10px
+        background $titlesColor
+        color $backgroundColor
+        border-radius(5px)
+        
+        a
+          text-decoration none
+          color inherit
+        
+
+  blockquote
+    background-color lighten($backgroundColor, 4)
+    border-radius(5px)
+    p
+      padding 10px
+      font-style italic
+
+  pre
+    background-color darken($backgroundColor, 4)
+    padding 8px
+    border-radius(5px)
