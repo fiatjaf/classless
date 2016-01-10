@@ -88,7 +88,7 @@ handlers = {
   },
   scenarioChanged: function(State, scenario) {
     return Promise.resolve().then(function() {
-      return superagent.get("//rawgit.com/websitesfortrello/classless/gh-pages/scenarios/" + scenario.value + ".html").end();
+      return superagent.get("//rawgit.com/websitesfortrello/classless/gh-pages/playground/scenarios/" + scenario.value + ".html").end();
     }).then(function(res) {
       $('#classless-widget').appendTo('head');
       $('body').html(res.text);

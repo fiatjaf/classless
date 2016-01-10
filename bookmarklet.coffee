@@ -70,7 +70,7 @@ handlers =
   scenarioChanged: (State, scenario) ->
     Promise.resolve().then(->
       superagent
-        .get("//rawgit.com/websitesfortrello/classless/gh-pages/scenarios/#{scenario.value}.html")
+        .get("//rawgit.com/websitesfortrello/classless/gh-pages/playground/scenarios/#{scenario.value}.html")
         .end()
     ).then((res) ->
       $('#classless-widget').appendTo('head')
