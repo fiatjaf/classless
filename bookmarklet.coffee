@@ -29,16 +29,17 @@ document.getElementsByTagName('head')[0].appendChild stylesheet
 
 # existing themes and scenarios
 themes = [
-  {name: 'blank'}
+  {name: 'cyprio'}
   {name: 'lebo'}
-  {name: 'jeen'}
   {name: 'wardrobe'}
   {name: 'ghostwriter'}
-  {name: 'festively'}
   {name: 'barbieri'}
+  {name: 'festively'}
+  {name: 'jeen'}
   {name: 'aluod'}
   {name: 'dbyll'}
   {name: 'tacit'}
+  {name: 'blank'}
 ]
 
 scenarios = [

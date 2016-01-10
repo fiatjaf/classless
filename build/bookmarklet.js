@@ -39,25 +39,27 @@ document.getElementsByTagName('head')[0].appendChild(stylesheet);
 
 themes = [
   {
-    name: 'blank'
+    name: 'cyprio'
   }, {
     name: 'lebo'
-  }, {
-    name: 'jeen'
   }, {
     name: 'wardrobe'
   }, {
     name: 'ghostwriter'
   }, {
+    name: 'barbieri'
+  }, {
     name: 'festively'
   }, {
-    name: 'barbieri'
+    name: 'jeen'
   }, {
     name: 'aluod'
   }, {
     name: 'dbyll'
   }, {
     name: 'tacit'
+  }, {
+    name: 'blank'
   }
 ];
 
