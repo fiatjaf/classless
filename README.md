@@ -1,3 +1,7 @@
+## Index
+
+* [The themes](https://github.com/websitesfortrello/classless/gh-pages/themes)
+
 ## Resources
 
 * [Our home page and demo](https://fiatjaf.github.io/classless/)
@@ -7,7 +11,6 @@
 
   * use the almost-random HTML that is loaded, or click on the buttons to get real-world _classlessd_ HTML.
   * write the name of a theme in our [themes](https://github.com/fiatjaf/classless/tree/gh-pages/themes) directory to test it, or paste the URL of CSS theme (it can be from GitHub).
-* A [showcase of the themes](https://fiatjaf.github.io/classless/showcase/) currently available at classless
 
 ## Related articles you should see:
 
