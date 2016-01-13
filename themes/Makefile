@@ -25,7 +25,7 @@ aluod.theme: aluod/style.less
 	lessc aluod/style.less aluod.css
 	browserify -t coffeeify aluod/main.coffee > aluod.js
 
-dbyll.theme: dbyll/4-style.css
+dbyll.theme: dbyll/2-style.css
 	cat dbyll/*.css > dbyll.css
 
 jeen.theme: jeen/style.css
