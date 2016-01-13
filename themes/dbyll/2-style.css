@@ -204,3 +204,21 @@ footer {
   font-family: 'Ubuntu';
   text-align: center;
 }
+
+@media (max-width: 30em) {
+  body > header,
+  body > aside {
+    height: auto;
+    display: block;
+    position: static;
+    width: 100%;
+  }
+
+  body > main,
+  body > nav,
+  body > footer {
+    width: 100%;
+    margin-left: 1%;
+    min-height: 1px;
+  }
+}
