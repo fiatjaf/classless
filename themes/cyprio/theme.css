@@ -295,6 +295,9 @@ a:hover {
   color: #eef5b8;
   border-bottom: 1px #999 solid;
 }
+img {
+  width: 100%;
+}
 time {
   color: #bbb;
   font-family: "et-bembo", serif;
@@ -490,10 +493,12 @@ article header aside {
 }
 article header aside ul {
   text-align: right;
+  margin: 0;
 }
 article header aside li {
   display: inline;
-  padding: 7px 10px;
+  padding: 4px 6px;
+  margin: 0 2px;
   background: #bbb;
   color: #343434;
   -webkit-border-radius: 5px;
