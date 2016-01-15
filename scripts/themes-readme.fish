@@ -12,3 +12,6 @@ for d in (ls -d */)
     set theme (echo $d | py -x 'x.strip("/")')
     echo "* [$theme]($theme/)"
 end
+
+echo ''
+echo '![](montage.png)'

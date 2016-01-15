@@ -16,7 +16,10 @@ all:
 	make README.md
 	make readmes
 
-README.md: *
+montage.png: */screenshots/*
+	montage -border 7 -geometry 400x400+1+1 -tile 3x */screenshots/* montage.png
+
+README.md: * montage.png
 	fish ../scripts/themes-readme.fish > README.md
 
 readmes: */desc.md */screenshots/*
