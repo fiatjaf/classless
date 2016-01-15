@@ -14,6 +14,10 @@ all:
 	cd subtle; make
 	
 	make README.md
+	make readmes
 
 README.md: *
 	fish ../scripts/themes-readme.fish > README.md
+
+readmes: */desc.md */screenshots/*
+	fish ../scripts/each-theme-readme.fish
