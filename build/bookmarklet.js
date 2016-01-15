@@ -198,9 +198,11 @@ vrenderMain = function(state, channels) {
 
 tl.run(document.body, vrenderMain, handlers);
 
-$('<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/css/selectize.default.min.css">').appendTo('head');
+$('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/css/selectize.default.min.css">').appendTo('head');
 
 $('html > head').append($('<style> .selectize-dropdown { z-index: 12000; } </style>'));
+
+$('html > head').append($('<script>\n(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){\n(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\nm=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n})(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');\n\nga(\'create\', \'UA-38297900-17\', \'auto\');\nga(\'send\', \'pageview\');\n</script>'));
 
 
 },{"jquery":8,"lie":12,"selectize":27,"superagent":31,"superagent-promise":30,"talio":35,"talio-selectize":34,"virtual-elements":121}],2:[function(require,module,exports){

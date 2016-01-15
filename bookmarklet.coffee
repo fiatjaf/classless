@@ -134,11 +134,21 @@ vrenderMain = (state, channels) ->
 tl.run document.body, vrenderMain, handlers
 
 # selectize css
-$('<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/css/selectize.default.min.css">').appendTo('head')
+$('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/css/selectize.default.min.css">').appendTo('head')
 # bookmarklet css
 $('html > head').append($('<style>
 .selectize-dropdown {
   z-index: 12000;
 }
 </style>'))
+# google analytics
+$('html > head').append($('''<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38297900-17', 'auto');
+  ga('send', 'pageview');
+</script>'''))
 # ~
