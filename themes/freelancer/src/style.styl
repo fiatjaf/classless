@@ -1,0 +1,424 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css)
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700)
+
+*
+  font-family Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
+  box-sizing border-box
+
+/* colors */
+$white = whitesmoke
+$hotgreen = #18BC9C
+$basictext = #2C3E50
+$footerback = #233140
+  
+/* mixins */
+indieBorder(c)
+  roundImage(c)
+  hoverImage()
+
+roundImage(c)
+  background c
+
+  & > a,
+  & > article > header > a
+    display block
+    height 100%
+    width 100%
+    z-index 15
+    text-decoration none
+
+  & > img,
+  & > article > header > img,
+  & > article > header > a > img,
+  & > a > img
+    border 16px solid #ECF0F0
+    border-radius 1000px
+    border-color c
+    transition 700ms linear
+
+hoverImage()
+  cursor pointer
+  position relative
+
+  & > a::after,
+  & > article > header > a::after
+    content '\f00e'
+    font-family FontAwesome
+    color $white
+    display block
+    position absolute 
+    font-size 80px
+    width 80px
+    top calc(50% - 40px)
+    left calc(50% - 40px)
+    bottom 0
+    right 0
+    opacity 0
+    transition 700ms linear
+    z-index 2
+
+  &:hover
+    background-color $hotgreen
+
+    & > img,
+    & > article > header > img,
+    & > article > header > a > img,
+    & > a > img
+      border-color transparent
+      opacity 0.5
+      transition 300ms linear
+
+    & > a::after,
+    & > article > header > a::after
+      opacity 0.7
+      transition 300ms linear
+
+/* classless 
+   structure and special 
+   definitions */
+
+header
+  a
+    color inherit !important
+    text-decoration none !important
+  ul, ol
+    list-style none
+    padding 0
+    margin 0
+    margin-top 8px
+  li
+    display inline-block
+    font-size 70%
+    margin 2px 6px 0
+    
+    a
+      text-decoration none
+      display block
+      width 100%
+      height 100%
+      padding 2px 19px
+      border 4px dotted $basictext
+      border-radius 5px
+       
+      &:hover
+        text-decoration none
+        border-style dashed
+        
+body
+  background $white
+  color $basictext
+  padding 0
+  margin 0
+  
+header
+  &, p, aside
+    text-align center
+  font-size 240%
+
+  h1
+    display block
+    text-transform uppercase
+
+  h1::after
+    content: "― \f005  ―"
+    // content: "\f178\f005\f177" // alternative with arrows
+    display block
+    font-family FontAwesome
+    font-weight bold
+    font-size 1.1em
+    position relative
+
+body > nav
+  position fixed
+  top 0
+  text-transform uppercase
+  padding 10px 40px
+  z-index 12
+
+  a:hover
+    color: $hotgreen
+  
+  ul
+    margin-right 10%
+    float right
+    
+    li
+      display inline
+      margin-left 20px
+
+    @media (max-width: 1000px)
+      margin-right 5%
+
+body > header
+  display block
+  width 100%
+  margin-top 70px
+  padding 60px
+  color $white
+  font-size 350%
+  background-color $hotgreen
+  text-align center
+
+  roundImage($hotgreen)
+
+body > nav,
+body > aside,
+body > footer
+  width 100%
+  padding-left 16%
+  padding-right 16%
+  background-color $basictext
+  width 100%
+  color $white
+  margin 0
+body > footer
+  background-color #footerback
+  
+body > header,
+main > header,
+main > section,
+main > article
+  clear both
+  width 100%
+  height auto
+  padding 3% 16% 7%
+
+  a
+    color $basictext
+    &:hover
+      text-decoration underline
+
+  @media (max-width: 1000px)
+    padding 2% 5%
+
+  &:nth-child(even)
+    background $hotgreen
+    color $white
+    
+    header li a
+      border-color $white
+
+main > article,
+main > section
+  & > header
+    margin-bottom 50px
+
+    & > *:not(h1)
+      font-size 75%
+    h1
+      margin-bottom 10px
+
+main > article
+  p
+    font-size 110%
+
+main > section
+  ul, ol
+    list-style none
+    height auto
+    overflow auto
+    padding 0
+
+  li
+    float left
+    height 250px
+    background #ECF0F0
+    text-align center
+
+    /* default: small screens, show 2 */
+    margin 1% 2%
+    width: 48%
+    &:nth-child(odd)
+      margin-left 0
+    &:nth-child(odd)
+      margin-right 0
+
+    /* normal screens, show 3 */
+    @media (min-width: 900px)
+      margin 1.5%
+      width 31.3%
+      &:nth-child(odd)
+        margin-left 1.5%
+      &:nth-child(odd)
+        margin-right 1.5%
+      &:nth-child(3n+1)
+        margin-left 0
+      &:nth-child(3n+3)
+        margin-right 0
+
+    /* enourmous screens, show 4 */
+    @media (min-width: 1700px)
+      margin 2%
+      width 22%
+      &:nth-child(3n+1)
+        margin-left 2%
+      &:nth-child(3n+3)
+        margin-right 2%
+      &:nth-child(4n+1)
+        margin-left 0
+      &:nth-child(4n+4)
+        margin-right 0
+
+  li > img,
+  li > a > img
+    height 100%
+    max-width 100%
+
+  li:nth-child(6n + 1)
+    indieBorder(#BA4C63)
+
+  li:nth-child(6n + 2)
+    indieBorder(#1FA4B6)
+
+  li:nth-child(6n + 3)
+    indieBorder(#1037B5)
+
+  li:nth-child(6n + 4)
+    indieBorder(#1D83C1)
+
+  li:nth-child(6n + 5)
+   indieBorder(#EFC84A)
+
+  li:nth-child(6n + 6)
+   indieBorder(#CCB2A3)
+
+  /* RANDOM elements */
+  li:nth-child(7n + 3)
+    indieBorder(#ECF0F0)
+
+  li:nth-child(8n + 8)
+    indieBorder(#130F0F)
+
+  li:nth-child(9n + 9)
+    indieBorder(#E27C3E)
+    
+  li > article
+    height 100%
+    overflow hidden
+    
+    & > *
+      display none
+    
+    header
+      & > *
+        display none
+      
+      h1
+        display block
+        margin 0
+
+      &,
+      & > header > a
+        display block
+        height 100%
+      
+      img
+        height 100%
+        width 100%
+        
+/* pagination */
+main > footer
+  padding 40px
+  text-align center
+
+  li
+    display inline
+    
+  a:not(*[href])
+    display none
+
+  a[rel]
+    padding 10px 20px
+    text-transform uppercase
+    font-size 120%
+      
+body > aside
+  height auto
+  overflow auto
+  padding-bottom 3%
+  padding-top 3%
+  
+  p, h1
+    text-align center
+
+  & > *
+    float left
+    width 33.3%
+    height auto
+    overflow auto
+    display block
+    padding 1%
+    margin auto
+
+    & > *
+      display block
+
+  & > *:nth-child(3n + 1):last-child
+    float none
+    width 100%
+
+  & > *:nth-child(3n + 1):nth-last-child(2),
+  & > *:nth-child(3n + 1):nth-last-child(2) + *
+    width 50%
+
+body > footer
+  padding-top 30px
+  padding-bottom 30px
+  text-align center
+
+  h1
+    text-transform uppercase
+
+/* some independent elements styling */    
+form
+  width 82%
+  padding 7% 7%
+  margin auto
+
+  background $white
+  border-radius 15px
+
+  @media (max-width: 700px)
+    width: 95%
+
+  input, textarea, button
+    display block
+    margin 0
+    background none
+    margin 10px
+    width 100%
+    padding 10px 6px
+    font-size 1.3em
+    border none
+    outline-color $basictext
+
+    &:not(:last-child)
+      border-bottom 1px solid grey
+
+    &:focus
+      border-bottom 0
+
+  button
+    padding 20px 10px
+    background-color $hotgreen
+    color $white
+    border-radius 15px
+    cursor pointer
+
+dl
+  dt
+    font-weight bold
+    margin 0.5em 0
+    font-size 1.4em
+    
+  dd
+    text-align justify
+    color dimgray
+
+a
+  color inherit
+  text-decoration none
+
+p
+  line-height 130%
+  text-align justify

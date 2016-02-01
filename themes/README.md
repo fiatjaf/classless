@@ -7,6 +7,7 @@
 * [cyprio](cyprio/)
 * [dbyll](dbyll/)
 * [festively](festively/)
+* [freelancer](freelancer/)
 * [ghostwriter](ghostwriter/)
 * [jeen](jeen/)
 * [lebo](lebo/)

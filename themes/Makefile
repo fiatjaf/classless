@@ -12,6 +12,7 @@ all:
 	cd longform; make
 	cd cyprio; make
 	cd subtle; make
+	cd freelancer; make
 	
 	make README.md
 	make readmes
@@ -19,7 +20,7 @@ all:
 montage.png: */screenshots/*
 	montage -border 7 -geometry 400x400+1+1 -tile 3x */screenshots/* montage.png
 
-README.md: * montage.png
+README.md: */desc.md montage.png
 	fish ../scripts/themes-readme.fish > README.md
 
 readmes: */desc.md */screenshots/*

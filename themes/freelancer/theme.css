@@ -1,0 +1,886 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+* {
+  font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+/* colors */
+/* mixins */
+/* classless 
+   structure and special 
+   definitions */
+header a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+header ul,
+header ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 8px;
+}
+header li {
+  display: inline-block;
+  font-size: 70%;
+  margin: 2px 6px 0;
+}
+header li a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 2px 19px;
+  border: 4px dotted #2c3e50;
+  border-radius: 5px;
+}
+header li a:hover {
+  text-decoration: none;
+  border-style: dashed;
+}
+body {
+  background: #f5f5f5;
+  color: #2c3e50;
+  padding: 0;
+  margin: 0;
+}
+header {
+  font-size: 240%;
+}
+header,
+header p,
+header aside {
+  text-align: center;
+}
+header h1 {
+  display: block;
+  text-transform: uppercase;
+}
+header h1::after {
+  content: "― \f005  ―";
+  display: block;
+  font-family: FontAwesome;
+  font-weight: bold;
+  font-size: 1.1em;
+  position: relative;
+}
+body > nav {
+  position: fixed;
+  top: 0;
+  text-transform: uppercase;
+  padding: 10px 40px;
+  z-index: 12;
+}
+body > nav a:hover {
+  color: #18bc9c;
+}
+body > nav ul {
+  margin-right: 10%;
+  float: right;
+}
+body > nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+@media (max-width: 1000px) {
+  body > nav ul {
+    margin-right: 5%;
+  }
+}
+body > header {
+  display: block;
+  width: 100%;
+  margin-top: 70px;
+  padding: 60px;
+  color: #f5f5f5;
+  font-size: 350%;
+  background-color: #18bc9c;
+  text-align: center;
+  background: #18bc9c;
+}
+body > header > a,
+body > header > article > header > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 15;
+  text-decoration: none;
+}
+body > header > img,
+body > header > article > header > img,
+body > header > article > header > a > img,
+body > header > a > img {
+  border: 16px solid #ecf0f0;
+  border-radius: 1000px;
+  border-color: #18bc9c;
+  transition: 700ms linear;
+}
+body > nav,
+body > aside,
+body > footer {
+  width: 100%;
+  padding-left: 16%;
+  padding-right: 16%;
+  background-color: #2c3e50;
+  width: 100%;
+  color: #f5f5f5;
+  margin: 0;
+}
+body > footer {
+  background-color: #fff ooterback;
+}
+body > header,
+main > header,
+main > section,
+main > article {
+  clear: both;
+  width: 100%;
+  height: auto;
+  padding: 3% 16% 7%;
+}
+body > header a,
+main > header a,
+main > section a,
+main > article a {
+  color: #2c3e50;
+}
+body > header a:hover,
+main > header a:hover,
+main > section a:hover,
+main > article a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 1000px) {
+  body > header,
+  main > header,
+  main > section,
+  main > article {
+    padding: 2% 5%;
+  }
+}
+body > header:nth-child(even),
+main > header:nth-child(even),
+main > section:nth-child(even),
+main > article:nth-child(even) {
+  background: #18bc9c;
+  color: #f5f5f5;
+}
+body > header:nth-child(even) header li a,
+main > header:nth-child(even) header li a,
+main > section:nth-child(even) header li a,
+main > article:nth-child(even) header li a {
+  border-color: #f5f5f5;
+}
+main > article > header,
+main > section > header {
+  margin-bottom: 50px;
+}
+main > article > header > *:not(h1),
+main > section > header > *:not(h1) {
+  font-size: 75%;
+}
+main > article > header h1,
+main > section > header h1 {
+  margin-bottom: 10px;
+}
+main > article p {
+  font-size: 110%;
+}
+main > section ul,
+main > section ol {
+  list-style: none;
+  height: auto;
+  overflow: auto;
+  padding: 0;
+}
+main > section li {
+  float: left;
+  height: 250px;
+  background: #ecf0f0;
+  text-align: center;
+/* default: small screens, show 2 */
+  margin: 1% 2%;
+  width: 48%;
+/* normal screens, show 3 */
+/* enourmous screens, show 4 */
+}
+main > section li:nth-child(odd) {
+  margin-left: 0;
+}
+main > section li:nth-child(odd) {
+  margin-right: 0;
+}
+@media (min-width: 900px) {
+  main > section li {
+    margin: 1.5%;
+    width: 31.3%;
+  }
+  main > section li:nth-child(odd) {
+    margin-left: 1.5%;
+  }
+  main > section li:nth-child(odd) {
+    margin-right: 1.5%;
+  }
+  main > section li:nth-child(3n+1) {
+    margin-left: 0;
+  }
+  main > section li:nth-child(3n+3) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 1700px) {
+  main > section li {
+    margin: 2%;
+    width: 22%;
+  }
+  main > section li:nth-child(3n+1) {
+    margin-left: 2%;
+  }
+  main > section li:nth-child(3n+3) {
+    margin-right: 2%;
+  }
+  main > section li:nth-child(4n+1) {
+    margin-left: 0;
+  }
+  main > section li:nth-child(4n+4) {
+    margin-right: 0;
+  }
+}
+main > section li > img,
+main > section li > a > img {
+  height: 100%;
+  max-width: 100%;
+}
+main > section li:nth-child(6n + 1) {
+  background: #ba4c63;
+  cursor: pointer;
+  position: relative;
+}
+main > section li:nth-child(6n + 1) > a,
+main > section li:nth-child(6n + 1) > article > header > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 15;
+  text-decoration: none;
+}
+main > section li:nth-child(6n + 1) > img,
+main > section li:nth-child(6n + 1) > article > header > img,
+main > section li:nth-child(6n + 1) > article > header > a > img,
+main > section li:nth-child(6n + 1) > a > img {
+  border: 16px solid #ecf0f0;
+  border-radius: 1000px;
+  border-color: #ba4c63;
+  transition: 700ms linear;
+}
+main > section li:nth-child(6n + 1) > a::after,
+main > section li:nth-child(6n + 1) > article > header > a::after {
+  content: '\f00e';
+  font-family: FontAwesome;
+  color: #f5f5f5;
+  display: block;
+  position: absolute;
+  font-size: 80px;
+  width: 80px;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 700ms linear;
+  z-index: 2;
+}
+main > section li:nth-child(6n + 1):hover {
+  background-color: #18bc9c;
+}
+main > section li:nth-child(6n + 1):hover > img,
+main > section li:nth-child(6n + 1):hover > article > header > img,
+main > section li:nth-child(6n + 1):hover > article > header > a > img,
+main > section li:nth-child(6n + 1):hover > a > img {
+  border-color: transparent;
+  opacity: 0.5;
+  transition: 300ms linear;
+}
+main > section li:nth-child(6n + 1):hover > a::after,
+main > section li:nth-child(6n + 1):hover > article > header > a::after {
+  opacity: 0.7;
+  transition: 300ms linear;
+}
+main > section li:nth-child(6n + 2) {
+  background: #1fa4b6;
+  cursor: pointer;
+  position: relative;
+}
+main > section li:nth-child(6n + 2) > a,
+main > section li:nth-child(6n + 2) > article > header > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 15;
+  text-decoration: none;
+}
+main > section li:nth-child(6n + 2) > img,
+main > section li:nth-child(6n + 2) > article > header > img,
+main > section li:nth-child(6n + 2) > article > header > a > img,
+main > section li:nth-child(6n + 2) > a > img {
+  border: 16px solid #ecf0f0;
+  border-radius: 1000px;
+  border-color: #1fa4b6;
+  transition: 700ms linear;
+}
+main > section li:nth-child(6n + 2) > a::after,
+main > section li:nth-child(6n + 2) > article > header > a::after {
+  content: '\f00e';
+  font-family: FontAwesome;
+  color: #f5f5f5;
+  display: block;
+  position: absolute;
+  font-size: 80px;
+  width: 80px;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 700ms linear;
+  z-index: 2;
+}
+main > section li:nth-child(6n + 2):hover {
+  background-color: #18bc9c;
+}
+main > section li:nth-child(6n + 2):hover > img,
+main > section li:nth-child(6n + 2):hover > article > header > img,
+main > section li:nth-child(6n + 2):hover > article > header > a > img,
+main > section li:nth-child(6n + 2):hover > a > img {
+  border-color: transparent;
+  opacity: 0.5;
+  transition: 300ms linear;
+}
+main > section li:nth-child(6n + 2):hover > a::after,
+main > section li:nth-child(6n + 2):hover > article > header > a::after {
+  opacity: 0.7;
+  transition: 300ms linear;
+}
+main > section li:nth-child(6n + 3) {
+  background: #1037b5;
+  cursor: pointer;
+  position: relative;
+}
+main > section li:nth-child(6n + 3) > a,
+main > section li:nth-child(6n + 3) > article > header > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 15;
+  text-decoration: none;
+}
+main > section li:nth-child(6n + 3) > img,
+main > section li:nth-child(6n + 3) > article > header > img,
+main > section li:nth-child(6n + 3) > article > header > a > img,
+main > section li:nth-child(6n + 3) > a > img {
+  border: 16px solid #ecf0f0;
+  border-radius: 1000px;
+  border-color: #1037b5;
+  transition: 700ms linear;
+}
+main > section li:nth-child(6n + 3) > a::after,
+main > section li:nth-child(6n + 3) > article > header > a::after {
+  content: '\f00e';
+  font-family: FontAwesome;
+  color: #f5f5f5;
+  display: block;
+  position: absolute;
+  font-size: 80px;
+  width: 80px;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 700ms linear;
+  z-index: 2;
+}
+main > section li:nth-child(6n + 3):hover {
+  background-color: #18bc9c;
+}
+main > section li:nth-child(6n + 3):hover > img,
+main > section li:nth-child(6n + 3):hover > article > header > img,
+main > section li:nth-child(6n + 3):hover > article > header > a > img,
+main > section li:nth-child(6n + 3):hover > a > img {
+  border-color: transparent;
+  opacity: 0.5;
+  transition: 300ms linear;
+}
+main > section li:nth-child(6n + 3):hover > a::after,
+main > section li:nth-child(6n + 3):hover > article > header > a::after {
+  opacity: 0.7;
+  transition: 300ms linear;
+}
+main > section li:nth-child(6n + 4) {
+  background: #1d83c1;
+  cursor: pointer;
+  position: relative;
+}
+main > section li:nth-child(6n + 4) > a,
+main > section li:nth-child(6n + 4) > article > header > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 15;
+  text-decoration: none;
+}
+main > section li:nth-child(6n + 4) > img,
+main > section li:nth-child(6n + 4) > article > header > img,
+main > section li:nth-child(6n + 4) > article > header > a > img,
+main > section li:nth-child(6n + 4) > a > img {
+  border: 16px solid #ecf0f0;
+  border-radius: 1000px;
+  border-color: #1d83c1;
+  transition: 700ms linear;
+}
+main > section li:nth-child(6n + 4) > a::after,
+main > section li:nth-child(6n + 4) > article > header > a::after {
+  content: '\f00e';
+  font-family: FontAwesome;
+  color: #f5f5f5;
+  display: block;
+  position: absolute;
+  font-size: 80px;
+  width: 80px;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 700ms linear;
+  z-index: 2;
+}
+main > section li:nth-child(6n + 4):hover {
+  background-color: #18bc9c;
+}
+main > section li:nth-child(6n + 4):hover > img,
+main > section li:nth-child(6n + 4):hover > article > header > img,
+main > section li:nth-child(6n + 4):hover > article > header > a > img,
+main > section li:nth-child(6n + 4):hover > a > img {
+  border-color: transparent;
+  opacity: 0.5;
+  transition: 300ms linear;
+}
+main > section li:nth-child(6n + 4):hover > a::after,
+main > section li:nth-child(6n + 4):hover > article > header > a::after {
+  opacity: 0.7;
+  transition: 300ms linear;
+}
+main > section li:nth-child(6n + 5) {
+  background: #efc84a;
+  cursor: pointer;
+  position: relative;
+}
+main > section li:nth-child(6n + 5) > a,
+main > section li:nth-child(6n + 5) > article > header > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 15;
+  text-decoration: none;
+}
+main > section li:nth-child(6n + 5) > img,
+main > section li:nth-child(6n + 5) > article > header > img,
+main > section li:nth-child(6n + 5) > article > header > a > img,
+main > section li:nth-child(6n + 5) > a > img {
+  border: 16px solid #ecf0f0;
+  border-radius: 1000px;
+  border-color: #efc84a;
+  transition: 700ms linear;
+}
+main > section li:nth-child(6n + 5) > a::after,
+main > section li:nth-child(6n + 5) > article > header > a::after {
+  content: '\f00e';
+  font-family: FontAwesome;
+  color: #f5f5f5;
+  display: block;
+  position: absolute;
+  font-size: 80px;
+  width: 80px;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 700ms linear;
+  z-index: 2;
+}
+main > section li:nth-child(6n + 5):hover {
+  background-color: #18bc9c;
+}
+main > section li:nth-child(6n + 5):hover > img,
+main > section li:nth-child(6n + 5):hover > article > header > img,
+main > section li:nth-child(6n + 5):hover > article > header > a > img,
+main > section li:nth-child(6n + 5):hover > a > img {
+  border-color: transparent;
+  opacity: 0.5;
+  transition: 300ms linear;
+}
+main > section li:nth-child(6n + 5):hover > a::after,
+main > section li:nth-child(6n + 5):hover > article > header > a::after {
+  opacity: 0.7;
+  transition: 300ms linear;
+}
+main > section li:nth-child(6n + 6) {
+  background: #ccb2a3;
+  cursor: pointer;
+  position: relative;
+}
+main > section li:nth-child(6n + 6) > a,
+main > section li:nth-child(6n + 6) > article > header > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 15;
+  text-decoration: none;
+}
+main > section li:nth-child(6n + 6) > img,
+main > section li:nth-child(6n + 6) > article > header > img,
+main > section li:nth-child(6n + 6) > article > header > a > img,
+main > section li:nth-child(6n + 6) > a > img {
+  border: 16px solid #ecf0f0;
+  border-radius: 1000px;
+  border-color: #ccb2a3;
+  transition: 700ms linear;
+}
+main > section li:nth-child(6n + 6) > a::after,
+main > section li:nth-child(6n + 6) > article > header > a::after {
+  content: '\f00e';
+  font-family: FontAwesome;
+  color: #f5f5f5;
+  display: block;
+  position: absolute;
+  font-size: 80px;
+  width: 80px;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 700ms linear;
+  z-index: 2;
+}
+main > section li:nth-child(6n + 6):hover {
+  background-color: #18bc9c;
+}
+main > section li:nth-child(6n + 6):hover > img,
+main > section li:nth-child(6n + 6):hover > article > header > img,
+main > section li:nth-child(6n + 6):hover > article > header > a > img,
+main > section li:nth-child(6n + 6):hover > a > img {
+  border-color: transparent;
+  opacity: 0.5;
+  transition: 300ms linear;
+}
+main > section li:nth-child(6n + 6):hover > a::after,
+main > section li:nth-child(6n + 6):hover > article > header > a::after {
+  opacity: 0.7;
+  transition: 300ms linear;
+}
+main > section li:nth-child(7n + 3) {
+  background: #ecf0f0;
+  cursor: pointer;
+  position: relative;
+}
+main > section li:nth-child(7n + 3) > a,
+main > section li:nth-child(7n + 3) > article > header > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 15;
+  text-decoration: none;
+}
+main > section li:nth-child(7n + 3) > img,
+main > section li:nth-child(7n + 3) > article > header > img,
+main > section li:nth-child(7n + 3) > article > header > a > img,
+main > section li:nth-child(7n + 3) > a > img {
+  border: 16px solid #ecf0f0;
+  border-radius: 1000px;
+  border-color: #ecf0f0;
+  transition: 700ms linear;
+}
+main > section li:nth-child(7n + 3) > a::after,
+main > section li:nth-child(7n + 3) > article > header > a::after {
+  content: '\f00e';
+  font-family: FontAwesome;
+  color: #f5f5f5;
+  display: block;
+  position: absolute;
+  font-size: 80px;
+  width: 80px;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 700ms linear;
+  z-index: 2;
+}
+main > section li:nth-child(7n + 3):hover {
+  background-color: #18bc9c;
+}
+main > section li:nth-child(7n + 3):hover > img,
+main > section li:nth-child(7n + 3):hover > article > header > img,
+main > section li:nth-child(7n + 3):hover > article > header > a > img,
+main > section li:nth-child(7n + 3):hover > a > img {
+  border-color: transparent;
+  opacity: 0.5;
+  transition: 300ms linear;
+}
+main > section li:nth-child(7n + 3):hover > a::after,
+main > section li:nth-child(7n + 3):hover > article > header > a::after {
+  opacity: 0.7;
+  transition: 300ms linear;
+}
+main > section li:nth-child(8n + 8) {
+  background: #130f0f;
+  cursor: pointer;
+  position: relative;
+}
+main > section li:nth-child(8n + 8) > a,
+main > section li:nth-child(8n + 8) > article > header > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 15;
+  text-decoration: none;
+}
+main > section li:nth-child(8n + 8) > img,
+main > section li:nth-child(8n + 8) > article > header > img,
+main > section li:nth-child(8n + 8) > article > header > a > img,
+main > section li:nth-child(8n + 8) > a > img {
+  border: 16px solid #ecf0f0;
+  border-radius: 1000px;
+  border-color: #130f0f;
+  transition: 700ms linear;
+}
+main > section li:nth-child(8n + 8) > a::after,
+main > section li:nth-child(8n + 8) > article > header > a::after {
+  content: '\f00e';
+  font-family: FontAwesome;
+  color: #f5f5f5;
+  display: block;
+  position: absolute;
+  font-size: 80px;
+  width: 80px;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 700ms linear;
+  z-index: 2;
+}
+main > section li:nth-child(8n + 8):hover {
+  background-color: #18bc9c;
+}
+main > section li:nth-child(8n + 8):hover > img,
+main > section li:nth-child(8n + 8):hover > article > header > img,
+main > section li:nth-child(8n + 8):hover > article > header > a > img,
+main > section li:nth-child(8n + 8):hover > a > img {
+  border-color: transparent;
+  opacity: 0.5;
+  transition: 300ms linear;
+}
+main > section li:nth-child(8n + 8):hover > a::after,
+main > section li:nth-child(8n + 8):hover > article > header > a::after {
+  opacity: 0.7;
+  transition: 300ms linear;
+}
+main > section li:nth-child(9n + 9) {
+  background: #e27c3e;
+  cursor: pointer;
+  position: relative;
+}
+main > section li:nth-child(9n + 9) > a,
+main > section li:nth-child(9n + 9) > article > header > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: 15;
+  text-decoration: none;
+}
+main > section li:nth-child(9n + 9) > img,
+main > section li:nth-child(9n + 9) > article > header > img,
+main > section li:nth-child(9n + 9) > article > header > a > img,
+main > section li:nth-child(9n + 9) > a > img {
+  border: 16px solid #ecf0f0;
+  border-radius: 1000px;
+  border-color: #e27c3e;
+  transition: 700ms linear;
+}
+main > section li:nth-child(9n + 9) > a::after,
+main > section li:nth-child(9n + 9) > article > header > a::after {
+  content: '\f00e';
+  font-family: FontAwesome;
+  color: #f5f5f5;
+  display: block;
+  position: absolute;
+  font-size: 80px;
+  width: 80px;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 700ms linear;
+  z-index: 2;
+}
+main > section li:nth-child(9n + 9):hover {
+  background-color: #18bc9c;
+}
+main > section li:nth-child(9n + 9):hover > img,
+main > section li:nth-child(9n + 9):hover > article > header > img,
+main > section li:nth-child(9n + 9):hover > article > header > a > img,
+main > section li:nth-child(9n + 9):hover > a > img {
+  border-color: transparent;
+  opacity: 0.5;
+  transition: 300ms linear;
+}
+main > section li:nth-child(9n + 9):hover > a::after,
+main > section li:nth-child(9n + 9):hover > article > header > a::after {
+  opacity: 0.7;
+  transition: 300ms linear;
+}
+main > section li > article {
+  height: 100%;
+  overflow: hidden;
+}
+main > section li > article > * {
+  display: none;
+}
+main > section li > article header > * {
+  display: none;
+}
+main > section li > article header h1 {
+  display: block;
+  margin: 0;
+}
+main > section li > article header,
+main > section li > article header > header > a {
+  display: block;
+  height: 100%;
+}
+main > section li > article header img {
+  height: 100%;
+  width: 100%;
+}
+/* pagination */
+main > footer {
+  padding: 40px;
+  text-align: center;
+}
+main > footer li {
+  display: inline;
+}
+main > footer a:not(*[href]) {
+  display: none;
+}
+main > footer a[rel] {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 120%;
+}
+body > aside {
+  height: auto;
+  overflow: auto;
+  padding-bottom: 3%;
+  padding-top: 3%;
+}
+body > aside p,
+body > aside h1 {
+  text-align: center;
+}
+body > aside > * {
+  float: left;
+  width: 33.3%;
+  height: auto;
+  overflow: auto;
+  display: block;
+  padding: 1%;
+  margin: auto;
+}
+body > aside > * > * {
+  display: block;
+}
+body > aside > *:nth-child(3n + 1):last-child {
+  float: none;
+  width: 100%;
+}
+body > aside > *:nth-child(3n + 1):nth-last-child(2),
+body > aside > *:nth-child(3n + 1):nth-last-child(2) + * {
+  width: 50%;
+}
+body > footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+body > footer h1 {
+  text-transform: uppercase;
+}
+/* some independent elements styling */
+form {
+  width: 82%;
+  padding: 7% 7%;
+  margin: auto;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+@media (max-width: 700px) {
+  form {
+    width: 95%;
+  }
+}
+form input,
+form textarea,
+form button {
+  display: block;
+  margin: 0;
+  background: none;
+  margin: 10px;
+  width: 100%;
+  padding: 10px 6px;
+  font-size: 1.3em;
+  border: none;
+  outline-color: #2c3e50;
+}
+form input:not(:last-child),
+form textarea:not(:last-child),
+form button:not(:last-child) {
+  border-bottom: 1px solid #808080;
+}
+form input:focus,
+form textarea:focus,
+form button:focus {
+  border-bottom: 0;
+}
+form button {
+  padding: 20px 10px;
+  background-color: #18bc9c;
+  color: #f5f5f5;
+  border-radius: 15px;
+  cursor: pointer;
+}
+dl dt {
+  font-weight: bold;
+  margin: 0.5em 0;
+  font-size: 1.4em;
+}
+dl dd {
+  text-align: justify;
+  color: #696969;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+p {
+  line-height: 130%;
+  text-align: justify;
+}
+
