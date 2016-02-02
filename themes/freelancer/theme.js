@@ -15,7 +15,7 @@ titleElement.style.marginTop = getComputedStyle(list).marginTop
 
 /* square images */
 function squareImages () {
-  var imgs = document.querySelectorAll('li img')
+  var imgs = document.querySelectorAll('section li img, body > header img')
   for (var i = 0; i < imgs.length; i++) {
     var img = imgs[i]
     if (img.offsetWidth > img.offsetHeight) {

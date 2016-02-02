@@ -82,6 +82,12 @@ main > section > ul li article > header h1::after {
   font-size: 1.1em;
   position: relative;
 }
+body > header img,
+main > header img,
+main > article > header img,
+main > section > ul li article > header img {
+  width: 100%;
+}
 body > nav {
   position: fixed;
   top: 0;
