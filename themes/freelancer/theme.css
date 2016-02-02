@@ -44,20 +44,38 @@ body {
   padding: 0;
   margin: 0;
 }
-header {
+body > header,
+main > header,
+main > article > header,
+main > section > ul li article > header {
   font-size: 240%;
 }
-header,
-header p,
-header aside {
+body > header,
+main > header,
+main > article > header,
+main > section > ul li article > header,
+body > header p,
+main > header p,
+main > article > header p,
+main > section > ul li article > header p,
+body > header aside,
+main > header aside,
+main > article > header aside,
+main > section > ul li article > header aside {
   text-align: center;
 }
-header h1 {
+body > header h1,
+main > header h1,
+main > article > header h1,
+main > section > ul li article > header h1 {
   display: block;
   text-transform: uppercase;
 }
-header h1::after {
-  content: "― \f005  ―";
+body > header h1::after,
+main > header h1::after,
+main > article > header h1::after,
+main > section > ul li article > header h1::after {
+  content: "\2015  \f005  \2015";
   display: block;
   font-family: FontAwesome;
   font-weight: bold;
@@ -784,6 +802,22 @@ main > footer a[rel] {
   padding: 10px 20px;
   text-transform: uppercase;
   font-size: 120%;
+}
+/* comments */
+main > section > article {
+  text-align: left;
+}
+main > section > article img {
+  height: 100px;
+  margin: 0 20px 20px 20px;
+  float: left;
+  clear: both;
+}
+main > section > article h1 {
+  margin: 20px 0 0 0;
+}
+main > section > article aside {
+  text-align: left;
 }
 body > aside {
   height: auto;

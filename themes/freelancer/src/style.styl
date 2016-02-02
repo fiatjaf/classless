@@ -110,17 +110,21 @@ body
   padding 0
   margin 0
   
-header
+body > header,
+main > header,
+main > article > header,
+main > section > ul li article > header
+  font-size 240%
+
   &, p, aside
     text-align center
-  font-size 240%
 
   h1
     display block
     text-transform uppercase
 
   h1::after
-    content: "― \f005  ―"
+    content: "\2015  \f005  \2015"
     // content: "\f178\f005\f177" // alternative with arrows
     display block
     font-family FontAwesome
@@ -331,6 +335,22 @@ main > footer
     padding 10px 20px
     text-transform uppercase
     font-size 120%
+
+/* comments */
+main > section > article
+  text-align left
+
+  img
+    height 100px
+    margin 0 20px 20px 20px
+    float left
+    clear both
+
+  h1
+    margin 20px 0 0 0
+
+  aside
+    text-align left
       
 body > aside
   height auto
