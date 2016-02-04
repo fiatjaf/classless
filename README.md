@@ -1,19 +1,20 @@
 ## Index
 
-* [The themes](themes)
+  * [The themes](themes)
 
 ## Resources
 
-* [Our home page and demo](https://websitesfortrello.github.io/classless/)
-* A badly-written little post about the motivation of this work: http://websitesfortrello.github.io/programming/reusable-pure-css-themes/
-* The best way to understand the HTML structure of the standard classless template: https://workflowy.com/s/Q79FgxLKUT
-* A [playground](https://websitesfortrello.github.io/classless/playground/) for testing themes:
+  * Our [home page and demo](https://websitesfortrello.github.io/classless/)
+  * [A mockup showing the HTML elements structure with CSS selectors](https://moqups.com/fiatjaf@gmail.com/HKy7qwhX/)
+  * An [outline of the HTML structure](https://workflowy.com/s/Q79FgxLKUT)
+  * A [playground](https://websitesfortrello.github.io/classless/playground/) for testing themes:
 
   * use the almost-random HTML that is loaded, or click on the buttons to get real-world _classlessd_ HTML.
   * write the name of a theme in our [themes](themes) directory to test it, or paste the URL of CSS theme (it can be from GitHub).
 
 ## Related articles you should see:
 
+  * A badly-written little post about the motivation of this work: http://websitesfortrello.github.io/programming/reusable-pure-css-themes/
   * [The Importance Of HTML5 Sectioning Elements](http://www.smashingmagazine.com/2013/01/18/the-importance-of-sections/)
   * [Classes? Where We’re Going, We Don’t Need Classes!](http://www.smashingmagazine.com/2012/06/19/classes-where-were-going-we-dont-need-classes/)
   * [Heydon Pickering talking about CSS](https://vimeo.com/101718785)
