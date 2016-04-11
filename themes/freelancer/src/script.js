@@ -1,3 +1,5 @@
+/* global getComputedStyle, location, imagesLoaded */
+
 /* the site title at the top bar */
 var titleElement = document.createElement('a')
 var siteTitle = document.querySelector('body > header h1')
@@ -18,6 +20,11 @@ function squareImages () {
   var imgs = document.querySelectorAll('section li img, body > header img')
   for (var i = 0; i < imgs.length; i++) {
     var img = imgs[i]
+
+    // cleanup
+    img.style.width = ''
+    img.style.height = ''
+
     if (img.offsetWidth > img.offsetHeight) {
       img.style.width = img.offsetHeight + 'px'
     } else {
@@ -25,12 +32,13 @@ function squareImages () {
     }
   }
 }
-squareImages()
+imagesLoaded('section li img, body > header img', squareImages)
 window.addEventListener('resize', squareImages)
 
 /* hide top header on article pages */
+var t
 if (location.pathname.length > 1) {
-  var target = document.querySelector('body > header')
-  target.parentNode.removeChild(target)
+  t = document.querySelector('body > header')
+  t.parentNode.removeChild(t)
 }
 

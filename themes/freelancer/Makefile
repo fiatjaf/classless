@@ -6,4 +6,4 @@ theme.css: src/style.styl
 	stylus < src/style.styl > theme.css
 
 theme.js: src/script.js
-	cp src/script.js theme.js
+	cat src/imagesloaded.pkgd.min.js src/script.js > theme.js
