@@ -12,8 +12,11 @@ for d in (ls -d */)
     echo '' >> README.md
     cat desc.md >> README.md
     for s in (ls screenshots/*)
-        echo -e '\n---\n' >> README.md
-        echo "![]($s)" >> README.md
+        switch $s
+            case 'screenshots/*'
+                echo -e '\n---\n' >> README.md
+                echo "![]($s)" >> README.md
+        end
     end
     cd ..
 end

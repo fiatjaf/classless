@@ -1,0 +1,63 @@
+a
+  &, &:visited
+    color #3282CC
+  &:hover
+    color lighten(#3282CC, 20)
+
+body > nav
+  max-width 666px
+  margin 20px auto
+
+  ul
+    text-align center
+
+  li a:hover
+    color inherit
+    background lighten(#3282CC, 44)
+    padding 10px
+
+body header h1
+  font-size 4rem
+
+main header h1
+  font-size 3rem
+main section, article
+  header h1
+    font-size 1.8rem
+  h1
+    font-size 1.4rem
+  li > article > header h1
+    font-size 1.3rem
+
+header > aside
+  text-align center
+
+main > header
+  text-align left
+  margin-left 23px
+
+main > section > ul 
+  padding 0
+  list-style none
+
+  li > article
+    margin-bottom 0
+    border-left 23px solid lighten(rgb(163, 163, 155), 20)
+    padding-left 12px
+
+body > aside
+  max-width 500px
+  margin auto
+
+  input
+    width 100%
+
+  &,
+  input, textarea
+    font-size 20px
+
+  button, input[type="submit"]
+    float right
+
+summary
+  font-size 12px
