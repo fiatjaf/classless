@@ -1,8 +1,21 @@
+*
+  box-sizing border-box
+
 a
+  transition all 500ms
+
   &, &:visited
     color #3282CC
   &:hover
     color lighten(#3282CC, 20)
+
+form
+  max-width: 700px;
+
+input, button, textarea, select
+  font-size 14px
+  line-height 20px
+  margin 10px auto
 
 body > nav
   max-width 666px
@@ -12,6 +25,7 @@ body > nav
     text-align center
 
   li a:hover
+    transition all 500ms
     color inherit
     background lighten(#3282CC, 44)
     padding 10px
@@ -32,6 +46,13 @@ main section, article
 header > aside
   text-align center
 
+  ul
+    text-align left
+    list-style none
+    padding 0
+    margin 0
+    word-break break-word
+
 main > header
   text-align left
   margin-left 23px
@@ -45,9 +66,15 @@ main > section > ul
     border-left 23px solid lighten(rgb(163, 163, 155), 20)
     padding-left 12px
 
+main nav li a:not([href])
+  visibility hidden
+
 body > aside
   max-width 500px
   margin auto
+
+  @media (min-width: 1066px)
+    position static
 
   input
     width 100%
