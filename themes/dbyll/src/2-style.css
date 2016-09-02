@@ -2,6 +2,10 @@ body {
   color: #2c3e50;
 }
 
+main {
+  display: block;
+}
+
 body > nav ul,
 main > section > ul, main > section > ol { list-style: none; }
 li p { display: inline; }
