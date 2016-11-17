@@ -103,6 +103,11 @@ main > section > ol {
       font-size: 80%;
     }
 
+
+    main > section li article header > aside > * {
+      display: inline;
+    }
+
     main > section li article header > time:after,
     main > section li article header > aside:after {
       content: ' » ';
