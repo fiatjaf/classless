@@ -1,8 +1,12 @@
-## Index
-
   * [The themes](themes)
 
-## Resources
+# For CMS developers
+
+If you're developing a CMS and want to add Classless support you can 
+
+# For website owners
+
+# Resources
 
   * Our [home page and demo](https://websitesfortrello.github.io/classless/)
   * [A mockup showing the HTML elements structure with CSS selectors](https://moqups.com/fiatjaf@gmail.com/HKy7qwhX/)
