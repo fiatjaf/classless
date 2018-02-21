@@ -63,6 +63,23 @@ header > aside ul {
   margin: 0;
   word-break: break-word;
 }
+header > h1 + aside {
+  position: static !important;
+  max-width: 100%;
+}
+header > h1 + aside li {
+  display: inline;
+  margin: 5px;
+  border-style: dotted;
+  border-width: 1px;
+  padding: 1px 8px;
+  border-radius: 2px;
+}
+header > h1 + aside lihover {
+  border-style: solid dotted dotted solid;
+  border-width: 1px;
+  background-color: rgba(100,100,100,0.1);
+}
 main > header {
   text-align: left;
   margin-left: 23px;

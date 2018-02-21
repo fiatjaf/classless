@@ -13,6 +13,8 @@ all:
 	cd cyprio; make
 	cd subtle; make
 	cd freelancer; make
+	cd plain; make
+	cd alabaster; make
 	
 	make README.md
 	make readmes
