@@ -1,0 +1,62 @@
+---
+---
+
+<!doctype html>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes" />
+<meta name="description" content="Pure-CSS themes for standard HTML formats.">
+<title>{{ page.title }} | classless themes</title>
+<script>;(function (d, s, c) {
+  var x, h, n = Date.now()
+  tc = function (p) {
+    m = s.getItem('_tcx') > n ? s.getItem('_tch') : 'tarola-tagarela'
+    x = new XMLHttpRequest()
+    x.addEventListener('load', function () {
+      if (x.status == 200) {
+        s.setItem('_tch', x.responseText)
+        s.setItem('_tcx', n + 14400000)
+      }
+    })
+    x.open('GET', 'https://visitantes.alhur.es/'+m+'.xml?r='+d.referrer+'&c='+c+(p?'&p='+p:''))
+    x.send()
+  }
+  tc()
+})(document, localStorage, 'yklzb7m1');</script>
+<body>
+  <header role="banner">
+    <h1>
+      <a title="classless themes" href="/">classless</a>
+    </h1>
+    <aside></aside>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="">Introduction</a></li>
+      <li><a href=for-personal-websites.html>For personal websites</a></li>
+      <li><a href=for-cms-makers.html>For CMS makers</a></li>
+      <li><a href=for-theme-writers.html>For theme writers</a></li>
+      <li><a href="https://github.com/websitesfortrello/classless/tree/gh-pages/themes">The themes</a></li>
+      {% for page in site.pages %}
+        {% if page.title and page.url | split('.') | last === 'html' %}
+        <li>
+          <a href="{{ page.url }}">{{ page.title }}</a>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+  <main>
+    {{ content }}
+  </main>
+  <aside>
+    <p><em>&quot;Love is the only way to grasp another human being in the innermost core of his personality.&quot;</em> - V. Frankl</p>
+    <form action="https://formspree.io/fiatjaf@gmail.com" method=POST>
+      <input type="text" name="_replyto" placeholder="Your email.">
+      <textarea name="message" placeholder="Your message." rows="4"></textarea>
+    </form>
+  </aside>
+  <footer role="contentinfo">
+    <p><a href=https://alhur.es/>alhur.es software</a>, 2015</p>
+  </footer>
+</body>
