@@ -1,16 +1,3 @@
-form {}
-  form label {
-    margin: 4px;
-    display: block;
-  }
-  form input,
-  form textarea {
-    width: 100%;
-  }
-  form textarea {
-    min-height: 300px;
-  }
-
 #theme-chooser {
   position: fixed;
   top: 8px;

@@ -53,6 +53,7 @@ let scenarios = fs.readdirSync('scenarios')
     name: filename.split('.')[0],
     html: fs.readFileSync(path.join('scenarios', filename), 'utf-8')
   }))
+  .filter(({name}) => name)
 
 generatePage('/scenarios', 'scenarios.js', {
   scenarioList: scenarios.map(scn => scn.name)

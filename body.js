@@ -71,23 +71,18 @@ module.exports = class extends React.Component {
       ]),
       main,
       h('aside', {key: 'aside'}, [
-        h('form', {action: 'https://formspree.io/fiatjaf@gmail.com', method: 'POST'}, [
-          h('legend', 'Need a custom theme? Want to know more about Classless? Talk to us!'),
-          h('label', [
-            'Your email: ',
-            h('input', {type: 'text', name: '_replyto'})
-          ]),
-          h('label', [
-            'Your message: ',
-            h('textarea', {name: 'message'})
-          ])
-        ])
+        h('p', 'Egestas dui id ornare arcu odio ut sem nulla. Purus sit amet volutpat consequat mauris nunc congue nisi vitae. Gravida cum sociis natoque penatibus et magnis dis parturient. Ac turpis egestas sed tempus urna et pharetra pharetra massa.'),
+        h('p', 'Tincidunt dui ut ornare lectus sit amet est placerat. Tempus egestas sed sed risus pretium quam. Bibendum arcu vitae elementum curabitur vitae nunc. Quis risus sed vulputate odio ut enim blandit volutpat.')
       ]),
       h('footer', {
         key: 'footer',
-        role: 'contentinfo',
-        dangerouslySetInnerHTML: {__html: this.props.global.footer}
-      }),
+        role: 'contentinfo'
+      }, [
+        h('p', [
+          h('a', {href: 'https://fiatjaf.alhur.es/'}, 'fiatjaf'),
+          ' 2018'
+        ])
+      ]),
       h(Draggable, {
         key: 'theme-chooser',
         onStart: e => {
