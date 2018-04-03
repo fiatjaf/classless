@@ -5,7 +5,17 @@
   },
   "devDependencies": {
     "browserify-incremental": "^3.1.1",
+    "envify": "^4.1.0",
+    "livereload": "^0.7.0",
     "markdown-it": "^8.4.1",
     "sitio": "latest"
+  },
+  "browserify": {
+    "transform": [
+      "envify"
+    ]
+  },
+  "scripts": {
+    "generate": "godotenv sitio generate.js --body=body.js --helmet=head.js"
   }
 }

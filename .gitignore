@@ -4,3 +4,4 @@ node_modules
 .shastore
 .sass-cache
 _site
+*.env

@@ -132,7 +132,11 @@ module.exports = class extends React.Component {
           `
         }
       }),
-      h('script', {key: 'bundle', src: '/bundle.js'})
+      h('script', {key: 'bundle', src: '/bundle.js'}),
+      this.props.global.livereload_host && h('script', {
+        key: 'livereload',
+        src: 'http://' + this.props.global.livereload_host + ':35729/livereload.js?snipver=1'
+      })
     ]
   }
 }

@@ -16,7 +16,8 @@ init({
     'tacit',
     'barbieri',
     'wardrobe'
-  ]
+  ],
+  livereload_host: process.env.LIVERELOAD_HOST
 })
 
 generatePage('/', 'sitio/component-utils/article.js', {
