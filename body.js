@@ -1,21 +1,30 @@
 const h = require('react-hyperscript')
 const Helmet = require('react-helmet').default
 const React = require('react')
+const Draggable = require('react-draggable')
 
 module.exports = class extends React.Component {
   constructor (props) {
     super(props)
 
+    let theme = (
+      (this.props.location.search ||
+        typeof location === 'undefined' ? '' : location.search
+      ).split('?')[1] || ''
+    )
+      .split('&')
+      .map(kv => kv.split('='))
+      .filter(([k, v]) => k === 'theme')
+      .map(([_, v]) => v)[0] ||
+        (typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem('theme')) ||
+        this.props.global.themes[0]
+
+    if (typeof sessionStorage !== 'undefined') {
+      sessionStorage.setItem('theme', theme)
+    }
+
     this.state = {
-      theme: (
-        (this.props.location.search ||
-          typeof location === 'undefined' ? '' : location.search
-        ).split('?')[1] || ''
-      )
-        .split('&')
-        .map(kv => kv.split('='))
-        .filter(([k, v]) => k === 'theme')
-        .map(([_, v]) => v)[0] || this.props.global.themes[0]
+      theme
     }
   }
 
@@ -79,17 +88,25 @@ module.exports = class extends React.Component {
         role: 'contentinfo',
         dangerouslySetInnerHTML: {__html: this.props.global.footer}
       }),
-      h('#theme-chooser', {
-        key: 'theme-chooser'
+      h(Draggable, {
+        key: 'theme-chooser',
+        onStart: e => {
+          if (e.target.tagName === 'INPUT') {
+            return false
+          }
+        }
       }, [
-        h('label', [
-          'Paste your theme CSS URL here:',
-          h('input', {
-            value: this.state.theme,
-            onChange: e => {
-              this.setState({theme: e.target.value})
-            }
-          })
+        h('#theme-chooser', [
+          h('label', [
+            'Paste your theme CSS URL here:',
+            h('input', {
+              value: this.state.theme,
+              onChange: e => {
+                sessionStorage.setItem('theme', e.target.value)
+                this.setState({theme: e.target.value})
+              }
+            })
+          ])
         ])
       ]),
       h('script', {
