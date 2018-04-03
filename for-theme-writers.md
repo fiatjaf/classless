@@ -1,8 +1,3 @@
----
-title: For theme writers
-layout: default
----
-
 > So you want to write a classless theme?
 > You've got the urge to write a classless theme?
 > You've got the nerve to write a classless theme?

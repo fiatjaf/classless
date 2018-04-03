@@ -1,8 +1,3 @@
----
-title: Introduction
-layout: default
----
-
 ### What is Classless?
 
 Classless is a set of themes for simple web pages (articles, personal websites, blogs) written only with CSS and possibly Javascript. The themes are all based upon the same HTML structure, which doesn't use any classes or element ids.

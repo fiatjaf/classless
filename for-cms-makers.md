@@ -1,8 +1,3 @@
----
-title: For CMS makers
-layout: default
----
-
 If you're writing a CMS or a static website generator and you want to quickly support a growing variety of themes without burdening yourself or your users with the task of distributing, finding, fetching and managing HTML files and template files, not to mention the task of writing or porting templates of other blog/website engines to your own custom CMS, you came to the right place.
 
 To automatically support all [classless themes](https://github.com/websitesfortrello/classless/tree/gh-pages/themes) on your CMS, you just need to

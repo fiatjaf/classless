@@ -1,8 +1,3 @@
----
-title: For personal websites
-layout: default
----
-
 If you're writing a website with raw HTML, the procedure is the following:
 
   1. Write an HTML that follows [the pattern demonstrated here](https://workflowy.com/s/Q79FgxLKUT). This is not a hard spec, and you don't need to use all the elements there, but the main structure must be kept. There's a simpler [HTML example](https://github.com/websitesfortrello/classless/blob/gh-pages/explained-structure.html) also. For more examples, see the HTML source code of any page on [https://reconhecendo.me/](https://reconhecendo.me/) and [https://fiatjaf.on.flowi.es/](https://fiatjaf.on.flowi.es/).
