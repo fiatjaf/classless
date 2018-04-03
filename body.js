@@ -6,18 +6,16 @@ module.exports = class extends React.Component {
   constructor (props) {
     super(props)
 
-    let theme = (
-      (this.props.location.search ||
-        typeof location === 'undefined' ? '' : location.search
-      ).split('?')[1] || ''
-    )
-      .split('&')
-      .map(kv => kv.split('='))
-      .filter(([k, v]) => k === 'theme')
-      .map(([_, v]) => v)[0] || this.props.global.themes[0]
-
     this.state = {
-      theme: theme.startsWith('http') ? theme : 'https://rawgit.com/fiatjaf/classless/gh-pages/themes/' + theme + '/theme.css'
+      theme: (
+        (this.props.location.search ||
+          typeof location === 'undefined' ? '' : location.search
+        ).split('?')[1] || ''
+      )
+        .split('&')
+        .map(kv => kv.split('='))
+        .filter(([k, v]) => k === 'theme')
+        .map(([_, v]) => v)[0] || this.props.global.themes[0]
     }
   }
 
@@ -34,7 +32,7 @@ module.exports = class extends React.Component {
         h('li', [ h('a', {href: '/for-cms-makers'}, 'For CMS markers') ]),
         h('li', [ h('a', {href: '/for-theme-writers'}, 'For theme writers') ]),
         h('li', [ h('a', {href: '/scenarios'}, 'Testing scenarios') ]),
-        h('li', [ h('a', {href: 'https://github.com/websitesfortrello/classless/tree/gh-pages/themes'}, 'Browse the themes') ])
+        h('li', [ h('a', {href: 'https://github.com/fiatjaf/classless/tree/master/themes'}, 'Browse the themes') ])
       ]
 
     let main = this.props.scenarioList
@@ -44,7 +42,12 @@ module.exports = class extends React.Component {
     return [
       h(Helmet, {
         key: 'helmet',
-        link: [{rel: 'stylesheet', href: this.state.theme}]
+        link: [{
+          rel: 'stylesheet',
+          href: this.state.theme.startsWith('http')
+            ? this.state.theme
+            : 'https://rawgit.com/fiatjaf/classless/gh-pages/themes/' + this.state.theme + '/theme.css'
+        }]
       }),
       h('header', {key: 'header', role: 'banner'}, [
         h('h1', [
@@ -67,7 +70,7 @@ module.exports = class extends React.Component {
           ]),
           h('label', [
             'Your message: ',
-            h('textarea', {name: 'message', placeholder: 'Your message'})
+            h('textarea', {name: 'message'})
           ])
         ])
       ]),
@@ -76,6 +79,19 @@ module.exports = class extends React.Component {
         role: 'contentinfo',
         dangerouslySetInnerHTML: {__html: this.props.global.footer}
       }),
+      h('#theme-chooser', {
+        key: 'theme-chooser'
+      }, [
+        h('label', [
+          'Paste your theme CSS URL here:',
+          h('input', {
+            value: this.state.theme,
+            onChange: e => {
+              this.setState({theme: e.target.value})
+            }
+          })
+        ])
+      ]),
       h('script', {
         key: 'trackingco.de',
         dangerouslySetInnerHTML: {

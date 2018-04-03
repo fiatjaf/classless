@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const {init, end, generatePage} = require('sitio')
+const {init, end, generatePage, copyStatic} = require('sitio')
 const md = require('markdown-it')({
   html: true,
   linkify: true,
@@ -63,5 +63,10 @@ scenarios.forEach(scn => {
     scenarioList: scenarios.map(scn => scn.name)
   })
 })
+
+copyStatic([
+  '*.css',
+  'CNAME'
+])
 
 end()

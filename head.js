@@ -10,6 +10,8 @@ module.exports = props =>
       {name: 'viewport', content: 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes'}
     ],
     title: props.data && props.data.name ? `${props.data.name} | classless` : 'classless',
-    link: [],
+    link: [
+      {rel: 'stylesheet', href: 'style.css'}
+    ],
     script: []
   })

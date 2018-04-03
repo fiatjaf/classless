@@ -1,0 +1,29 @@
+form {}
+  form label {
+    margin: 4px;
+    display: block;
+  }
+  form input,
+  form textarea {
+    width: 100%;
+  }
+  form textarea {
+    min-height: 300px;
+  }
+
+#theme-chooser {
+  position: fixed;
+  top: 8px;
+  left: 12px;
+  width: 290px;
+  padding: 12px;
+  background: rgba(230, 228, 243, 0.8);
+  color: black;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+  #theme-chooser input {
+    display: block;
+    width: calc(100% - 9px);
+    padding: 2px;
+  }

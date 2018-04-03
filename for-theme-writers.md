@@ -7,7 +7,7 @@ _[Glenn Gould](https://www.youtube.com/watch?v=QZM4yxbE0ZE)_
 
 
 
-You can write a theme just by writing CSS. Basically you can write anything that makes a decent-looking page when applied to a valid Classless HTML page. Most of the themes in https://github.com/websitesfortrello/classless/tree/gh-pages/themes can serve as inspiration, but since many of them are ports from themes written for other HTML structures, they may contain unnecessary complication. A simple yet nice pure-classless theme is, for example, https://github.com/websitesfortrello/classless/blob/gh-pages/themes/barbieri/src/bundle.css. As you can see, a few lines of CSS are sufficient for making a theme.
+You can write a theme just by writing CSS. Basically you can write anything that makes a decent-looking page when applied to a valid Classless HTML page. Most of the themes in https://github.com/fiatjaf/classless/tree/master/themes can serve as inspiration, but since many of them are ports from themes written for other HTML structures, they may contain unnecessary complication. A simple yet nice pure-classless theme is, for example, https://github.com/fiatjaf/classless/blob/master/themes/barbieri/src/bundle.css. As you can see, a few lines of CSS are sufficient for making a theme.
 
 ### Using CSS preprocessors
 
