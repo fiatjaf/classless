@@ -4,6 +4,7 @@
 * [barbieri](barbieri/) - A theme with a big hero unit. Good for simple text-only landing pages.
 * [base-3-column](base-3-column/) - This is a not a theme. This is just a CSS base to serve as guide to -- or to be directly included in -- themes that may want to create a three-column design on Classless.
 * [blank](blank/) - No CSS at all.
+* [creative-portfolio](creative-portfolio/) - Creative portfolio is a clean and elegant template originally intended to showcase artists and designers portfolios, but can be easily used in normal websites.
 * [cyprio](cyprio/) - A theme for sites generated with magical ferrets, unhealthy amounts of coffee.
 * [dbyll](dbyll/) - A multipurpose theme with a fixed sidebar.
 * [festively](festively/) - A happy theme that goes well with big header pictures.
