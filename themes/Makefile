@@ -1,5 +1,4 @@
 all:
-	cd base-3-column; make
 	cd wardrobe; make;
 	cd ghostwriter; make;
 	cd festively; make;
