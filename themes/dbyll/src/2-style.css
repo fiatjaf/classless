@@ -1,6 +1,54 @@
-body {
-  color: #2c3e50;
+@import url('https://fonts.googleapis.com/css?family=Arimo');
+
+* {
+  box-sizing: border-box;
 }
+
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+  a:focus,
+  a:hover {
+    color: #2a6496;
+    text-decoration: underline;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", "Arimo", Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  color: #2c3e50;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 10vh 50vh 30vh 1fr;
+  grid-template-areas: 
+    'header nav'
+    'header main'
+    'aside main'
+    'footer main'
+}
+
+@media (max-width: 700px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      'header'
+      'nav'
+      'main'
+      'aside'
+      'footer'
+  }
+}
+
+body > header { grid-area: header; }
+body > nav { grid-area: nav; }
+body > aside { grid-area: aside; }
+body > footer { grid-area: footer; }
+body > main { grid-area: main; }
 
 main {
   display: block;
@@ -9,78 +57,50 @@ main {
 body > nav ul,
 main > section > ul, main > section > ol { list-style: none; }
 li p { display: inline; }
-nav ul { margin: auto; }
 nav li { list-style: none; display: inline; margin: 0 10px; }
-a { text-decoration: none; }
-a:hover {
-  text-decoration: none;
-  color: inherit;
-}
 
 body > header,
 body > aside {
-  width: 25%;
-  position: fixed;
-  left: 0;
   color: #fff;
-  z-index: 2;
   text-align: center;
 }
 
-body > header img,
-body > aside img {
-  max-width: 75%;
-  max-height: 150px;
-}
-
-body > header a,
-body > aside a {
-  color: inherit;
-}
-
 body > header {
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  padding-top: 13%;
-  padding-bottom: 16%;
-  background-color: #2c3e50;
-  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
-body > aside {
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  background-color: #2c3e50;
-  padding-bottom: 10%;
-  padding-top: 18%;
-  z-index: 4;
-}
-body > header ~ aside {
-  top: 55%;
-  height: 45%;
-  padding-top: 10%;
-  z-index: 6;
-}
+  body > header {
+    flex: auto;
+  }
+  body > header h1 {
+    font-size: 24px;
+  }
+  body > header img {
+    width: 150px;
+    border-radius: 75px;
+    clip-path: circle(75px at 50% 50%);
+    display: block;
+    margin: auto;
+  }
+  body > header a:hover { text-decoration: none; }
 
-body > main,
-body > nav,
+body > aside {}
+  body > aside a {
+    color: inherit;
+  }
+  
+body > header,
+body > aside,
 body > footer {
-  width: 75%;
-  margin-left: 25%;
-  min-height: 1px;
+  background-color: #2c3e50;
   padding: 0 15px;
 }
 
 body > nav {
-  float: right;
-  margin-right: 25px;
-  margin-left: 45%;
-  margin-left: calc(50% - 25px);
-  width: 50%;
-  font-family: "Ubuntu";
-  line-height: 5em;
-  font-size: 1.2em;
+  font-family: "Helvetica Neue", "Arimo", Helvetica, Arial, sans-serif;
   text-align: right;
 }
 
@@ -88,18 +108,12 @@ body > header {
   text-align: center;
 }
 
-nav + main > header {
-  position: absolute;
-}
-
-nav + main > header + *:not(header):nth-child(2) {
-  padding-top: 75px;
-}
-
 body > header a {
   text-decoration: none;
   color: #fff;
 }
+  body > header a:hover,
+  body > header a:focus { color: #fff; }
 
 body > header h1 {
   letter-spacing: 3px;
@@ -109,7 +123,7 @@ body > header h1 {
 body > header aside,
 body > aside {
   font-family: "Courier New", Courier, monospace;
-  font-size: 11px;
+  font-size: 14px;
 }
 body > header aside {
   margin: 0 auto;
@@ -117,10 +131,21 @@ body > header aside {
 }
 
 main > header {
-  color: #e74c3c;
-  text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+  margin: -40px 0 20px;
+  border-bottom: 1px solid #eee;
 }
-main > header a { color: inherit; }
+  main > header h1 {
+    font-size: 36px;
+    margin: 20px 0 50px -10px;
+    color: #e74c3c;
+    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+  }
+    main > header a { color: inherit; }
+    main > header a:hover,
+    main > header a:focus {
+      color: inherit;
+      text-decoration: none;
+    }
 
 main > section,
 main > article {
@@ -135,94 +160,137 @@ main > article div {
   margin-bottom: 20px;
 }
 
-main > section header aside,
-main > article header aside {
-  font-size: 14px;
-}
-
-main > article > header ul {
-  display: inline;
-  padding: 0;
-}
-main > article > header li {
-  display: inline;
-  margin: 0 4px;
-}
-main > article > header li a {
-  min-height: 1em;
-  padding: 4px 10px;
-  background-color: #2c3e50;
-  color: white;
-  border-radius: 4px;
-}
-
-main > section,
-main > article {
-  padding: 0 5% 0;
+main > * {
+  padding: 0 5%;
 }
 
 main > article {
-  min-height: 500px;
   font-size: 1.25em;
 }
 
-main > section > * > li article div a, main > section > * > li article pre a { color: #2c3e50; }
 article img { max-width: 100%; }
 
-h1,h2,h3,h4,h5,h6 { font-family: 'Ubuntu', sans-serif; }
-main > section li article h1,
-main > section li article h2,
-main > section li article h3,
-main > section li article h4,
-main > section li article h5,
-main > section li article h6 {
-  font-family: 'Ubuntu', sans-serif;
-  color: #f2756a;
+article header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-
-main > section li article h1 a,
-main > section li article h2 a,
-main > section li article h3 a,
-main > section li article h4 a {
-  color: #f2756a;
-}
-main > section li article h1 a:hover,
-main > section li article h2 a:hover,
-main > section li article h3 a:hover,
-main > section li article h4 a:hover {
-  color: #e74c3c;
-}
-
-body > aside img {
-  border-radius: 100%;
-  max-height: 77px;
-}
-
-main > footer nav a {
-  text-decoration: none;
-}
-main > footer nav a:not(*[href]) { display: none }
-
-footer {
-  margin-top: 15px;
-  font-family: 'Ubuntu';
-  text-align: center;
-}
-
-@media (max-width: 30em) {
-  body > header,
-  body > aside {
-    height: auto;
-    display: block;
-    position: static;
+  article header aside {
+    flex: auto;
+    order: 1;
+    display: flex;
+    justify-content: flex-start;
     width: 100%;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+    article header time {
+      text-transform: uppercase;
+      font-family: "Helvetica Neue", "Arimo", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 3px;
+    }
+    article header ul {
+      list-style: none;
+      margin: 0 0 0 20px;
+      padding: 0;
+    }
+      article header li {
+        margin: 0 4px;
+        display: inline;
+        font-family: "Helvetica Neue", "Arimo", Helvetica, Arial, sans-serif;
+      }
+        article header li a {
+          min-height: 1em;
+          padding: 4px 10px;
+          background-color: #2c3e50;
+          color: white;
+          border-radius: 4px;
+        }
+          article header li a:hover,
+          article header li a:focus {
+            color: white;
+            text-decoration: none;
+            background-color: #4e5e50;
+          }
+  article header > a {
+    flex: auto;
+    order: 0;
+  }
+  article header h1 {
+    flex: auto;
+    order: 2;
+    margin: 10px 0 10px;
+    font-size: 30px;
   }
 
-  body > main,
-  body > nav,
-  body > footer {
-    width: 100%;
-    margin-left: 1%;
-    min-height: 1px;
+main > section {}
+  main > section > ul {
+    margin: 0;
+    padding: 0;
+  }
+    main > section article {
+      margin-bottom: 40px;
+    }
+      main > section > li article div a,
+      main > section > li article pre a { color: #2c3e50; }
+    main > section li article h1,
+    main > section li article h2,
+    main > section li article h3,
+    main > section li article h4,
+    main > section li article h5,
+    main > section li article h6 {
+      font-family: "Helvetica Neue", "Arimo", Helvetica, Arial, sans-serif;
+      color: #f2756a;
+    }
+    
+    main > section li article h1 a,
+    main > section li article h2 a,
+    main > section li article h3 a,
+    main > section li article h4 a {
+      color: #f2756a;
+    }
+    main > section li article h1 a:hover,
+    main > section li article h2 a:hover,
+    main > section li article h3 a:hover,
+    main > section li article h4 a:hover {
+      color: #e74c3c;
+    }
+
+main > footer nav {
+  line-height: 20px;
+}
+  main > footer nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+    main > footer nav a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 5px 14px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+    }
+      main > footer nav a:hover {
+        background-color: #eee;
+        text-decoration: none;
+      }
+      main > footer nav a:not([href]) { visibility: hidden; }
+
+body > footer {
+  font-family: "Helvetica Neue", "Arimo", Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  body > nav {
+    margin: 0 20px 30px 0;
+  }
+
+  body > aside {
+    padding-top: 30px;
+    padding-bottom: 20px;
   }
 }

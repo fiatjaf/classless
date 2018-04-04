@@ -17,7 +17,8 @@ init({
     'barbieri',
     'wardrobe',
     'zen',
-    'creative-portfolio'
+    'creative-portfolio',
+    'dbyll'
   ],
   livereload_host: process.env.LIVERELOAD_HOST
 })

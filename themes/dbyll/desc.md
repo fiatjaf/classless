@@ -1,3 +1,3 @@
 A multipurpose theme with a fixed sidebar.
 
-Based on the original theme by @dbtek on https://github.com/dbtek/dbyll.
+Ported from the original theme https://github.com/dbtek/dbyll by [@fiatjaf](https://github.com/fiatjaf).
