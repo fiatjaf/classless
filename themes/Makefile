@@ -14,6 +14,7 @@ all:
 	cd freelancer; make
 	cd plain; make
 	cd creative-portfolio; make
+	cd zen; make
 	
 	make README.md
 	make readmes

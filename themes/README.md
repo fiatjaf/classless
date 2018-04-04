@@ -2,7 +2,6 @@
 
 * [aluod](aluod/) - A fancy theme that turns lists of content into floating masonry-style cards.
 * [barbieri](barbieri/) - A theme with a big hero unit. Good for simple text-only landing pages.
-* [base-3-column](base-3-column/) - This is a not a theme. This is just a CSS base to serve as guide to -- or to be directly included in -- themes that may want to create a three-column design on Classless.
 * [blank](blank/) - No CSS at all.
 * [creative-portfolio](creative-portfolio/) - Creative portfolio is a clean and elegant template originally intended to showcase artists and designers portfolios, but can be easily used in normal websites.
 * [cyprio](cyprio/) - A theme for sites generated with magical ferrets, unhealthy amounts of coffee.
@@ -17,5 +16,6 @@
 * [subtle](subtle/) - A simple and minimalist theme that shows a sidebar with header and aside content in it. Better for simple text blogs with not much header images.
 * [tacit](tacit/) - The [tacit CSS framework](https://github.com/yegor256/tacit) adapted to the Classless standard.
 * [wardrobe](wardrobe/) - A minimal and clean blog theme.
+* [zen](zen/) - **Zen** theme strives to be as clean as possible with some neat features. A solid base for custom modifications you can introduce (or not).
 
 ![](montage.jpg)
