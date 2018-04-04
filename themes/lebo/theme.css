@@ -107,7 +107,7 @@ p a:visited {
 body > header a:visited { color: #c75b12; }
 
 img {
-  margin: 2em;
+  margin: 2em 0;
 }
 
 table {
@@ -129,8 +129,7 @@ main {
   margin-bottom: 5em;
 }
 
-main > section > ul,
-main > section > ol {
+main > section > ul {
   list-style-type: none;
   margin-bottom: 2em;
 }
@@ -147,45 +146,90 @@ main > section > ol {
     margin: 0;
   }
 
-    main > section > * li article header > *:not(h1):not(aside):not(header):not(time),
-    main > section li article > *:not(h1):not(header) {
-      display: none;
+    main > section li article header {
+      display: flex;
+      justify-content: flex-end;
     }
+        main > section li article header > a {
+          flex-shrink: 3;
+          flex: auto;
+          height: 1em;
+          order: 3;
+        }
+        main > section li article header img {
+          flex-shrink: 3;
+          height: 1em;
+          margin: 4px 3px -2px;
+        }
 
-    main > section li article header > time,
-    main > section li article header > aside {
-      float: left;
-      text-align: right;
-      width: 19%;
-      margin-right: 1%;
-      color: #aaa;
-      font-family: Monaco, "Courier New", monospace;
-      font-size: 80%;
-    }
+        main > section li article header h1 {
+          flex: auto;
+          flex-shrink: 3;
+          text-align: left;
+          width: 80%;
+          order: 4;
+        }
 
+        main > section li article header aside {
+          order: 1;
+          min-width: 290px;
+          display: flex;
+          justify-content: flex-end;
+        }
 
-    main > section li article header > aside > * {
-      display: inline;
-    }
+        @media (max-width: 900px) {
+          main > section li article header aside {
+            min-width: 150px;
+          }
+        }
 
-    main > section li article header > time:after,
-    main > section li article header > aside:after {
-      content: ' » ';
-    }
+        main > section li article header aside ul {
+          flex: auto;
+          order: 1;
+          flex-shrink: 3;
+          font-size: 10px;
+          overflow: hidden;
+          white-space: nowrap;
+          max-width: 150px;
+          text-overflow: ellipsis;
+          margin-right: 12px;
+        }
+          main > section li article header aside li {
+            display: inline;
+            margin: 0 4px;
+          }
+            main > section li article header aside li a {
+              padding: 2px 6px;
+            }
 
+        @media (max-width: 900px) {
+          main > section li aside ul { display: none; }
+        }
 
-    main > section li article header h1 {
-      float: right;
-      text-align: left;
-      width: 80%;
-    }
+        main > section li article header aside time {
+          order: 2;
+          text-align: right;
+          margin-right: 1%;
+          color: #aaa;
+          font-family: Monaco, "Courier New", monospace;
+          font-size: 80%;
+          display: inline;
+        }
 
-    main > section li article {
-      clear: both;
-      width: 100%;
-      height: auto;
-      overflow: auto;
-    }
+        main > section li article header time:after {
+          content: ' » ';
+          margin-right: 8px;
+        }
+
+      main > section li article {
+        width: 100%;
+        height: auto;
+        overflow: auto;
+      }
+
+        main > section li article div {
+          display: none;
+        }
 
 /*****************************************************************************/
 /*
@@ -196,29 +240,25 @@ main > section > ol {
 main > footer nav ul {
   list-style: none;
   text-align: center;
+  margin-bottom: 20px;
 }
-
-main > footer nav li {
-  display: block;
-  float: left;
-}
-
-main > footer nav li a:not(*[href]) {
-  display: none;
-}
-
-main > footer nav li a {
-  visibility: hidden;
-}
-
-main > footer nav li:nth-child(2) a:after {
-  content: 'next';
-  visibility: visible;
-}
-main > footer nav li:first-child a:after {
-  content: 'prev';
-  visibility: visible;
-}
+  main > footer nav li {
+    display: inline;
+  }
+    main > footer nav li a:not(*[href]) {
+      display: none;
+    }
+    main > footer nav li a {
+      visibility: hidden;
+    }
+    main > footer nav li:nth-child(2) a:after {
+      content: 'next';
+      visibility: visible;
+    }
+    main > footer nav li:first-child a:after {
+      content: 'prev';
+      visibility: visible;
+    }
 
 /*****************************************************************************/
 /*
@@ -232,11 +272,38 @@ body {
   width: 42em;
   margin: 3em auto 2em auto;
   line-height: 1.5em;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    'header nav'
+    'main main'
+    'footer aside'
 }
 
+@media (max-width: 900px) {
+  body {
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      'header'
+      'nav'
+      'main'
+      'aside'
+      'footer'
+  }
+}
+
+body > header { grid-area: header; }
+body > nav { grid-area: nav; }
+body > aside { grid-area: aside; }
+body > footer { grid-area: footer; }
+body > main { grid-area: main; }
+
 body > header {
-  float: left;
   font-family: helvetica, arial, clean, sans-serif;
+  padding-left: 20px;
 }
 
   body > header > *:not(h1) {
@@ -250,9 +317,9 @@ body > header {
   }
 
 body > nav {
-  float: right;
   font-family: helvetica, arial, clean, sans-serif;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
   body > nav ul {
@@ -285,33 +352,15 @@ body > aside {
   font-size: 80%;
   color: #666;
   border-top: 4px solid #eee;
-  overflow: hidden;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding: 1em 20px;
 }
   body > footer p,
   body > aside p {
     margin: 0;
   }
 
-body > footer {
-  float: left;
-  width: 60%;
-}
-
-body > aside {
-  float: right;
-  padding-left: 10%;
-  width: 30%
-}
-
-  body > aside * {
-    display: inline;
-  }
-
-  body > aside img {
-    display: none;
-  }
+body > footer {}
+body > aside {}
 
 /*****************************************************************************/
 /*
@@ -319,20 +368,23 @@ body > aside {
 /*
 /*****************************************************************************/
 
-main { clear: both; }
+main {
+  margin: 0 20px;
+}
 
 main > header {
   display: none;
 }
 
 main > article {
-
+  
 }
-
-  /* header */
   main > article > header {
     
   }
+    main > article img {
+      max-width: 100%;
+    }
     main > article > header h1 {
       margin-bottom: 0:
     }
