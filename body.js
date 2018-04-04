@@ -17,7 +17,7 @@ module.exports = class extends React.Component {
       .filter(([k, v]) => k === 'theme')
       .map(([_, v]) => v)[0] ||
         (typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem('theme')) ||
-        this.props.global.themes[0]
+        this.props.global.themes[parseInt(this.props.global.themes.length * Math.random())]
 
     if (typeof sessionStorage !== 'undefined') {
       sessionStorage.setItem('theme', theme)

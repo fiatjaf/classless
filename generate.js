@@ -15,7 +15,9 @@ init({
     'lebo',
     'tacit',
     'barbieri',
-    'wardrobe'
+    'wardrobe',
+    'zen',
+    'creative-portfolio'
   ],
   livereload_host: process.env.LIVERELOAD_HOST
 })
