@@ -50,51 +50,36 @@ blockquote {
 }
 
 body {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
   margin: 0;
   padding: 0;
-}
-
-body > * {
-  flex: auto;
+  display: grid;
+  grid-template-columns: 25% auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    'header main'
+    'aside main'
+    'nav main'
+    'footer main';
 }
 
 body > header {
-  order: 0;
+  grid-area: header;
 }
 
 body > nav {
-  order: 1;
+  grid-area: nav;
 }
 
 body > aside {
-  order: 2;
-}
-@media (max-height: 600px) { /* work around too short screens (never happens) */
-  body > aside { display: none; }
+  grid-area: aside;
 }
 
 body > footer {
-  order: 3;
-}
-@media (max-height: 490px) {
-  body > footer { display: none; }
+  grid-area: footer;
 }
 
 body > main {
-  order: 4;
-}
-
-body > header,
-body > nav,
-body > aside,
-body > footer {
-  width: 430px;
-  flex-shrink: 2;
+  grid-area: main;
 }
 
 article header aside {
@@ -121,9 +106,7 @@ article header aside {
         text-transform: uppercase;
       }
 
-body > main {
-  width: calc(100vw - 430px);
-}
+body > main {}
 
 body > header {
   padding: 40px 35px 0;
@@ -215,8 +198,7 @@ body > main {
         main > section > ul > li:hover {
           box-shadow: 0 0 5px #999;
         }
-        main > section > ul > li header {
-        }
+        main > section > ul > li header {}
           main > section > ul > li header img {
             width: 100%;
             display: block;
@@ -279,6 +261,7 @@ body > main {
     background: white;
     color: #999;
     padding: 40px 55px 0;
+    min-height: 100vh;
   }
     main > article header {
       width: 66.67%;
@@ -308,6 +291,18 @@ body > main {
       main > article h2 { font-size: 30px; }
       main > article h3 { font-size: 22px; }
 
+      main > article ul {
+        list-style: none;
+      }
+        main > article div ul li::before {
+          content: '>';
+          margin: 0 5px 0 -15px;
+          color: #ef5285;
+        }
+          main > article div ul li a {
+            text-decoration: none;
+          }
+
 body > aside {
   padding: 0 35px;
   color: #999;
@@ -320,46 +315,42 @@ body > footer {
 }
 
 /* responsiveness */
-@media (max-width: 700px) {
+@media (max-width: 760px) {
   body {
-    height: auto;
-    width: 100vw;
-    justify-content: flex-start;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      'header'
+      'nav'
+      'main'
+      'aside'
+      'footer'
   }
 
-  body > main {
-    width: 100vw;
-    height: auto;
-  }
-
-  body > header,
-  body > nav {
-    order: 0;
-  }
-
+  body > main,
   body > aside,
-  body > footer {
-    flex-shrink: 1;
-    flex-grow: 2;
-    order: 10;
-    width: 100vw;
+  body > footer,
+  main > section {
+    height: auto;
+    width: 100%;
   }
 
   main > section > ul {
     display: block;
+    height: auto;
+    width: 100%;
   }
 
   main > section > ul > li {
     display: block;
-    width: auto;
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  main > article header {
-    width: auto;
-  }
-
+  main > article header,
   main > article div {
-    width: auto;
+    width: 100%;
   }
 }
-
