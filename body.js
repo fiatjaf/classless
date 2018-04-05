@@ -2,6 +2,7 @@ const h = require('react-hyperscript')
 const Helmet = require('react-helmet').default
 const React = require('react')
 const Draggable = require('react-draggable')
+const Autocomplete = require('react-autocomplete')
 
 module.exports = class extends React.Component {
   constructor (props) {
@@ -79,8 +80,13 @@ module.exports = class extends React.Component {
         role: 'contentinfo'
       }, [
         h('p', [
-          h('a', {href: 'https://fiatjaf.alhur.es/'}, 'fiatjaf'),
-          ' 2018'
+          h('a', {href: 'https://fiatjaf.alhur.es/'}, '@fiatjaf'),
+          ' 2018.'
+        ]),
+        h('p', [
+          'Page generated with ',
+          h('a', {href: 'https://github.com/fiatjaf/sitio'}, 'sitio'),
+          '.'
         ])
       ]),
       h(Draggable, {
@@ -94,11 +100,27 @@ module.exports = class extends React.Component {
         h('#theme-chooser', [
           h('label', [
             'Paste your theme CSS URL here:',
-            h('input', {
+            h(Autocomplete, {
+              items: this.props.global.themes,
+              getItemValue: x => x,
+              renderItem: (v, highlighted) => (
+                h('div', {background: highlighted ? 'lightgray' : 'white'}, v)
+              ),
               value: this.state.theme,
               onChange: e => {
                 sessionStorage.setItem('theme', e.target.value)
                 this.setState({theme: e.target.value})
+              },
+              onSelect: v => {
+                sessionStorage.setItem('theme', v)
+                this.setState({theme: v})
+              },
+              menuStyle: {
+                borderRadius: '3px',
+                boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
+                background: 'rgba(255, 255, 255, 0.9)',
+                padding: '2px 0',
+                overflow: 'auto'
               }
             })
           ])
