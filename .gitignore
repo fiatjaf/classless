@@ -5,3 +5,5 @@ node_modules
 .sass-cache
 _site
 *.env
+static
+browserify-cache.json

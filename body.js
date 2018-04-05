@@ -41,7 +41,7 @@ module.exports = class extends React.Component {
         h('li', [ h('a', {href: '/for-cms-makers'}, 'For CMS markers') ]),
         h('li', [ h('a', {href: '/for-theme-writers'}, 'For theme writers') ]),
         h('li', [ h('a', {href: '/scenarios'}, 'Testing scenarios') ]),
-        h('li', [ h('a', {href: 'https://github.com/fiatjaf/classless/tree/master/themes'}, 'Browse the themes') ])
+        h('li', [ h('a', {href: '/themes'}, 'The themes') ])
       ]
 
     let main = this.props.scenarioList

@@ -1,13 +1,17 @@
 {
   "dependencies": {
+    "md5": "^2.2.1",
     "react-draggable": "^3.0.5",
     "react-hyperscript": "^3.2.0"
   },
   "devDependencies": {
     "browserify-incremental": "^3.1.1",
     "envify": "^4.1.0",
+    "gh-got": "^7.0.0",
     "livereload": "^0.7.0",
     "markdown-it": "^8.4.1",
+    "mkdirp": "^0.5.1",
+    "puppeteer": "^1.2.0",
     "sitio": "latest"
   },
   "browserify": {
