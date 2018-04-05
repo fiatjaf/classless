@@ -55,7 +55,7 @@ module.exports = class extends React.Component {
           rel: 'stylesheet',
           href: this.state.theme.startsWith('http')
             ? this.state.theme
-            : 'https://rawgit.com/fiatjaf/classless/gh-pages/themes/' + this.state.theme + '/theme.css'
+            : 'https://rawgit.com/fiatjaf/classless/master/themes/' + this.state.theme + '/theme.css'
         }]
       }),
       h('header', {key: 'header', role: 'banner'}, [
