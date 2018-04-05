@@ -1,10 +1,10 @@
 const fs = require('fs')
 const path = require('path')
-const execSync = require('child_process').execSync
 const mkdirp = require('mkdirp')
 const gh = require('gh-got')
 const puppeteer = require('puppeteer')
 const md5 = require('md5')
+const md5dir = require('md5dir-sync')
 const {init, end, generatePage, copyStatic} = require('sitio')
 const md = require('markdown-it')({
   html: true,
@@ -87,53 +87,59 @@ async function takeScreenshots () {
     mkdirp.sync('static')
     screenshots[theme] = []
 
+    const hash = md5dir(path.join('themes', theme))
+
     screenshots[theme].push(
-      await takeScreenshot(browser, 'http://classless.alhur.es/scenarios/a-list-of-posts-with-a-header/', theme, false)
+      await takeScreenshot(browser, 'http://classless.alhur.es/scenarios/a-list-of-posts-with-a-header/', theme, false, hash)
     )
     screenshots[theme].push(
-      await takeScreenshot(browser, 'http://classless.alhur.es/scenarios/a-simple-post-with-a-header/', theme, false)
+      await takeScreenshot(browser, 'http://classless.alhur.es/scenarios/a-simple-post-with-a-header/', theme, false, hash)
     )
     screenshots[theme].push(
-      await takeScreenshot(browser, 'http://classless.alhur.es/scenarios/a-list-of-posts/', theme, true)
+      await takeScreenshot(browser, 'http://classless.alhur.es/scenarios/a-list-of-posts/', theme, true, hash)
     )
     screenshots[theme].push(
-      await takeScreenshot(browser, 'http://classless.alhur.es/scenarios/a-simple-post-with-a-header/', theme, true)
+      await takeScreenshot(browser, 'http://classless.alhur.es/scenarios/a-simple-post-with-a-header/', theme, true, hash)
     )
   }
 
   return screenshots
 }
 
-async function takeScreenshot (browser, url, theme, mobile) {
+async function takeScreenshot (browser, url, theme, mobile, hash) {
   console.log(theme, url, mobile)
-
-  let page = await browser.newPage()
-  if (mobile) {
-    await page.emulate(MOBILE)
-  }
-  await page.goto(url + '?theme=' + theme)
-  await page.waitForSelector('#theme-chooser')
-  await page.waitFor(2000)
-  await page.evaluate(() => {
-    Array.from(document.querySelectorAll('body > *'))
-      .filter(el =>
-        el.tagName !== 'MAIN' && el.tagName !== 'HEADER' &&
-        el.tagName !== 'NAV' && el.tagName !== 'ASIDE' &&
-        el.tagName !== 'FOOTER'
-      )
-      .forEach(el => {
-        document.body.removeChild(el)
-      })
-  })
 
   let screenshotPath = path.join(
     'static',
-    theme + '-' + md5(url).slice(0, 5) + (mobile ? '-mobile' : '') + '.png'
+    theme + '-' + hash + '-' + md5(url).slice(0, 5) + (mobile ? '-mobile' : '') + '.png'
   )
 
-  await page.screenshot({
-    path: screenshotPath
-  })
+  try {
+    fs.accessSync(screenshotPath)
+  } catch (e) {
+    let page = await browser.newPage()
+    if (mobile) {
+      await page.emulate(MOBILE)
+    }
+    await page.goto(url + '?theme=' + theme)
+    await page.waitForSelector('#theme-chooser')
+    await page.waitFor(2000)
+    await page.evaluate(() => {
+      Array.from(document.querySelectorAll('body > *'))
+        .filter(el =>
+          el.tagName !== 'MAIN' && el.tagName !== 'HEADER' &&
+          el.tagName !== 'NAV' && el.tagName !== 'ASIDE' &&
+          el.tagName !== 'FOOTER'
+        )
+        .forEach(el => {
+          document.body.removeChild(el)
+        })
+    })
+
+    await page.screenshot({
+      path: screenshotPath
+    })
+  }
 
   return screenshotPath
 }
@@ -207,6 +213,5 @@ takeScreenshots()
       'static/*'
     ])
     end()
-    execSync('rm -r static')
   })
   .catch(console.log.bind(console))
