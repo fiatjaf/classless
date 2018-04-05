@@ -37,17 +37,17 @@ p, pre {
   margin: 1.05682rem 0;
 }
 
-article div ul,
+article > div ul,
 body > aside ul {
   display: table;
   list-style: none;
   padding: 0;
 }
-  article div li,
+  article > div li,
   body > aside li {
     display: table-row;
   }
-    article div li::before,
+    article > div li::before,
     body > aside li::before {
       font-size: .81818rem;
       padding-right: .70455rem;
@@ -55,7 +55,7 @@ body > aside ul {
       content: '\2022';
     }
     @media (min-width: 1111px) {
-      article div li::before,
+      article > div li::before,
       body > aside li::before {
         font-size: .88889rem;
       }
@@ -227,7 +227,7 @@ body > main {
       main > article header h1 a {
         color: inherit;
       }
-    main > article div {
+    main > article > div {
       width: 66.67%;
     }
       main > article img {

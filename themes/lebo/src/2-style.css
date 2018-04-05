@@ -167,7 +167,7 @@ main > section > ul {
         overflow: auto;
       }
 
-        main > section li article div {
+        main > section li article > div {
           display: none;
         }
 

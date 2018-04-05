@@ -273,7 +273,7 @@ body > main {
       main > article header h1 a {
         color: inherit;
       }
-    main > article div {
+    main > article > div {
       width: 66.67%;
     }
       main > article img {
@@ -294,12 +294,12 @@ body > main {
       main > article ul {
         list-style: none;
       }
-        main > article div ul li::before {
+        main > article > div ul li::before {
           content: '>';
           margin: 0 5px 0 -15px;
           color: #ef5285;
         }
-          main > article div ul li a {
+          main > article > div ul li a {
             text-decoration: none;
           }
 
@@ -350,7 +350,7 @@ body > footer {
   }
 
   main > article header,
-  main > article div {
+  main > article > div {
     width: 100%;
   }
 }

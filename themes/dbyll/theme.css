@@ -162,7 +162,7 @@ main > article {
 main > section div,
 main > section ul,
 main > section ol,
-main > article div {
+main > article > div {
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -239,7 +239,7 @@ main > section {}
     main > section article {
       margin-bottom: 40px;
     }
-      main > section > li article div a,
+      main > section > li article > div a,
       main > section > li article pre a { color: #2c3e50; }
     main > section li article h1,
     main > section li article h2,
