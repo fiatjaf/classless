@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway|Open+Sans|Montserrat")
+
+*
+  box-sizing border-box
+
+html
+  font-family 'Montserrat', 'Open Sans', 'Arial', sans-serif
+  font-weight 400
+  color #111
+  line-height 1.6
+  text-rendering optimizelegibility !important
+
+a
+  color #428bca
+  transition color 0.1s cubic-bezier(0.47, 0, 0.75, 0.72)
+
+  &:hover, &:focus
+    color #2a6496
+    text-decoration none
+  
+body
+  margin 0 auto
+  padding 0
+  min-height 100vh
+  width 750px
+  max-width 100%
+  display flex
+  flex-direction column
+  aling-items center
+  justify-content center
+
+  & > *
+    padding 0 46px
+
+  @media (max-width 600px)
+    & > *
+      padding 0 16px
+
+    & > header, & > nav, & > aside
+      order 0
+      background-color #f7f7f7
+      color #555
+
+    & > footer
+      background #f7f7f7
+
+body > header
+  padding-top 60px
+  display flex
+  align-items center
+  flex-wrap wrap
+
+  & > a, & > img
+    margin-right calc(100% - 50px)
+
+    @media (max-width 600px)
+      margin 0 auto
+
+  & > img, & > a img
+    height 50px
+    width 50px
+    border-radius 50%
+    display block
+    box-shadow 0px 2px 3px rgba(0, 0, 0, 0.2)
+
+  & > h1
+    display inline
+    margin 0 0 6px
+    font-size 18px
+    font-family 'Raleway', 'Montserrat', 'Open Sans', 'Arial', sans-serif
+    text-transform uppercase
+    letter-spacing -0.005rem
+    font-weight 700
+    color #333
+    line-height 28.8px
+
+    a
+      color inherit
+      text-decoration none
+
+      &:hover, &:focus
+        color #333
+
+  & > aside
+    margin-left 12px
+    font-size 14px
+
+    p
+      margin 0 0 6px
+
+  @media (max-width 600px)
+    display block
+    text-align center
+
+    & > header > aside
+      display none
+      
+body > nav
+  padding-bottom 60px
+  margin-top -8px
+  font-size 14px
+  text-transform uppercase
+  font-weight 700
+  font-family 'Open Sans', 'Arial', sans-serif
+
+  ul
+    list-style none
+    display inline
+    text-align left
+    margin 0
+    padding 0
+
+  li
+    display inline
+    margin 0 6px
+    letter-spacing -0.005rem
+
+    &:first-child
+      margin-left 0
+
+    &:last-child
+      margin-right 0
+
+  a
+    color #666
+    font-weight 500
+    text-decoration none
+
+    &:hover, &:focus
+      color #333
+      @media (max-width 600px)
+        color #111
+
+  @media (max-width 600px)
+    padding-bottom 16px
+    text-align center
+
+body > main
+  padding-bottom 60px
+
+  @media (max-width 600px)
+    padding-top 60px
+
+  & > header,
+  & > article > header
+    margin-bottom 32px
+    color #666
+
+    & > a,
+    & > img
+      display none
+
+    & > h1
+      font-size 18px
+      margin 0
+      font-family 'Raleway', 'Montserrat', 'Open Sans', 'Arial', sans-serif
+      letter-spacing -0.005rem
+      font-weight 700
+      color #333
+      text-transform uppercase
+
+      a
+        color inherit
+        text-decoration none
+
+        &:hover, &:focus
+          color #333
+
+    & > aside
+      & > *:not(:last-child)
+        &::after
+          content '•'
+          font-size 6px
+
+      ul
+        display inline
+        padding 0
+        margin 0
+
+      li
+        display inline
+
+        a
+          padding 2px 8px
+
+  & > section
+    & > ul
+      list-style none
+      padding 0
+
+    article
+      header
+        display flex
+        font-size 16px
+        font-family 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif
+
+        & > a, & > img
+          display none
+
+        & > aside
+          order 1
+          min-width 100px
+          margin-right 16px
+          text-align right
+
+          time
+            text-align right
+
+          ul
+            display none
+
+        & > h1
+          font-size 16px
+          order 2
+          margin 0
+          font-weight 400
+
+          a
+            text-decoration none
+
+      & > div
+        display none
+
+  & > article
+
+  & > footer
+    nav ul
+      display flex
+      padding 0
+      list-style none
+      justify-content flex-end
+
+      li
+        margin-left 12px
+
+        a
+          color #333
+          text-decoration none
+
+          &:hover, &:focus
+            color #111
+
+      a:not([href])
+        display none
+
+  @media (max-width 600px)
+    order 1
+    margin auto
+
+article
+  & > div
+    font-family 'Open Sans', 'Arial', sans-serif
+    font-size 16px
+    color #111
+  
+    img
+      max-width 100%
+      margin-bottom 1rem
+    p
+      font-size 1rem
+      margin-bottom 1rem
+      text-align justify
+    h1, h2, h3, h4, h5, h6
+      margin-bottom 1rem
+    h1
+      font-size 1.4rem
+    h2
+      font-size 1.2rem
+    h3, h4, h5, h6
+      font-size 1rem
+      letter-spacing none
+    ul
+      list-style-type disc
+      list-style-position outside
+      padding 0
+      margin-left 1em
+      margin-top 0.5rem
+      margin-bottom 1.25rem
+    ol, dl, table
+      margin 1rem
+    code
+      padding .15em .5em
+      border-radius 2px
+    code, pre
+      font-family 'Ubuntu Mono', 'Menlo', monospace
+      font-size 1rem
+      background-color #f7f7f7
+
+    blockquote
+      padding .5rem 5rem .5rem 1.25rem
+      quotes none
+      margin .8rem 0
+      color #7a7a7a
+      border-left .25rem solid #e5e5e5
+
+      p:first-child
+        margin-top 0
+
+      p:last-child
+        margin-bottom 0
+
+body > aside
+  text-align left
+  font-size 16px
+
+  @media (max-width 600px)
+    text-align center
+    padding-bottom 32px
+
+body > footer
+  padding 60px 0 18px
+  text-align center
+
+  @media (max-width 600px)
+    order 1
+    margin-left 0
