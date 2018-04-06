@@ -113,7 +113,10 @@ module.exports = class extends React.Component {
               items: this.props.global.themes,
               getItemValue: x => x,
               renderItem: (v, highlighted) => (
-                h('div', {background: highlighted ? 'lightgray' : 'white'}, v)
+                h('div', {
+                  key: v,
+                  background: highlighted ? 'lightgray' : 'white'
+                }, v)
               ),
               value: this.state.theme,
               onChange: e => {
