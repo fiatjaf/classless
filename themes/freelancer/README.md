@@ -38,12 +38,16 @@ If there is an image it will be shown with a round border -- try to make it squa
 
 ---
 
-![](screenshots/freelancer-1.png)
+![](screenshots/freelancer-list-mobile.png)
 
 ---
 
-![](screenshots/freelancer-2.png)
+![](screenshots/freelancer-list.png)
 
 ---
 
-![](screenshots/freelancer-3.png)
+![](screenshots/freelancer-post-mobile.png)
+
+---
+
+![](screenshots/freelancer-post.png)

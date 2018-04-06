@@ -7,12 +7,16 @@ Based on the original work by @wting and @gfidente on https://github.com/gfident
 
 ---
 
-![](screenshots/subtle-1.png)
+![](screenshots/subtle-list-mobile.png)
 
 ---
 
-![](screenshots/subtle-2.png)
+![](screenshots/subtle-list.png)
 
 ---
 
-![](screenshots/subtle-3.png)
+![](screenshots/subtle-post-mobile.png)
+
+---
+
+![](screenshots/subtle-post.png)

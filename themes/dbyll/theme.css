@@ -86,7 +86,7 @@ body > header {
     font-size: 24px;
   }
   body > header img {
-    width: 150px;
+    height: 150px;
     border-radius: 75px;
     clip-path: circle(75px at 50% 50%);
     display: block;

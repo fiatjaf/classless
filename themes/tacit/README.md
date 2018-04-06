@@ -5,12 +5,16 @@ A very rough and simple layout, enriched by tacit's default HTML styles.
 
 ---
 
-![](screenshots/tacit-1.png)
+![](screenshots/tacit-list-mobile.png)
 
 ---
 
-![](screenshots/tacit-2.png)
+![](screenshots/tacit-list.png)
 
 ---
 
-![](screenshots/tacit-3.png)
+![](screenshots/tacit-post-mobile.png)
+
+---
+
+![](screenshots/tacit-post.png)

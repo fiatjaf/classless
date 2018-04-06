@@ -4,12 +4,16 @@ No CSS at all.
 
 ---
 
-![](screenshots/blank-1.png)
+![](screenshots/blank-list-mobile.png)
 
 ---
 
-![](screenshots/blank-2.png)
+![](screenshots/blank-list.png)
 
 ---
 
-![](screenshots/blank-3.png)
+![](screenshots/blank-post-mobile.png)
+
+---
+
+![](screenshots/blank-post.png)

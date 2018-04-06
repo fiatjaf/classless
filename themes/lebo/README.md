@@ -6,16 +6,16 @@ Adapted from the original design by @mojombo on https://github.com/mojombo/mojom
 
 ---
 
-![](screenshots/lebo-1.png)
+![](screenshots/lebo-list-mobile.png)
 
 ---
 
-![](screenshots/lebo-2.png)
+![](screenshots/lebo-list.png)
 
 ---
 
-![](screenshots/lebo-3.png)
+![](screenshots/lebo-post-mobile.png)
 
 ---
 
-![](screenshots/lebo-4.png)
+![](screenshots/lebo-post.png)

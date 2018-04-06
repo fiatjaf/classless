@@ -6,16 +6,16 @@ Based on https://github.com/kishaningithub/hugo-creative-portfolio-theme, ported
 
 ---
 
-![](screenshots/creative-portfolio-1.png)
+![](screenshots/creative-portfolio-list-mobile.png)
 
 ---
 
-![](screenshots/creative-portfolio-2.png)
+![](screenshots/creative-portfolio-list.png)
 
 ---
 
-![](screenshots/creative-portfolio-3.jpg)
+![](screenshots/creative-portfolio-post-mobile.png)
 
 ---
 
-![](screenshots/creative-portfolio-4.png)
+![](screenshots/creative-portfolio-post.png)

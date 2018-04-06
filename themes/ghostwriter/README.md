@@ -7,12 +7,16 @@ Based on the original work by @roryg on https://github.com/roryg/ghostwriter.
 
 ---
 
-![](screenshots/ghostwriter-1.png)
+![](screenshots/ghostwriter-list-mobile.png)
 
 ---
 
-![](screenshots/ghostwriter-2.png)
+![](screenshots/ghostwriter-list.png)
 
 ---
 
-![](screenshots/ghostwriter-3.png)
+![](screenshots/ghostwriter-post-mobile.png)
+
+---
+
+![](screenshots/ghostwriter-post.png)

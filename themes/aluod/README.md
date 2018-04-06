@@ -7,12 +7,16 @@ Adapted from the work @fiatjaf on http://doulas.club/.
 
 ---
 
-![](screenshots/aluod-1.png)
+![](screenshots/aluod-list-mobile.png)
 
 ---
 
-![](screenshots/aluod-2.png)
+![](screenshots/aluod-list.png)
 
 ---
 
-![](screenshots/aluod-3.png)
+![](screenshots/aluod-post-mobile.png)
+
+---
+
+![](screenshots/aluod-post.png)

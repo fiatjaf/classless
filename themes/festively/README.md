@@ -7,12 +7,16 @@ Based on the original work by http://meanthemes.com/ on http://festively.wpengin
 
 ---
 
-![](screenshots/festively-1.png)
+![](screenshots/festively-list-mobile.png)
 
 ---
 
-![](screenshots/festively-2.png)
+![](screenshots/festively-list.png)
 
 ---
 
-![](screenshots/festively-3.png)
+![](screenshots/festively-post-mobile.png)
+
+---
+
+![](screenshots/festively-post.png)

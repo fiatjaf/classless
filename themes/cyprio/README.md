@@ -6,8 +6,16 @@ Adapted from the original design by @oz on http://cyprio.net/.
 
 ---
 
-![](screenshots/cyprio-1.png)
+![](screenshots/cyprio-list-mobile.png)
 
 ---
 
-![](screenshots/cyprio-2.png)
+![](screenshots/cyprio-list.png)
+
+---
+
+![](screenshots/cyprio-post-mobile.png)
+
+---
+
+![](screenshots/cyprio-post.png)

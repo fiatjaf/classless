@@ -1,21 +1,21 @@
-## zen
+## cocoa
 
-**Zen** theme strives to be as clean as possible with some neat features. A solid base for custom modifications you can introduce (or not).
+A consistent and responsive theme with clean typography. The primary typefaces are Open Sans and Raleway.
 
-This is ported from https://github.com/frjo/hugo-theme-zen by [@fiatjaf](https://fiatjaf.alhur.es/).
-
----
-
-![](screenshots/zen-1.png)
+Ported from https://github.com/nishanths/cocoa-hugo-theme by [@fiatjaf](https://github.com/fiatjaf).
 
 ---
 
-![](screenshots/zen-2.png)
+![](screenshots/cocoa-list-mobile.png)
 
 ---
 
-![](screenshots/zen-3.png)
+![](screenshots/cocoa-list.png)
 
 ---
 
-![](screenshots/zen-4.png)
+![](screenshots/cocoa-post-mobile.png)
+
+---
+
+![](screenshots/cocoa-post.png)

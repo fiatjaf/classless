@@ -6,12 +6,16 @@ Ported from the original theme https://github.com/dbtek/dbyll by [@fiatjaf](http
 
 ---
 
-![](screenshots/dbyll-1.png)
+![](screenshots/dbyll-list-mobile.png)
 
 ---
 
-![](screenshots/dbyll-2.png)
+![](screenshots/dbyll-list.png)
 
 ---
 
-![](screenshots/dbyll-3.png)
+![](screenshots/dbyll-post-mobile.png)
+
+---
+
+![](screenshots/dbyll-post.png)

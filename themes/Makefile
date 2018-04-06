@@ -1,30 +1,18 @@
-all:
-	cd wardrobe; make;
-	cd ghostwriter; make;
-	cd festively; make;
-	cd dbyll; make;
-	cd jeen; make;
-	cd lebo; make;
-	cd tacit; make;
-	cd barbieri; make;
-	cd aluod; make;
-	cd longform; make
-	cd cyprio; make
-	cd subtle; make
-	cd freelancer; make
-	cd plain; make
-	cd creative-portfolio; make
-	cd zen; make
+all: $(wildcard */src/*)
+	fish -c 'for x in (find . -maxdepth 1 -type d ! -path "."); cd $$x; make; cd ..;end;'
 	
-	make README.md
 	make readmes
+	make README.md
 
-montage.jpg: */screenshots/*
+montage.jpg: $(wildcard */screenshots)
 	montage -border 7 -geometry 400x400+1+1 -tile 3x */screenshots/* montage.jpg
 	mogrify montage.jpg -resize 888x
 
-README.md: */desc.md montage.jpg
+README.md: $(wildcard */desc.md montage.jpg)
 	fish ../scripts/themes-readme.fish > README.md
 
-readmes: */desc.md */screenshots/*
+readmes: $(wildcard */desc.md */screenshots)
 	fish ../scripts/each-theme-readme.fish
+
+screenshots: $(wildcard */src/*)
+	fish -c 'for x in (find . -maxdepth 1 -type d ! -path "."); cd $$x; ../../scripts/take-screenshots.js $$x; cd ..; end;'

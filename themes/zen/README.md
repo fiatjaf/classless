@@ -6,16 +6,16 @@ This is ported from https://github.com/frjo/hugo-theme-zen by [@fiatjaf](https:/
 
 ---
 
-![](screenshots/zen-1.png)
+![](screenshots/zen-list-mobile.png)
 
 ---
 
-![](screenshots/zen-2.png)
+![](screenshots/zen-list.png)
 
 ---
 
-![](screenshots/zen-3.png)
+![](screenshots/zen-post-mobile.png)
 
 ---
 
-![](screenshots/zen-4.png)
+![](screenshots/zen-post.png)

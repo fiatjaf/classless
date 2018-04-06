@@ -6,12 +6,16 @@ Loosely based on the design of http://editorarevistas.mackenzie.br/index.php/rem
 
 ---
 
-![](screenshots/barbieri-1.png)
+![](screenshots/barbieri-list-mobile.png)
 
 ---
 
-![](screenshots/barbieri-2.png)
+![](screenshots/barbieri-list.png)
 
 ---
 
-![](screenshots/barbieri-3.png)
+![](screenshots/barbieri-post-mobile.png)
+
+---
+
+![](screenshots/barbieri-post.png)

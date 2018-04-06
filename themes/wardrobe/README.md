@@ -4,12 +4,16 @@ A minimal and clean blog theme.
 
 ---
 
-![](screenshots/wardrobe-1.png)
+![](screenshots/wardrobe-list-mobile.png)
 
 ---
 
-![](screenshots/wardrobe-2.png)
+![](screenshots/wardrobe-list.png)
 
 ---
 
-![](screenshots/wardrobe-3.png)
+![](screenshots/wardrobe-post-mobile.png)
+
+---
+
+![](screenshots/wardrobe-post.png)

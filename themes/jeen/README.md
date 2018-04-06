@@ -6,16 +6,16 @@ Original work for the Classless Project by @fiatjaf.
 
 ---
 
-![](screenshots/jeen-1.png)
+![](screenshots/jeen-list-mobile.png)
 
 ---
 
-![](screenshots/jeen-2.png)
+![](screenshots/jeen-list.png)
 
 ---
 
-![](screenshots/jeen-3.png)
+![](screenshots/jeen-post-mobile.png)
 
 ---
 
-![](screenshots/jeen-4.png)
+![](screenshots/jeen-post.png)
