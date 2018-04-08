@@ -77,10 +77,10 @@ module.exports = class extends React.Component {
       h('header', {key: 'header', role: 'banner'}, [
         Math.random() < 0.667
           ? Math.random() < 0.5
-            ? h('img', {src: 'https://picsum.photos/1024/768/'})
+            ? h('img', {src: 'https://picsum.photos/1024/768/?image=929'})
             : (
               h('a', {href: '#'}, [
-                h('img', {src: 'https://picsum.photos/1024/768/'})
+                h('img', {src: 'https://picsum.photos/1024/768/?image=929'})
               ])
             )
           : null,
