@@ -1,7 +1,10 @@
 all: _site themes/README.md
 
-themes/README.md: $(shell find themes/*/README.md)
-	fish tasks/themes-readme.fish > themes/README.md
+themes/README.md: $(shell find themes/*/desc.md)
+	cd themes; \
+      echo '## Themes' > README.md; \
+      echo '' >> README.md; \
+      fish -c 'for theme in (ls -d */); set desc (cat $$theme/desc.md | head -n 1); echo "* [$$theme]($$theme/) - $$desc" >> README.md; end;'
 
 _site: $(shell find *.md *.js themes/*/screenshots/* scenarios/*)
 	godotenv sitio generate.js --body=body.js --helmet=head.js
