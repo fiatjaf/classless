@@ -3,19 +3,10 @@
 A green and simple theme.
 
 Original work for the Classless Project by @fiatjaf.
-
+-e 
 ---
 
-![](screenshots/jeen-list-mobile.png)
-
----
-
-![](screenshots/jeen-list.png)
-
----
-
-![](screenshots/jeen-post-mobile.png)
-
----
-
-![](screenshots/jeen-post.png)
+![](screenshots/list.png)
+![](screenshots/article.png)
+![](screenshots/list-mobile.png)
+![](screenshots/article-mobile.png)

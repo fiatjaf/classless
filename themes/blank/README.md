@@ -1,19 +1,10 @@
 ## blank
 
 No CSS at all.
-
+-e 
 ---
 
-![](screenshots/blank-list-mobile.png)
-
----
-
-![](screenshots/blank-list.png)
-
----
-
-![](screenshots/blank-post-mobile.png)
-
----
-
-![](screenshots/blank-post.png)
+![](screenshots/list.png)
+![](screenshots/article.png)
+![](screenshots/list-mobile.png)
+![](screenshots/article-mobile.png)

@@ -3,19 +3,10 @@
 A theme for sites generated with magical ferrets, unhealthy amounts of coffee.
 
 Adapted from the original design by @oz on http://cyprio.net/.
-
+-e 
 ---
 
-![](screenshots/cyprio-list-mobile.png)
-
----
-
-![](screenshots/cyprio-list.png)
-
----
-
-![](screenshots/cyprio-post-mobile.png)
-
----
-
-![](screenshots/cyprio-post.png)
+![](screenshots/list.png)
+![](screenshots/article.png)
+![](screenshots/list-mobile.png)
+![](screenshots/article-mobile.png)

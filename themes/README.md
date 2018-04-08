@@ -3,6 +3,7 @@
 * [aluod](aluod/) - A fancy theme that turns lists of content into floating masonry-style cards.
 * [barbieri](barbieri/) - A theme with a big hero unit. Good for simple text-only landing pages.
 * [blank](blank/) - No CSS at all.
+* [cocoa](cocoa/) - A consistent and responsive theme with clean typography. The primary typefaces are Open Sans and Raleway.
 * [creative-portfolio](creative-portfolio/) - Creative portfolio is a clean and elegant template originally intended to showcase artists and designers portfolios, but can be easily used in normal websites.
 * [cyprio](cyprio/) - A theme for sites generated with magical ferrets, unhealthy amounts of coffee.
 * [dbyll](dbyll/) - A multipurpose theme with a fixed sidebar.
@@ -17,5 +18,3 @@
 * [tacit](tacit/) - The [tacit CSS framework](https://github.com/yegor256/tacit) adapted to the Classless standard.
 * [wardrobe](wardrobe/) - A minimal and clean blog theme.
 * [zen](zen/) - **Zen** theme strives to be as clean as possible with some neat features. A solid base for custom modifications you can introduce (or not).
-
-![](montage.jpg)

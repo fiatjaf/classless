@@ -35,19 +35,10 @@ If there is an image it will be shown with a round border -- try to make it squa
   </li>
 </ul>
 ```
-
+-e 
 ---
 
-![](screenshots/freelancer-list-mobile.png)
-
----
-
-![](screenshots/freelancer-list.png)
-
----
-
-![](screenshots/freelancer-post-mobile.png)
-
----
-
-![](screenshots/freelancer-post.png)
+![](screenshots/list.png)
+![](screenshots/article.png)
+![](screenshots/list-mobile.png)
+![](screenshots/article-mobile.png)

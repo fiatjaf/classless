@@ -1,19 +1,10 @@
 ## wardrobe
 
 A minimal and clean blog theme.
-
+-e 
 ---
 
-![](screenshots/wardrobe-list-mobile.png)
-
----
-
-![](screenshots/wardrobe-list.png)
-
----
-
-![](screenshots/wardrobe-post-mobile.png)
-
----
-
-![](screenshots/wardrobe-post.png)
+![](screenshots/list.png)
+![](screenshots/article.png)
+![](screenshots/list-mobile.png)
+![](screenshots/article-mobile.png)

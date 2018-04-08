@@ -1,20 +1,12 @@
 ## tacit
 
 The [tacit CSS framework](https://github.com/yegor256/tacit) adapted to the Classless standard.
+
 A very rough and simple layout, enriched by tacit's default HTML styles.
-
+-e 
 ---
 
-![](screenshots/tacit-list-mobile.png)
-
----
-
-![](screenshots/tacit-list.png)
-
----
-
-![](screenshots/tacit-post-mobile.png)
-
----
-
-![](screenshots/tacit-post.png)
+![](screenshots/list.png)
+![](screenshots/article.png)
+![](screenshots/list-mobile.png)
+![](screenshots/article-mobile.png)

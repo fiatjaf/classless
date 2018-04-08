@@ -12,7 +12,6 @@ const themes = [
   'cyprio',
   'jeen',
   'lebo',
-  'tacit',
   'barbieri',
   'wardrobe',
   'zen',

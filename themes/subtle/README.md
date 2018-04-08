@@ -4,19 +4,10 @@ A simple and minimalist theme that shows a sidebar with header and aside content
 Requires a Javascript file to be included in the page for full functionality.
 
 Based on the original work by @wting and @gfidente on https://github.com/gfidente/pelican-svbhack.
-
+-e 
 ---
 
-![](screenshots/subtle-list-mobile.png)
-
----
-
-![](screenshots/subtle-list.png)
-
----
-
-![](screenshots/subtle-post-mobile.png)
-
----
-
-![](screenshots/subtle-post.png)
+![](screenshots/list.png)
+![](screenshots/article.png)
+![](screenshots/list-mobile.png)
+![](screenshots/article-mobile.png)
