@@ -1,6 +1,9 @@
 themes/README.md: $(shell find themes/*/README.md)
 	fish tasks/themes-readme.fish > themes/README.md
 
+_site: $(shell find *.md *.js themes/*/screenshots/*)
+	npm run generate
+
 $(shell find themes/*/README.md): themes/%/README.md: themes/%/desc.md themes/%/screenshots/article.png themes/%/screenshots/article-mobile.png themes/%/screenshots/list.png themes/%/screenshots/list-mobile.png
 	cd themes/$*; \
       echo '## $*' > README.md; \

@@ -20,6 +20,7 @@
     ]
   },
   "scripts": {
-    "generate": "godotenv sitio generate.js --body=body.js --helmet=head.js"
+    "generate": "godotenv sitio generate.js --body=body.js --helmet=head.js",
+    "deploy": "surge _site"
   }
 }

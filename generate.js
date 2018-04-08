@@ -82,7 +82,13 @@ async function main () {
   }
 
   for (let theme in screenshots) {
-    let screenshotPaths = screenshots[theme]
+    let shots = [
+      screenshots[theme].filter(n => n.endsWith('article.png'))[0],
+      screenshots[theme].filter(n => n.endsWith('list.png'))[0],
+      screenshots[theme].filter(n => n.endsWith('article-mobile.png'))[0],
+      screenshots[theme].filter(n => n.endsWith('list-mobile.png'))[0]
+    ]
+
     var html = md.render(
       fs.readFileSync(path.join('themes', theme, 'desc.md'), 'utf-8')
     )
@@ -91,23 +97,12 @@ async function main () {
 
     html += `<br><p>Include URL: <div style="display:inline-block"><code>${url}</code></div></p>`
 
-    html += `<br><div style="display: flex; flex-wrap: wrap;">${screenshotPaths
-      .map(p => p.indexOf('mobile') === -1
-        ? `
-  <a href="/${p}">
-    <img src="/${p}" style="border: 3px;">
-  </a>
+    html += `<br><div style="display: flex; flex-wrap: wrap;">${shots
+      .map(p =>
         `
-        : `
-  <div class="marvel-device nexus5" style="margin: 9px 7px;">
-    <div class="top-bar"></div>
-    <div class="sleep"></div>
-    <div class="volume"></div>
-    <div class="camera"></div>
-    <div class="screen">
-      <img src="/${p}" style="width: 100%; margin: 0; padding: 0; border: 0;">
-    </div>
-  </div>
+  <a href="/${p}" style="margin-right: 4px; ${p.indexOf('mobile') !== -1 ? 'width: 230px' : ''}">
+    <img src="/${p}" style="border: 3px solid;">
+  </a>
         `
       )
       .join('')
@@ -129,7 +124,7 @@ async function main () {
       .map(theme => ({
         path: path.join('themes', theme),
         name: theme,
-        cover: '/' + screenshots[theme][0]
+        cover: '/' + screenshots[theme].filter(n => n.endsWith('list.png'))[0]
       })),
     page: 1
   })

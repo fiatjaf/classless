@@ -11,8 +11,7 @@ module.exports = props =>
     ],
     title: props.data && props.data.name ? `${props.data.name} | classless` : 'classless',
     link: [
-      {rel: 'stylesheet', href: '/style.css'},
-      {rel: 'stylesheet', href: 'https://cdn.rawgit.com/marvelapp/devices.css/a5448c0a/assets/devices.min.css'}
+      {rel: 'stylesheet', href: '/style.css'}
     ],
     script: []
   })
