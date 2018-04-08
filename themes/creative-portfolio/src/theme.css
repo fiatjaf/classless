@@ -106,8 +106,6 @@ article header aside {
         text-transform: uppercase;
       }
 
-body > main {}
-
 body > header {
   padding: 40px 35px 0;
 }
@@ -124,6 +122,11 @@ body > header {
         color: #000;
         border-bottom: dotted 1px #ef5285;
       }
+  body > header > img,
+  body > header > a,
+  body > header > a > img {
+    width: 100%;
+  }
 
 body > nav a,
 body > aside a,
@@ -165,7 +168,8 @@ body > nav {
         }
 
 body > main {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
   main > section {
     height: 90%;
@@ -262,6 +266,7 @@ body > main {
     color: #999;
     padding: 40px 55px 0;
     min-height: 100vh;
+    height: 100%;
   }
     main > article header {
       width: 66.67%;

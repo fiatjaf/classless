@@ -1,3 +1,5 @@
+all: _site themes/README.md
+
 themes/README.md: $(shell find themes/*/README.md)
 	fish tasks/themes-readme.fish > themes/README.md
 
