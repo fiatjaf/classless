@@ -23,8 +23,7 @@ const themes = [
 
 async function main () {
   await init({
-    themes,
-    livereload_host: process.env.LIVERELOAD_HOST
+    themes
   })
 
   await generatePage('/', 'sitio/component-utils/article.js', {

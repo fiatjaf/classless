@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "fetch-js": "^1.0.3",
     "react-autocomplete": "^1.8.1",
     "react-draggable": "^3.0.5",
     "react-hyperscript": "^3.2.0"
@@ -18,9 +19,5 @@
     "transform": [
       "envify"
     ]
-  },
-  "scripts": {
-    "generate": "godotenv sitio generate.js --body=body.js --helmet=head.js",
-    "deploy": "surge _site"
   }
 }

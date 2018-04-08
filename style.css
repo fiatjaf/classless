@@ -1,14 +1,18 @@
 #theme-chooser {
+  z-index: 55;
   position: fixed;
   top: 8px;
   left: 12px;
   width: 290px;
   padding: 12px;
-  background: rgba(230, 228, 243, 0.8);
+  background: rgba(30, 188, 243, 0.5);
   color: black;
   border-radius: 8px;
   box-sizing: border-box;
 }
+  #theme-chooser:hover {
+    background: rgb(30, 188, 243);
+  }
   #theme-chooser input {
     display: block;
     width: calc(100% - 9px);

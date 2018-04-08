@@ -3,6 +3,7 @@ const Helmet = require('react-helmet').default
 const React = require('react')
 const Draggable = require('react-draggable')
 const Autocomplete = require('react-autocomplete')
+const fetchJS = require('fetch-js')
 
 module.exports = class extends React.Component {
   constructor (props) {
@@ -25,7 +26,21 @@ module.exports = class extends React.Component {
     }
 
     this.state = {
-      theme
+      theme,
+      livereload: null,
+      editing_livereload: false,
+      theme_chooser_widget: true
+    }
+  }
+
+  componentDidMount () {
+    if (sessionStorage.getItem('livereload')) {
+      this.setState({livereload: sessionStorage.getItem('livereload')})
+    } else if (process.env.LIVERELOAD) {
+      if (process.env.LIVERELOAD.indexOf(location.hostname) !== -1) {
+        this.setState({livereload: process.env.LIVERELOAD})
+        fetchJS(process.env.LIVERELOAD)
+      }
     }
   }
 
@@ -81,8 +96,7 @@ module.exports = class extends React.Component {
       ]),
       main,
       h('aside', {key: 'aside'}, [
-        h('p', 'Egestas dui id ornare arcu odio ut sem nulla. Purus sit amet volutpat consequat mauris nunc congue nisi vitae. Gravida cum sociis natoque penatibus et magnis dis parturient. Ac turpis egestas sed tempus urna et pharetra pharetra massa.'),
-        h('p', 'Tincidunt dui ut ornare lectus sit amet est placerat. Tempus egestas sed sed risus pretium quam. Bibendum arcu vitae elementum curabitur vitae nunc. Quis risus sed vulputate odio ut enim blandit volutpat.')
+        h('p', 'Classless themes is an initiative that tries to bring DRY to the site theming domain of the internet. Frankly the world is such a mess with so many ways to create and maintain sites that it is difficult to understand no one made this before.')
       ]),
       h('footer', {
         key: 'footer',
@@ -90,15 +104,14 @@ module.exports = class extends React.Component {
       }, [
         h('p', [
           h('a', {href: 'https://fiatjaf.alhur.es/'}, '@fiatjaf'),
-          ' 2018.'
-        ]),
-        h('p', [
+          ' 2018. ',
           'Page generated with ',
           h('a', {href: 'https://github.com/fiatjaf/sitio'}, 'sitio'),
-          '.'
+          '. ',
+          h('a', {href: 'https://github.com/fiatjaf/classless'}, 'GitHub repository.')
         ])
       ]),
-      h(Draggable, {
+      this.state.theme_chooser_widget && h(Draggable, {
         key: 'theme-chooser',
         onStart: e => {
           if (e.target.tagName === 'INPUT') {
@@ -108,7 +121,7 @@ module.exports = class extends React.Component {
       }, [
         h('#theme-chooser', [
           h('label', [
-            'Paste your theme CSS URL here:',
+            'choose a theme or paste your CSS URL:',
             h(Autocomplete, {
               items: this.props.global.themes,
               getItemValue: x => x,
@@ -134,7 +147,35 @@ module.exports = class extends React.Component {
                 padding: '2px 0',
                 overflow: 'auto'
               }
-            })
+            }),
+            h('button', {
+              onClick: e => {
+                e.preventDefault()
+                this.setState({
+                  editing_livereload: !this.state.editing_livereload
+                })
+              }
+            }, this.state.editing_livereload
+              ? 'close'
+              : this.state.livereload ? 'livereload on' : 'set livereload'
+            )
+          ]),
+          this.state.editing_livereload && h('form', {
+            onSubmit: e => {
+              e.preventDefault()
+              sessionStorage.setItem('livereload', e.target.livereload.value)
+              this.setState({
+                livereload: e.target.livereload.value,
+                editing_livereload: false
+              })
+              fetchJS(e.target.livereload.value)
+            }
+          }, [
+            h('label', [
+              'paste your livereload server URL here and click "done": ',
+              h('input', {name: 'livereload', defaultValue: this.state.livereload || ''})
+            ]),
+            h('button', 'done')
           ])
         ])
       ]),
@@ -161,11 +202,7 @@ module.exports = class extends React.Component {
           `
         }
       }),
-      h('script', {key: 'bundle', src: '/bundle.js'}),
-      this.props.global.livereload_host && h('script', {
-        key: 'livereload',
-        src: 'http://' + this.props.global.livereload_host + ':35729/livereload.js?snipver=1'
-      })
+      h('script', {key: 'bundle', src: '/bundle.js'})
     ]
   }
 }

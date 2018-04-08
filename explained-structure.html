@@ -15,53 +15,70 @@
   </nav>
 
   <main>
-    <section>
-      <h1>A section will receive only basic formatting so it can be anything</h1>
-      <p>Even, perhaps, those carousels with featured posts</p>
-    </section>
-
     <article>
       <header>
-        <img>
+        <a>
+          <!-- the image header for the article, if there is one could be wrapped in
+                an <a> or not, so please support both if you're making a theme. -->
+          <img>
+        </a>
         <h1>Title of the article</h1>
+        <aside>
+          <!-- metadata for the article goes here -->
+          <time>April 23, 2016</time>
+          <ul>
+            <li><a>a tag</a></li>
+            <li><a>another tag</a></li>
+          </ul>
+        </aside>
       </header>
 
       <div>
-        <p>The article starts here.</p>
-        <p>This can be rendered by markdown, for example.</p>
-        <h2>Something</h3>
+        <p>The article content goes inside a div.</p>
+        <p>The content could be anything. Rendered markdown, for example.</p>
         <img>
+        <h2></h2>
+        <blockquote></blockquote>
+        <ul></ul>
       </div>
+    </article>
 
-      <section>
-        <h1>Anything goes here, maybe a special section with "related posts"</h1>
-        <ul>
-          <li><article><header><h1></h1></header></article></li>                 
-          <li><article><header><h1></h1></header></article></li>          
-          <li><article><header><h1></h1></header></article></li>
-        </ul>
-      </section>
+    <section>
+      <!-- a list of posts, like what you have on an index, archive or paginated page
+           can also be used as a gallery or showcase, if the theme fits it well -->
+      <ul>
+        <li>
+          <article>
+            <!-- the structure here mimics the 'main > article' element -->
 
-      <section>
-        <!-- comments -->
-        <ul>
-          <li><article>
             <header>
-              <h1>name of the commenter</h1>
-              <time>date of the comment</time>
+              <a>
+                <img>
+              </a>
+              <h1>Article Title</h1>
+              <aside>
+                <time>optional time</time>
+                <ul>
+                  <li>optional tag</li>
+                </ul>
+              </aside>
             </header>
             <div>
-              <p>the comment itself</p>
+              <!-- optionally you can have article excerpts here, or the full article -->
             </div>
-          </article></li>
-        </ul>
-      </section>
-    </article>
+          </article>
+        </li>
+        <!-- many other <li>s follow -->
+      </ul>
+    </section>
 
     <footer>
       <nav>
-        <!-- pagination -->
+        <!-- pagination for those list of pages -->
         <ul>
+          <!-- if there is no previous or next link, it should be still present
+               but have no href attribute, so if you're making a theme you should
+               support it. -->
           <li><a>previous</a></li>
           <li><a href="">next</a></li>
         </ul>
@@ -70,13 +87,15 @@
   </main>
 
   <aside>
-    <!-- author information or meta information about the page -->
+    <!-- author information or meta information about the page. any content
+         may go here. -->
     <img>
     <h1>Author name</h1>
     <div>Something about the author</div>
   </aside>
 
-  <footer role="contentinfo">
-    Anything.
+  <footer>
+    <!-- any content may go here also. -->
+    Copyright date etc.
   </footer>
 </body>
