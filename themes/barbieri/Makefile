@@ -1,5 +1,5 @@
 all:
 	make theme.css
 
-theme.css: src/bundle.css
+theme.css: $(wildcard src/*.css)
 	cat src/*.css > theme.css
