@@ -43,6 +43,10 @@ module.exports = class extends React.Component {
         fetchJS(process.env.LIVERELOAD)
       }
     }
+
+    window.setTheme = (theme) => {
+      this.setState({theme})
+    }
   }
 
   render () {

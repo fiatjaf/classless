@@ -74,6 +74,14 @@ module.exports = class extends React.Component {
               }
             }, this.state.css)
           ]),
+          h('p', [
+            h('button', {
+              onClick: e => {
+                e.preventDefault()
+                window.setTheme(this.props.theme)
+              }
+            }, `Browse this entire site using ${this.props.theme}`)
+          ]),
           h('br'),
           h('div', {
             style: {
