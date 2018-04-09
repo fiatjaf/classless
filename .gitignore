@@ -7,3 +7,4 @@ _site
 *.env
 static
 browserify-cache.json
+.netlify

@@ -10,7 +10,7 @@ _site: $(shell find *.md *.js themes/*/screenshots/* scenarios/*)
 	godotenv sitio generate.js --body=body.js --helmet=head.js
 
 deploy: _site
-	surge _site
+	netlify deploy -s classless -p _site
 
 $(shell find themes/*/README.md): themes/%/README.md: themes/%/desc.md themes/%/screenshots/article.png themes/%/screenshots/article-mobile.png themes/%/screenshots/list.png themes/%/screenshots/list-mobile.png
 	cd themes/$*; \
