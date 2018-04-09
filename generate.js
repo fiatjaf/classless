@@ -82,38 +82,17 @@ async function main () {
   }
 
   for (let theme in screenshots) {
-    let shots = [
-      screenshots[theme].filter(n => n.endsWith('article.png'))[0],
-      screenshots[theme].filter(n => n.endsWith('list.png'))[0],
-      screenshots[theme].filter(n => n.endsWith('article-mobile.png'))[0],
-      screenshots[theme].filter(n => n.endsWith('list-mobile.png'))[0]
-    ]
-
-    var html = md.render(
-      fs.readFileSync(path.join('themes', theme, 'desc.md'), 'utf-8')
-    )
-
-    let url = `https://rawgit.com/fiatjaf/classless/master/themes/${theme}/theme.css`
-
-    html += `<br><p>Include URL: <div style="display:inline-block"><code>${url}</code></div></p>`
-
-    html += `<br><div style="display: flex; flex-wrap: wrap;">${shots
-      .map(p =>
-        `
-  <a href="/${p}" style="margin-right: 4px; ${p.indexOf('mobile') !== -1 ? 'width: 230px' : ''}">
-    <img src="/${p}" style="border: 3px solid;">
-  </a>
-        `
-      )
-      .join('')
-    }</div>`
-
-    await generatePage('/themes/' + theme, 'sitio/component-utils/article.js', {
-      html,
-      data: {
-        name: theme,
-        parentName: 'Themes'
-      }
+    await generatePage('/themes/' + theme, 'show-theme.js', {
+      theme,
+      descHTML: md.render(
+        fs.readFileSync(path.join('themes', theme, 'desc.md'), 'utf-8')
+      ),
+      screenshots: [
+        screenshots[theme].filter(n => n.endsWith('article.png'))[0],
+        screenshots[theme].filter(n => n.endsWith('list.png'))[0],
+        screenshots[theme].filter(n => n.endsWith('article-mobile.png'))[0],
+        screenshots[theme].filter(n => n.endsWith('list-mobile.png'))[0]
+      ]
     })
   }
 
