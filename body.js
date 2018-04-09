@@ -36,6 +36,7 @@ module.exports = class extends React.Component {
   componentDidMount () {
     if (sessionStorage.getItem('livereload')) {
       this.setState({livereload: sessionStorage.getItem('livereload')})
+      fetchJS(process.env.LIVERELOAD)
     } else if (process.env.LIVERELOAD) {
       if (process.env.LIVERELOAD.indexOf(location.hostname) !== -1) {
         this.setState({livereload: process.env.LIVERELOAD})
