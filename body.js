@@ -157,7 +157,7 @@ module.exports = class extends React.Component {
               }
             }, this.state.editing_livereload
               ? 'close'
-              : this.state.livereload ? 'livereload on' : 'set livereload'
+              : this.state.livereload ? 'livereload enabled' : 'set livereload'
             )
           ]),
           this.state.editing_livereload && h('form', {

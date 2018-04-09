@@ -123,7 +123,6 @@ body > header h1 a {
 
 header ul {
   list-style: none;
-  margin-top: -5px !important;
   margin-bottom: 5px !important;
 }
 header li {
@@ -214,8 +213,7 @@ main > header + section {
   border-top: 6px solid #303030;
 }
 main > section { margin-bottom: 25px; }
-main > section ul,
-main > section ol {
+main > section > ul {
   list-style: none;
   margin: 20px 40px 0;
 }
@@ -235,18 +233,29 @@ main > section li article:hover {
   padding: 20px 12px;
 }
 
-main > section li article header { display: inline; }
+main > section li article header { display: flex; }
 main > section li article header img { display: none; }
 main > section li article header h1 {
   display: inline-block;
-  margin: 0;
+  margin: 0 18px 0 0;
   text-transform: none;
   font-size: 18px;
 }
-main > section li article aside { display: inline-block; }
-main > section li article aside:before { content: "/ "; }
+main > section li article aside {
+  display: flex;
+  flex-grow: 2;
+}
+main > section li article aside:before {
+  content: "/ ";
+  margin-right: 12px;
+}
 main > section li article time { display: inline-block; }
 main > section li article time:not(aside > time):before { content: "/ "; }
+main > section li article aside ul {
+  list-style: none;
+  text-align: right;
+  flex-grow: 2;
+}
 
 main > footer nav ul { float: right; }
 main > footer nav a:not([href]) {
