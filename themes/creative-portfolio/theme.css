@@ -63,25 +63,11 @@ body {
   align-content: start;
 }
 
-body > header {
-  grid-area: header;
-}
-
-body > nav {
-  grid-area: nav;
-}
-
-body > aside {
-  grid-area: aside;
-}
-
-body > footer {
-  grid-area: footer;
-}
-
-body > main {
-  grid-area: main;
-}
+body > header { grid-area: header; }
+body > nav { grid-area: nav; }
+body > aside { grid-area: aside; }
+body > footer { grid-area: footer; }
+body > main { grid-area: main; }
 
 article header aside {
   padding: 0 20px 15px;
@@ -173,7 +159,8 @@ body > main {
   height: 100%;
 }
   main > section {
-    height: 90%;
+    height: 83vh;
+    min-height: 500px;
     padding: 40px 15px 0;
   }
     main > section > ul {
