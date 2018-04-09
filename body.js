@@ -18,11 +18,11 @@ module.exports = class extends React.Component {
       .map(kv => kv.split('='))
       .filter(([k, v]) => k === 'theme')
       .map(([_, v]) => v)[0] ||
-        (typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem('theme')) ||
+        (typeof localStorage === 'undefined' ? null : localStorage.getItem('theme')) ||
         this.props.global.themes[parseInt(this.props.global.themes.length * Math.random())]
 
-    if (typeof sessionStorage !== 'undefined') {
-      sessionStorage.setItem('theme', theme)
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('theme', theme)
     }
 
     this.state = {
@@ -34,8 +34,8 @@ module.exports = class extends React.Component {
   }
 
   componentDidMount () {
-    if (sessionStorage.getItem('livereload')) {
-      this.setState({livereload: sessionStorage.getItem('livereload')})
+    if (localStorage.getItem('livereload')) {
+      this.setState({livereload: localStorage.getItem('livereload')})
       fetchJS(process.env.LIVERELOAD)
     } else if (process.env.LIVERELOAD) {
       if (process.env.LIVERELOAD.indexOf(location.hostname) !== -1) {
@@ -134,11 +134,11 @@ module.exports = class extends React.Component {
               ),
               value: this.state.theme,
               onChange: e => {
-                sessionStorage.setItem('theme', e.target.value)
+                localStorage.setItem('theme', e.target.value)
                 this.setState({theme: e.target.value})
               },
               onSelect: v => {
-                sessionStorage.setItem('theme', v)
+                localStorage.setItem('theme', v)
                 this.setState({theme: v})
               },
               menuStyle: {
@@ -164,7 +164,7 @@ module.exports = class extends React.Component {
           this.state.editing_livereload && h('form', {
             onSubmit: e => {
               e.preventDefault()
-              sessionStorage.setItem('livereload', e.target.livereload.value)
+              localStorage.setItem('livereload', e.target.livereload.value)
               this.setState({
                 livereload: e.target.livereload.value,
                 editing_livereload: false
