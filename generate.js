@@ -14,6 +14,7 @@ const themes = [
   'lebo',
   'barbieri',
   'wardrobe',
+  'subtle',
   'zen',
   'creative-portfolio',
   'dbyll',

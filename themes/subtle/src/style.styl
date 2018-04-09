@@ -1,0 +1,224 @@
+$red  = #ff0000
+$black  = #000000
+$white  = #ffffff
+$super-light-grey = #efefef
+$light-grey  = #eeeeee
+$med-grey  = #999999
+$dark-grey  = #4d4d4d
+$blue  = #0e94ec
+$accent  = $blue
+$sans = 'PT Sans', sans-serif
+$serif = 'PT Serif', serif
+$mono = 'PT Mono', monospace
+
+@require './fonts'
+
+a
+  color $black
+  text-decoration none
+  &:hover
+    color $dark-grey
+
+hr
+  color $light-grey
+  background-color $light-grey
+  height 1px
+  border none
+
+img
+  max-width 100%
+
+body
+  margin 0
+  padding 0
+  background-color $white
+  color $dark-grey
+  font-family $sans
+  font-size 18px
+  display grid
+  grid-template-columns 1fr 3fr
+  grid-template-rows 88px auto 1fr auto
+  grid-template-areas 'header nav' 'header main' 'aside main' 'aside footer'
+  align-items stretch
+
+  @media (max-width 700px)
+    grid-template-columns 1fr
+    grid-template-rows auto
+    grid-template-areas 'header' 'aside' 'nav' 'main' 'footer' 
+
+body > header
+  grid-area header
+body > nav
+  grid-area nav
+body > aside
+  grid-area aside
+body > footer
+  grid-area footer
+body > main
+  grid-area main
+
+body > header, body > aside
+  border-right 3px solid $light-grey
+
+body > footer
+  border-top 3px solid $light-grey
+
+body > header
+  & > h1
+    padding 40px 40px 0 40px
+    text-align center
+  h1
+    margin 15px 0 5px 0
+  p
+    margin 0 0 15px 0
+    font-size 14px
+    text-align center
+
+body > nav
+  border-bottom $light-grey 1px solid
+  padding 0 40px
+  align-self center
+
+  ul
+    padding 0
+    display flex
+    flex-wrap wrap
+    list-style none
+
+  li
+    font-size 11px
+    font-weight bold
+    text-transform uppercase
+
+    &:not(:first-child)::before
+      content '|'
+      margin 0 8px
+
+main
+  & > header
+    text-align center
+
+  article, & > section
+    max-width 640px
+    padding 40px
+
+  & > section
+    ul, ol
+      padding 0
+      list-style none
+    li article
+      padding 40px 0
+
+  article
+    & > header
+      &:hover
+        time
+          color $med-grey
+        h1
+          color $blue
+        ul
+          color inherit
+          background inherit
+      & > h1
+        position relative
+        top 27px
+        color $black
+        a
+          color inherit
+      & > aside
+        position relative
+        top -47px
+        text-align left
+        & > *
+          display inline
+      aside, time, p
+        font-size 12px
+        color $med-grey
+      time
+        color $super-light-grey
+        transition 500ms all
+      aside > ul
+        color $super-light-grey
+        background none
+        transition 500ms all
+        li
+          display inline
+          a
+            color inherit
+            padding 5px 15px
+            transition 800ms background
+            border-radius 15px
+          a:hover
+            background $light-grey
+
+    & > div
+      line-height 1.375em
+      a
+        text-decoration underline
+
+      code
+        margin 2px
+        padding 0
+        color $black
+        font-size 14px
+        font-family $mono
+        background $light-grey
+
+      pre
+        margin 22px 2px 22px 2px
+        padding 2px
+        color $black
+        border-left 3px solid $accent
+        font-size 14px
+        font-family $mono
+        background $light-grey
+        line-height 1.125em
+        overflow-x auto
+
+      blockquote
+        margin 22px 2px 22px 2px
+        padding-left 40px
+        color $med-grey
+        font-style italic
+
+  & > footer
+    max-width 640px
+    border-top $light-grey 1px solid
+    padding 40px
+    text-align center
+
+    ul
+      display flex
+      justify-content space-between
+
+    li
+      display inline
+
+    a:not([href])
+      display none
+
+    a[rel]
+      padding 10px 20px
+      border 2px solid $accent
+      border-radius 20px
+      text-transform uppercase
+      color $accent
+      font-size 18px
+
+      &:hover
+        color $white
+        background-color $accent
+
+      &:active
+        color $white
+        background-color $accent
+
+body > aside
+  padding 40px
+  text-align center
+
+body > footer
+    border-top $light-grey 1px solid
+    padding 0 40px 0 40px
+    color $med-grey
+    font-size 10px

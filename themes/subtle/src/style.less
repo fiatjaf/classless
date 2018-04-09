@@ -146,16 +146,6 @@ body > header {
     padding: 40px 40px 0 40px;
     text-align: center;
   }
-  
-  /* body > aside is moved here. */
-  aside {
-    padding: 40px;
-    text-align: center;
-    
-    &:first-of-type {
-      padding-top: 0;
-    }
-  }
 
   h1 {
     margin: 15px 0 5px 0;
@@ -187,30 +177,6 @@ body > header {
 }
 
 main {
-  /* body > nav is moved here */
-  & > nav {
-    padding: 40px;
-    border-top: @light-grey 1px solid;
-    border-bottom: @light-grey 1px solid;
-    
-    li {
-      font-size: 10px;
-      font-weight: bold;
-      text-transform: uppercase;
-      display: inline;
-      
-      &:not(*:first-child)::before {
-        content: ' ¦ ';
-      }
-    }
-
-    p {
-      font-weight: bold;
-      font-size: 10px;
-      text-transform: uppercase;
-    }
-  }
-  
   & > header {
     text-align: center;
   }
@@ -219,7 +185,7 @@ main {
     max-width: 640px;
     padding: 40px;
   }
-  
+
   section {
     ul, ol {
       padding: 0;
@@ -229,59 +195,59 @@ main {
       padding: 40px 0;
     }
   }
-  
+
   article {
     & > header {
       &:hover {
         time {
           color: @med-grey;
         }
-        
+
         h1 {
           color: @blue;
         }
-        
+
         ul {
           color: inherit;
           background: inherit;
         }
       }
-      
+
       h1 {
         position: relative;
         top: 27px;
         color: @black;
-        
+
         a { color: inherit; }
       }
-      
+
       aside {
         position: relative;
         top: -47px;
         text-align: left;
-        
+
         & > * { display: inline }
       }
-      
+
       aside, time, p {
         font-size: 12px;
         color: @med-grey;
       }
-      
+
       time {
         color: @super-light-grey;
         .transition(500ms all);
       }
-      
+
       ul {
         /* tags */
         color: @super-light-grey;
         background: none;
         .transition(500ms all);
-        
+
         li {
           display: inline;
-          
+
           a {
             color: inherit;
             padding: 5px 15px;
@@ -340,7 +306,7 @@ main {
     li {
       display: inline;
     }
-    
+
     a[rel="next"]::before {
       content: 'older posts'
     }
@@ -367,22 +333,44 @@ main {
       }
     }
   }
-  
-  /* body > footer is moved here */
-  footer:last-child {
-    border-top: @light-grey 1px solid;
-    padding: 0 40px 0 40px;
-    color: @med-grey;
-    font-size: 10px;
+}
+
+body > aside {
+  padding: 40px;
+  text-align: center;
+
+  &:first-of-type {
+    padding-top: 0;
   }
 }
 
-/* these are hidden in their original
-places, but the three will be moved by JS
-and will appear again. */
-body > aside { display: none }
-body > nav { display: none }
-body > footer { display: none }
+body > nav {
+  padding: 40px;
+  border-top: @light-grey 1px solid;
+  border-bottom: @light-grey 1px solid;
+
+  li {
+    font-size: 10px;
+    font-weight: bold;
+
+    &:not(*:first-child)::before {
+      content: ' ¦ ';
+    }
+  }
+
+  p {
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+}
+
+body > footer {
+  border-top: @light-grey 1px solid;
+  padding: 0 40px 0 40px;
+  color: @med-grey;
+  font-size: 10px;
+}
 
 @media screen and (min-width: 1024px) {
   body > header {

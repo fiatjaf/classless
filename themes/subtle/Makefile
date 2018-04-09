@@ -1,9 +1,4 @@
-all:
-	make theme.css
-	make theme.js
+all: theme.css
 
-theme.css: src/style.less
-	lessc src/style.less theme.css
-
-theme.js: src/script.js
-	cp src/script.js theme.js
+theme.css: $(wildcard src/*.styl)
+	cd src; stylus < style.styl > ../theme.css
