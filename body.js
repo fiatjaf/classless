@@ -101,7 +101,7 @@ module.exports = class extends React.Component {
       ]),
       main,
       h('aside', {key: 'aside'}, [
-        h('p', 'Classless themes is an initiative that tries to bring DRY to the site theming domain of the internet. Frankly the world is such a mess with so many ways to create and maintain sites that it is difficult to understand no one made this before.')
+        h('p', 'Classless themes is an initiative that tries to bring DRY to the site theming domain of the internet. You can contribute by using the Classless template in your site or by creating/porting themes to the project!')
       ]),
       h('footer', {
         key: 'footer',
