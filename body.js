@@ -59,7 +59,7 @@ module.exports = class extends React.Component {
       : [
         h('li', [ h('a', {href: '/'}, 'Introduction') ]),
         h('li', [ h('a', {href: '/for-personal-websites'}, 'For personal websites') ]),
-        h('li', [ h('a', {href: '/for-cms-makers'}, 'For CMS markers') ]),
+        h('li', [ h('a', {href: '/for-cms-makers'}, 'For CMS makers') ]),
         h('li', [ h('a', {href: '/for-theme-writers'}, 'For theme writers') ]),
         h('li', [ h('a', {href: '/scenarios'}, 'Testing scenarios') ]),
         h('li', [ h('a', {href: '/themes'}, 'The themes') ])
