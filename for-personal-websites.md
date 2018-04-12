@@ -1,3 +1,7 @@
+If you're using [Hugo](https://gohugo.io/) or [Hexo](https://hexo.io/), you can just download the premade templates:
+  - https://themes.gohugo.io/classless-hugo/
+  - https://github.com/fiatjaf/classless-hexo
+
 If you can easily and completely control the HTML structure of your site, this just be pretty straightforward:
 
 1. Write or generate HTML [with this structure](https://github.com/fiatjaf/classless/blob/master/explained-structure.html) (see [this](/for-cms-makers) for a brief explanation).
