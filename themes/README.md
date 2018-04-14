@@ -11,6 +11,7 @@
 * [ghostwriter/](ghostwriter//) - A simple blog theme. Better when lists of posts don't bring an excerpt with them.
 * [jeen/](jeen//) - A green and simple theme.
 * [lebo/](lebo//) - A minimal theme that uses white backgrounds. Adapted from http://lebo.io/.
+* [numa/](numa//) - 
 * [plain/](plain//) - A small theme for simple websites where content matters more than design.
 * [subtle/](subtle//) - A simple and minimalist theme that shows a sidebar with header and aside content in it. Better for simple text blogs with not much header images.
 * [wardrobe/](wardrobe//) - A minimal and clean blog theme.

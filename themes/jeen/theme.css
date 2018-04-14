@@ -25,6 +25,9 @@ blockquote {
   padding-left: 1em;
 }
 li p { display: inline }
+img {
+  max-width: 100%;
+}
 
 body > header a,
 body > header a:hover,
