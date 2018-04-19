@@ -1,10 +1,28 @@
 ### What is Classless?
 
-Classless is a set of themes for simple web pages (articles, personal websites, blogs) written only with CSS and possibly Javascript. The themes are all based upon the same HTML structure, which doesn't use any classes or element ids.
+Classless is a proposal for a basic HTML layout that tries to make the less arbitrary decisions possible, along with a set of themes written only with CSS that match that basic HTML layout.
+
+### Why do we need this?
+
+Classless eases out the pain of users who switch from CMS to CMS to static site generator to custom blog engines and lose their themes in the process; it enables developers to create new site engines without having to worry about the lack of themes; it multiplies the work of designers, who can just create a Classless theme and have it usable in multiple platforms instantaneously.
+
+Because the Classless layout is fixed, people can change themes by just editing a CSS `link`;  because it is easy to implement on every blog engine, people can move from Jekyll to less famous engines and keep their themes; because it has no classes, no one has to fight on what should be the class names;  because [Flexbox ](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)and [Grid ](https://css-tricks.com/snippets/css/complete-guide-grid/)exists, almost every theme can be implemented in it.
+
+### What is that HTML layout you’re talking about?
+
+In the basic Classless layout, there are *list pages* and *article pages*. These two types are sufficient for most blogs and simple websites out there.
+
+Article pages may include a header for the article, containing a header image, a title, date and tags, besides the article content. List pages should list a bunch of articles (with or without their metadata), and may include a header and pagination. You can also have an article followed by a list of articles.
+
+The layout is explained in more detail [here](https://github.com/fiatjaf/classless/blob/master/explained-structure.html).
 
 ### Why basing all themes into the same HTML structure?
 
 Because that makes it much easier for CMS development (if you are developing a simple CMS you can let your users change themes without letting them mess up with the HTML rendering process at all); it makes it much easier for people to try out new themes (you can just change a `<link>` tag and the page has a new theme); and it is much more interesting to develop new themes having this constraint in place.
+
+### What if I want to have custom stuff?
+
+Well, if you have full control of your HTML, nothing prevents you from inserting custom elements, even using classes, and styling them individually, in the context of an article page or list page, but if you’re thinking about messing up with the basic structure of the HTML, then your site is probably not the best place to use Classless.
 
 ### Why not using classes?
 
@@ -12,7 +30,13 @@ If we're going to have a fixed HTML structure, a lot of arbitrary choices must b
 
 ### Besides not having classes, what other arbitrary decisions were made?
 
-To make things less arbitrary and more useful, we tried to follow W3C recommendations for the HTML structure, so the HTML would have _meaning_. Because of that, and because having multiple element names, each one in a meaningful location of the page, makes it easier for theme developers, the basic HTML structure uses `<main>`, `<nav>`, `<aside>`, `<article>`, `<section>`, all these nice "new" elements, and not a single `<div>` -- except one that is optional but recommended place to place the article text content.
+To make things less arbitrary and more useful, we tried to follow W3C recommendations for the HTML structure, so the HTML would have *meaning*. Because of that, and because having multiple element names, each one in a meaningful location of the page, makes it easier for theme developers, the basic HTML structure uses `<main>`, `<nav>`, `<aside>`, `<article>`, `<section>` as the 5 main elements of the page, all children of `<body>`.
+
+### Ok, I get it, the Classless ideal is inspiring, how can I help the project move forward?
+
+Well, if you have a website, you [can migrate it to Classless](http:///for-personal-websites), [port the theme](http:///for-theme-writers) you’re using in the process and [contribute it](https://github.com/fiatjaf/classless/tree/master/themes); if you have a CMS or static site generator or any software that people may use to create websites, consider adding built-in [support for the Classless HTML layout](http:///for-cms-makers), along with some way for users to choose between one of the [existing themes](http:///themes) and edit the included CSS; if you’re going to write a blog theme, take this opportunity to challenge yourself and write it in pure CSS, using the Classless HTML as basis for it — depending on your development environment, you may even use **[livereload](http:///for-theme-writers)** [to develop against this site directly](http:///for-theme-writers) —, it may be a good time to learn how to use [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) to achieve great designs.
+
+Or, in any case, [let’s talk](mailto:fiatjaf@gmail.com)!
 
 ### Where is this being used?
 
@@ -20,7 +44,7 @@ Currently, it is being used in websites generated by [sitios.xyz](https://sitios
 
 ### Can I see the themes?
 
-[Yes, please!](/themes)
+[Yes, please!](/themes) But please don’t be dissapointed, we’re still young and don’t have too many good themes.
 
 ### How do I start using it?
 
