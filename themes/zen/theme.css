@@ -179,15 +179,22 @@ body > main {
     }
       main > section > ul > li {
         display: block;
+        margin-top: 1.40909rem;
       }
-        main > section > ul > li header {}
+        main > section > ul > li header {
+          display: flex;
+          flex-direction: column;
+        }
           main > section > ul > li header img {
             width: 100%;
             display: block;
+            order: 2;
           }
           main > section > ul > li header h1 {
-            margin-bottom: 0;
+            margin: 0;
+            order: 1;
           }
+          main > section > ul > li header > * { order: 3 }
           main > section > ul > li header a {}
             main > section > ul > li header a:hover {}
         main > section > ul > li div {}
