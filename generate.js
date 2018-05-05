@@ -19,7 +19,8 @@ const themes = [
   'creative-portfolio',
   'dbyll',
   'ghostwriter',
-  'cocoa'
+  'cocoa',
+  'numa'
 ]
 
 async function main () {
