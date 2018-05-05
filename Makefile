@@ -7,7 +7,7 @@ themes/README.md: $(shell find themes/*/desc.md)
       fish -c 'for theme in (ls -d */); set desc (cat $$theme/desc.md | head -n 1); echo "* [$$theme]($$theme/) - $$desc" >> README.md; end;'
 
 _site: $(shell find *.md *.js themes/*/screenshots/* scenarios/*)
-	godotenv sitio generate.js --body=body.js --helmet=head.js
+	godotenv sitio generate.js --body=body.js
 
 deploy: _site
 	netlify deploy -s classless -p _site

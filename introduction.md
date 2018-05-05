@@ -24,7 +24,7 @@ Because that makes it much easier for CMS development (if you are developing a s
 
 Well, if you have full control of your HTML, nothing prevents you from inserting custom elements, even using classes, and styling them individually, in the context of an article page or list page, but if you’re thinking about messing up with the basic structure of the HTML, then your site is probably not the best place to use Classless.
 
-### Why not using classes?
+### Why don't you use classes?
 
 If we're going to have a fixed HTML structure, a lot of arbitrary choices must be made for what will be that structure. Having to choose how many classes and what would be the name of the classes would be much more complicated than choosing not to have any classes at all. Having no classes also makes it easier for the person who is writing the HTML of some page in particular in which a Classless theme will be used.
 

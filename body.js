@@ -1,5 +1,5 @@
 const h = require('react-hyperscript')
-const Helmet = require('react-helmet').default
+const Helmet = require('react-safety-helmet').default
 const React = require('react')
 const Draggable = require('react-draggable')
 const Autocomplete = require('react-autocomplete')
@@ -61,7 +61,7 @@ module.exports = class extends React.Component {
         h('li', [ h('a', {href: '/for-personal-websites'}, 'For personal websites') ]),
         h('li', [ h('a', {href: '/for-cms-makers'}, 'For CMS makers') ]),
         h('li', [ h('a', {href: '/for-theme-writers'}, 'For theme writers') ]),
-        h('li', [ h('a', {href: '/scenarios'}, 'Testing scenarios') ]),
+        h('li', [ h('a', {href: '/scenarios/a-list-of-posts'}, 'Testing scenarios') ]),
         h('li', [ h('a', {href: '/themes'}, 'The themes') ])
       ]
 
@@ -70,15 +70,20 @@ module.exports = class extends React.Component {
       : h('main', {key: 'main'}, this.props.children)
 
     return [
-      h(Helmet, {
-        key: 'helmet',
-        link: [{
+      h(Helmet, {key: 'helmet'}, [
+        h('meta', {charset: 'utf-8'}),
+        h('meta', {httpEquiv: 'x-ua-compatible', content: 'ie: edge'}),
+        h('meta', {name: 'description', content: 'Pure-CSS themes for standard HTML formats.'}),
+        h('meta', {name: 'viewport', content: 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes'}),
+        h('title', this.props.data && this.props.data.name ? `${this.props.data.name} | classless` : 'classless'),
+        h('link', {rel: 'stylesheet', href: '/style.css'}),
+        h('link', {
           rel: 'stylesheet',
           href: this.state.theme.startsWith('http')
             ? this.state.theme
             : 'https://rawgit.com/fiatjaf/classless/master/themes/' + this.state.theme + '/theme.css'
-        }]
-      }),
+        })
+      ]),
       h('header', {key: 'header', role: 'banner'}, [
         Math.random() < 0.667
           ? Math.random() < 0.5
@@ -108,7 +113,7 @@ module.exports = class extends React.Component {
         role: 'contentinfo'
       }, [
         h('p', [
-          h('a', {href: 'https://fiatjaf.alhur.es/'}, '@fiatjaf'),
+          h('a', {href: 'https://alhur.es/'}, 'alhur.es'),
           ' 2018. ',
           'Page generated with ',
           h('a', {href: 'https://github.com/fiatjaf/sitio'}, 'sitio'),
