@@ -217,8 +217,7 @@ body > main > section > ul {
   }
 }
 body > main > section > ul > li {
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
 }
 body > main > section > ul > li:not(:last-child)::after {
   content: ' ';
